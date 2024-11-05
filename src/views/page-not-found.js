@@ -9,32 +9,12 @@ const PageNotFound = (props) => {
   return (
     <div className="page-not-found-container1">
       <Helmet>
-        <title>Page-Not-Found - Daiki Development Rebuild</title>
+        <title>Page-Not-Found - Daiki Development</title>
         <meta
           property="og:title"
-          content="Page-Not-Found - Daiki Development Rebuild"
+          content="Page-Not-Found - Daiki Development"
         />
       </Helmet>
-      <div className="page-not-found-web-alerts">
-        <span className="page-not-found-text10">
-          <span className="page-not-found-text11">
-            Daiki Developments website is still under development. Some pages
-            may be unavailable at this time. If you believe you received this in
-            error
-            <span
-              dangerouslySetInnerHTML={{
-                __html: ' ',
-              }}
-            />
-          </span>
-          <br className="page-not-found-text12"></br>
-          <span className="page-not-found-text13">Please contact </span>
-          <span className="page-not-found-text14">
-            our support team at +1 ‪(267) 544-9565‬. Thank you!
-          </span>
-          <br></br>
-        </span>
-      </div>
       <div className="page-not-found-nav-bar">
         <header
           data-thq="thq-navbar"

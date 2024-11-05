@@ -10,33 +10,9 @@ const Home = (props) => {
   return (
     <div className="home-container1">
       <Helmet>
-        <title>Daiki Development Rebuild</title>
-        <meta property="og:title" content="Daiki Development Rebuild" />
+        <title>Daiki Development</title>
+        <meta property="og:title" content="Daiki Development" />
       </Helmet>
-      <WebAlerts
-        text={
-          <Fragment>
-            <span className="home-text10">
-              <span className="home-text11">
-                Daiki Developments website is still under development. Some
-                pages may be unavailable at this time. If you believe you
-                received this in error
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: ' ',
-                  }}
-                />
-              </span>
-              <br className="home-text12"></br>
-              <span className="home-text13">Please contact </span>
-              <span className="home-text14">
-                our support team at +1 ‪(267) 544-9565‬. Thank you!
-              </span>
-              <br></br>
-            </span>
-          </Fragment>
-        }
-      ></WebAlerts>
       <NavBar
         text={
           <Fragment>
