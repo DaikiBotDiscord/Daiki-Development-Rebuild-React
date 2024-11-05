@@ -4,8 +4,8 @@ import { Helmet } from 'react-helmet'
 
 import WebAlerts from '../components/web-alerts'
 import NavBar from '../components/nav-bar'
-import './home.css'
 import Footer from '../components/footer'
+import './home.css'
 
 const Home = (props) => {
   return (
@@ -96,12 +96,7 @@ const Home = (props) => {
         </div>
         <div className="home-container5">
           <div className="home-container6">
-            <a
-              href="https://www.daiki-bot.xyz/docs"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="home-link3"
-            >
+            <a href="https://www.daiki-bot.xyz/docs" className="home-link3">
               <div className="home-container7">
                 <svg
                   width="75"
@@ -120,12 +115,7 @@ const Home = (props) => {
                 </span>
               </div>
             </a>
-            <a
-              href="https://www.daiki-bot.xyz/contact"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="home-link4"
-            >
+            <a href="https://www.daiki-bot.xyz/contact" className="home-link4">
               <div className="home-container8">
                 <svg
                   width="75"
@@ -144,12 +134,7 @@ const Home = (props) => {
                 </span>
               </div>
             </a>
-            <a
-              href="https://www.daiki-bot.xyz/commands"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="home-link5"
-            >
+            <a href="https://www.daiki-bot.xyz/commands" className="home-link5">
               <div className="home-container9">
                 <svg
                   width="75"

@@ -17,21 +17,21 @@ const Footer = (props) => {
                         />
                     </div>
                     <div className="footer-links">
-                        <a href={props.link1Url} target="_blank" rel="noreferrer noopener">
+                        <a href={props.link1Url}>
                             {props.link1 ?? (
                                 <Fragment>
                                     <span className="footer-text1 thq-body-small">Home</span>
                                 </Fragment>
                             )}
                         </a>
-                        <a href={props.link2Url} target="_blank" rel="noreferrer noopener">
+                        <a href={props.link2Url}>
                             {props.link2 ?? (
                                 <Fragment>
                                     <span className="footer-text2 thq-body-small">Docs</span>
                                 </Fragment>
                             )}
                         </a>
-                        <a href={props.link3Url} target="_blank" rel="noreferrer noopener">
+                        <a href={props.link3Url}>
                             {props.link3 ?? (
                                 <Fragment>
                                     <span className="footer-text3 thq-body-small">Contact</span>
@@ -54,8 +54,8 @@ const Footer = (props) => {
                             className="footer-link5"
                         >
                             <img
-                                src={props.imageSrc}
                                 alt={props.imageAlt}
+                                src={props.imageSrc}
                                 viewBox="0 0 1024 1024"
                                 className="footer-image"
                             />
