@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet'
 import WebAlerts from '../components/web-alerts'
 import NavBar from '../components/nav-bar'
 import './home.css'
+import Footer from '../components/footer'
 
 const Home = (props) => {
   return (
@@ -172,6 +173,7 @@ const Home = (props) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }

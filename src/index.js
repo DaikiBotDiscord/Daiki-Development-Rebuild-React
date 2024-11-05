@@ -13,10 +13,12 @@ import Home from './views/home'
 import LendMeATenor from './views/lend-me-a-tenor'
 import TheWeddingSinger from './views/theweddingsinger'
 import AroundTheWorld from './views/around-the-world'
+import WebAlerts from './components/web-alerts'
 
 const App = () => {
   return (
     <Router>
+      <WebAlerts />
       <Switch>
         <Route component={Home} exact path="/" />
         <Route component={Home} exact path="/home" />

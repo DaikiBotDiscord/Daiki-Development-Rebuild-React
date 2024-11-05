@@ -4,12 +4,13 @@ import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 
 import './page-not-found.css'
+import Footer from '../components/footer'
 
 const PageNotFound = (props) => {
   return (
     <div className="page-not-found-container1">
       <Helmet>
-        <title>Page-Not-Found - Daiki Development</title>
+        <title>Page Not Found - Daiki Development</title>
         <meta
           property="og:title"
           content="Page-Not-Found - Daiki Development"
@@ -160,6 +161,7 @@ const PageNotFound = (props) => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   )
 }
