@@ -216,7 +216,8 @@
 
 @media(max-width: 767px) {
     .documentation-container3 {
-        background-image: url("/daiki6-1300w.png");
+        background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.6) 1.00%, rgba(0, 9, 24, 0.2) 96.00%),
+            url("/daiki6-1300w.png");
     }
 }
 
@@ -226,7 +227,8 @@
     }
 
     .documentation-container3 {
-        background-image: url("/daiki6-1300w.png");
+        background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.6) 1.00%, rgba(0, 9, 24, 0.2) 96.00%),
+            url("/daiki6-1300w.png");
     }
 
     .documentation-container5 {
