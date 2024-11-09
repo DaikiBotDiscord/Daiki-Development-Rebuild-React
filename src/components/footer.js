@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom'
 
 import PropTypes from 'prop-types'
 
@@ -17,34 +18,34 @@ const Footer = (props) => {
                         />
                     </div>
                     <div className="footer-links">
-                        <a href={props.link1Url}>
+                        <Link to="/" className="footer-link1">
                             {props.link1 ?? (
                                 <Fragment>
-                                    <span className="footer-text1 thq-body-small">Home</span>
+                                    <span className="footer-text6 thq-body-small">Home</span>
                                 </Fragment>
                             )}
-                        </a>
-                        <a href={props.link2Url}>
+                        </Link>
+                        <Link to="/docs" className="footer-link2">
                             {props.link2 ?? (
                                 <Fragment>
-                                    <span className="footer-text2 thq-body-small">Docs</span>
+                                    <span className="footer-text7 thq-body-small">Docs</span>
                                 </Fragment>
                             )}
-                        </a>
-                        <a href={props.link3Url}>
+                        </Link>
+                        <Link to="/contact" className="footer-link3">
                             {props.link3 ?? (
                                 <Fragment>
-                                    <span className="footer-text3 thq-body-small">Contact</span>
+                                    <span className="footer-text8 thq-body-small">Contact</span>
                                 </Fragment>
                             )}
-                        </a>
-                        <a href={props.link4Url}>
+                        </Link>
+                        <Link to="/commands" className="footer-link4">
                             {props.link4 ?? (
                                 <Fragment>
                                     <span className="footer-text4 thq-body-small">Commands</span>
                                 </Fragment>
                             )}
-                        </a>
+                        </Link>
                     </div>
                     <div className="footer-social-links">
                         <a
@@ -85,7 +86,7 @@ const Footer = (props) => {
                             <a href={props.link11Url}>
                                 {props.link11 ?? (
                                     <Fragment>
-                                        <span className="footer-text6 thq-body-small">
+                                        <span className="footer-text5 thq-body-small">
                                             Privacy Policy
                                         </span>
                                     </Fragment>
@@ -113,45 +114,37 @@ const Footer = (props) => {
 }
 
 Footer.defaultProps = {
-    image1Src: '/footer-image-200h.png',
     image1Alt: 'Daiki Development Footer Logo',
-    link1: undefined,
-    link1Url: 'https://daiki-bot.xyz/',
-    link2: undefined,
-    link2Url: 'https://daiki-bot.xyz/docs',
-    link3: undefined,
-    link3Url: 'https://daiki-bot.xyz/contact',
+    content3: undefined,
+    link111: undefined,
     link4: undefined,
-    link4Url: 'https://daiki-bot.xyz/commands',
+    link11: undefined,
+    link1: undefined,
+    link2: undefined,
+    link3: undefined,
+    link11Url1: 'https://daiki-bot.xyz/tos',
+    link11Url: 'https://daiki-bot.xyz/privacy',
+    image1Src: '/footer-image-200h.png',
+    imageUrl: 'https://daiki-bot.xyz/support',
     imageSrc: '/discord%20logo.svg',
     imageAlt: 'image',
-    imageUrl: 'https://daiki-bot.xyz/support',
-    content3: undefined,
-    link11: undefined,
-    link11Url: 'https://daiki-bot.xyz/privacy',
-    link111: undefined,
-    link11Url1: 'https://daiki-bot.xyz/tos',
 }
 
 Footer.propTypes = {
-    image1Src: PropTypes.string,
     image1Alt: PropTypes.string,
-    link1: PropTypes.element,
-    link1Url: PropTypes.string,
-    link2: PropTypes.element,
-    link2Url: PropTypes.string,
-    link3: PropTypes.element,
-    link3Url: PropTypes.string,
+    content3: PropTypes.element,
+    link111: PropTypes.element,
     link4: PropTypes.element,
-    link4Url: PropTypes.string,
+    link11: PropTypes.element,
+    link1: PropTypes.element,
+    link2: PropTypes.element,
+    link3: PropTypes.element,
+    link11Url1: PropTypes.string,
+    link11Url: PropTypes.string,
+    image1Src: PropTypes.string,
+    imageUrl: PropTypes.string,
     imageSrc: PropTypes.string,
     imageAlt: PropTypes.string,
-    imageUrl: PropTypes.string,
-    content3: PropTypes.element,
-    link11: PropTypes.element,
-    link11Url: PropTypes.string,
-    link111: PropTypes.element,
-    link11Url1: PropTypes.string,
 }
 
 export default Footer

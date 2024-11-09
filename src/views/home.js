@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom'
 
 import { Helmet } from 'react-helmet'
 
-import WebAlerts from '../components/web-alerts'
 import NavBar from '../components/nav-bar'
 import Footer from '../components/footer'
 import './home.css'
@@ -11,72 +11,14 @@ const Home = (props) => {
   return (
     <div className="home-container1">
       <Helmet>
-        <title>Daiki Development</title>
-        <meta property="og:title" content="Daiki Development" />
+        <title>Daiki Development Rebuild</title>
+        <meta property="og:title" content="Daiki Development Rebuild" />
       </Helmet>
-      <NavBar
-        text={
-          <Fragment>
-            <span className="home-text16">Invite Daiki</span>
-          </Fragment>
-        }
-        link1={
-          <Fragment>
-            <span className="home-link1 thq-body-small thq-link">
-              <span>Home</span>
-              <br></br>
-            </span>
-          </Fragment>
-        }
-        link2={
-          <Fragment>
-            <span className="home-text19 thq-body-small thq-link">Docs</span>
-          </Fragment>
-        }
-        link3={
-          <Fragment>
-            <span className="home-text20 thq-body-small thq-link">Contact</span>
-          </Fragment>
-        }
-        link4={
-          <Fragment>
-            <span className="home-text21 thq-body-small thq-link">
-              Commands
-            </span>
-          </Fragment>
-        }
-        text1={
-          <Fragment>
-            <span className="home-text22">Invite Daiki</span>
-          </Fragment>
-        }
-        link11={
-          <Fragment>
-            <span className="home-text23 thq-body-small thq-link">Home</span>
-          </Fragment>
-        }
-        link21={
-          <Fragment>
-            <span className="home-text24 thq-body-small thq-link">Docs</span>
-          </Fragment>
-        }
-        link31={
-          <Fragment>
-            <span className="home-text25 thq-body-small thq-link">Contact</span>
-          </Fragment>
-        }
-        link41={
-          <Fragment>
-            <span className="home-text26 thq-body-small thq-link">
-              Commands
-            </span>
-          </Fragment>
-        }
-      ></NavBar>
+      <NavBar id='top' />
       <div className="home-container2">
         <div className="home-container3">
           <div className="home-container4">
-            <span className="home-text27">
+            <span className="home-text22">
               <span>Home</span>
               <br></br>
             </span>
@@ -84,7 +26,7 @@ const Home = (props) => {
               href="https://daiki-bot.xyz/invite"
               target="_blank"
               rel="noreferrer noopener"
-              className="home-link2"
+              className="home-link3"
             >
               <img
                 alt="Exclude380"
@@ -96,7 +38,7 @@ const Home = (props) => {
         </div>
         <div className="home-container5">
           <div className="home-container6">
-            <a href="https://www.daiki-bot.xyz/docs" className="home-link3">
+            <Link to="/docs" className="home-navlink1">
               <div className="home-container7">
                 <svg
                   width="75"
@@ -109,13 +51,13 @@ const Home = (props) => {
                     fill="currentColor"
                   ></path>
                 </svg>
-                <span className="home-text30">
+                <span className="home-text25">
                   <span>Documentation</span>
                   <br></br>
                 </span>
               </div>
-            </a>
-            <a href="https://www.daiki-bot.xyz/contact" className="home-link4">
+            </Link>
+            <Link to="/contact" className="home-navlink2">
               <div className="home-container8">
                 <svg
                   width="75"
@@ -128,13 +70,13 @@ const Home = (props) => {
                     fill="currentColor"
                   ></path>
                 </svg>
-                <span className="home-text33">
+                <span className="home-text28">
                   <span>Contact</span>
                   <br></br>
                 </span>
               </div>
-            </a>
-            <a href="https://www.daiki-bot.xyz/commands" className="home-link5">
+            </Link>
+            <Link to="/commands" className="home-navlink3">
               <div className="home-container9">
                 <svg
                   width="75"
@@ -149,12 +91,12 @@ const Home = (props) => {
                     fill-rule="evenodd"
                   ></path>
                 </svg>
-                <span className="home-text36">
+                <span className="home-text31">
                   <span>Commands</span>
                   <br></br>
                 </span>
               </div>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

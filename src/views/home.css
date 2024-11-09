@@ -10,76 +10,54 @@
   background-position: center;
 }
 
-.home-text10 {
-  fill: var(--dl-color-theme-primary2);
-  color: var(--dl-color-theme-primary2);
+.home-link1 {
+  fill: var(--dl-color-theme-accent1);
+  color: rgb(255, 255, 255);
   display: inline-block;
-  font-size: 18px;
-  font-style: normal;
-  text-align: center;
-  font-weight: 700;
+  text-decoration: none;
 }
 
-.home-text11 {
-  font-size: 16px;
-}
-
-.home-text12 {
-  font-size: 16px;
-}
-
-.home-text13 {
-  font-size: 16px;
+.home-link2 {
+  display: inline-block;
+  text-decoration: none;
 }
 
 .home-text14 {
-  font-size: 16px;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.home-text15 {
+  display: inline-block;
+  text-decoration: none;
 }
 
 .home-text16 {
   display: inline-block;
 }
 
-.home-link1 {
-  fill: var(--dl-color-theme-accent1);
-  color: rgb(255, 255, 255);
-  display: none;
+.home-text17 {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.home-text18 {
+  display: inline-block;
+  text-decoration: none;
 }
 
 .home-text19 {
-  display: none;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .home-text20 {
-  display: none;
+  display: inline-block;
+  text-decoration: none;
 }
 
 .home-text21 {
-  display: none;
-}
-
-.home-text22 {
   display: inline-block;
-}
-
-.home-text23 {
-  display: none;
-  text-decoration: none;
-}
-
-.home-text24 {
-  display: none;
-  text-decoration: none;
-}
-
-.home-text25 {
-  display: none;
-  text-decoration: none;
-}
-
-.home-text26 {
-  display: none;
-  text-decoration: none;
 }
 
 .home-container2 {
@@ -111,7 +89,7 @@
   animation-delay: 0s;
   background-size: cover, auto;
   justify-content: flex-end;
-  background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.2) 0.00%, rgba(0, 9, 24, 0.2) 98.00%), url("/daiki6-1500h.png");
+  background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.6) 0.00%, rgba(0, 9, 24, 0.2) 98.00%), url("/daiki6-1300w.png");
   background-repeat: repeat, no-repeat;
   animation-duration: 300ms;
   animation-direction: normal;
@@ -133,7 +111,7 @@
   flex-direction: column;
 }
 
-.home-text27 {
+.home-text22 {
   fill: var(--dl-color-theme-neutral-light);
   color: var(--dl-color-theme-neutral-light);
   font-size: 40px;
@@ -142,7 +120,7 @@
   font-weight: 700;
 }
 
-.home-link2 {
+.home-link3 {
   display: contents;
 }
 
@@ -186,7 +164,7 @@
   display: flex;
 }
 
-.home-link3 {
+.home-navlink1 {
   display: contents;
 }
 
@@ -223,7 +201,7 @@
   color: var(--dl-color-theme-secondary1);
 }
 
-.home-text30 {
+.home-text25 {
   fill: var(--dl-color-theme-secondary1);
   color: var(--dl-color-theme-secondary1);
   font-size: 18px;
@@ -231,7 +209,7 @@
   font-family: "Poppins";
 }
 
-.home-link4 {
+.home-navlink2 {
   display: contents;
 }
 
@@ -269,7 +247,7 @@
   color: var(--dl-color-theme-secondary1);
 }
 
-.home-text33 {
+.home-text28 {
   fill: var(--dl-color-theme-secondary1);
   color: var(--dl-color-theme-secondary1);
   font-size: 20px;
@@ -277,7 +255,7 @@
   font-family: "Poppins";
 }
 
-.home-link5 {
+.home-navlink3 {
   display: contents;
 }
 
@@ -315,7 +293,7 @@
   color: var(--dl-color-theme-secondary1);
 }
 
-.home-text36 {
+.home-text31 {
   fill: var(--dl-color-theme-secondary1);
   color: var(--dl-color-theme-secondary1);
   font-size: 20px;
@@ -323,40 +301,52 @@
   font-family: "Poppins";
 }
 
-.home-text39 {
+.home-text34 {
+  fill: var(--dl-color-theme-secondary1);
+  color: var(--dl-color-theme-secondary1);
   display: inline-block;
 }
 
-.home-text40 {
+.home-text35 {
+  fill: var(--dl-color-theme-secondary1);
+  color: var(--dl-color-theme-secondary1);
   display: inline-block;
 }
 
-.home-text41 {
+.home-text36 {
+  fill: var(--dl-color-theme-secondary1);
+  color: var(--dl-color-theme-secondary1);
   display: inline-block;
 }
 
-.home-text42 {
+.home-text37 {
+  fill: var(--dl-color-theme-secondary1);
+  color: var(--dl-color-theme-secondary1);
   display: inline-block;
 }
 
-.home-text43 {
+.home-text38 {
+  fill: var(--dl-color-theme-secondary2);
+  color: var(--dl-color-theme-secondary2);
   display: inline-block;
+  text-decoration: none;
 }
 
-.home-text44 {
+.home-link11 {
+  fill: var(--dl-color-theme-secondary2);
+  color: var(--dl-color-theme-secondary2);
   display: inline-block;
+  text-decoration: none;
 }
 
-.home-text45 {
-  display: inline-block;
-}
-
-.home-text46 {
+.home-content3 {
+  fill: var(--dl-color-theme-secondary2);
+  color: var(--dl-color-theme-secondary2);
   display: inline-block;
 }
 
 @media(max-width: 991px) {
-  .home-text27 {
+  .home-text22 {
     font-size: 35px;
   }
 
@@ -372,6 +362,10 @@
 }
 
 @media(max-width: 767px) {
+  .home-container3 {
+    background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.6) 1.00%, rgba(0, 9, 24, 0.2) 96.00%), url("/daiki6-1300w.png");
+  }
+
   .home-container7 {
     width: 200px;
   }
@@ -391,7 +385,7 @@
   }
 
   .home-container3 {
-    background-image: url("/daiki6-1500h.png");
+    background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.6) 1.00%, rgba(0, 9, 24, 0.2) 96.00%), url("/daiki6-1300w.png");
   }
 
   .home-container5 {

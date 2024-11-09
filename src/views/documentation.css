@@ -1,0 +1,235 @@
+.documentation-container1 {
+    width: 100%;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    background-size: cover;
+    background-image: url("/daiki-webpage-background-1500w.png");
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.documentation-text10 {
+    display: inline-block;
+}
+
+.documentation-link1 {
+    fill: var(--dl-color-theme-accent1);
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.documentation-link2 {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.documentation-text15 {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.documentation-text16 {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.documentation-text17 {
+    display: inline-block;
+}
+
+.documentation-text18 {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.documentation-text19 {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.documentation-text20 {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.documentation-text21 {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.documentation-container2 {
+    flex: 0 0 auto;
+    width: 85%;
+    height: auto;
+    display: flex;
+    margin-top: 168px;
+    align-items: flex-start;
+    border-radius: 0px;
+    margin-bottom: var(--dl-space-space-threeunits);
+    flex-direction: column;
+    background-color: rgba(0, 9, 24, 0.8);
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+}
+
+.documentation-container3 {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 350px;
+    display: flex;
+    align-items: flex-start;
+    border-radius: 0px;
+    animation-name: none;
+    flex-direction: column;
+    animation-delay: 0s;
+    background-size: cover, auto;
+    justify-content: flex-end;
+    background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.6) 1.00%, rgba(0, 9, 24, 0.2) 96.00%), url("/daiki6-1300w.png");
+    background-repeat: repeat, no-repeat;
+    animation-duration: 300ms;
+    animation-direction: normal;
+    background-position: bottom, center;
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+}
+
+.documentation-container4 {
+    flex: 0 0 auto;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    margin-left: var(--dl-space-space-threeunits);
+    margin-bottom: var(--dl-space-space-threeunits);
+    flex-direction: column;
+}
+
+.documentation-text22 {
+    fill: var(--dl-color-theme-neutral-light);
+    color: var(--dl-color-theme-neutral-light);
+    font-size: 40px;
+    font-style: normal;
+    font-family: "Poppins";
+    font-weight: 700;
+}
+
+.documentation-container5 {
+    flex: 0 0 auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    border-radius: 0px;
+    flex-direction: column;
+    justify-content: flex-start;
+    background-color: #000918;
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+}
+
+.documentation-text25 {
+    display: inline-block;
+}
+
+.documentation-text28 {
+    display: inline-block;
+}
+
+.documentation-text29 {
+    display: inline-block;
+}
+
+.documentation-text32 {
+    display: inline-block;
+}
+
+.documentation-text33 {
+    display: inline-block;
+}
+
+.documentation-text34 {
+    display: inline-block;
+}
+
+.documentation-text37 {
+    fill: var(--dl-color-theme-secondary1);
+    color: var(--dl-color-theme-secondary1);
+    display: inline-block;
+}
+
+.documentation-text38 {
+    fill: var(--dl-color-theme-secondary1);
+    color: var(--dl-color-theme-secondary1);
+    display: inline-block;
+}
+
+.documentation-text39 {
+    fill: var(--dl-color-theme-secondary1);
+    color: var(--dl-color-theme-secondary1);
+    display: inline-block;
+}
+
+.documentation-text40 {
+    fill: var(--dl-color-theme-secondary1);
+    color: var(--dl-color-theme-secondary1);
+    display: inline-block;
+}
+
+.documentation-text41 {
+    fill: var(--dl-color-theme-secondary2);
+    color: var(--dl-color-theme-secondary2);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.documentation-link11 {
+    fill: var(--dl-color-theme-secondary2);
+    color: var(--dl-color-theme-secondary2);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.documentation-content3 {
+    fill: var(--dl-color-theme-secondary2);
+    color: var(--dl-color-theme-secondary2);
+    display: inline-block;
+}
+
+@media(max-width: 991px) {
+    .documentation-text22 {
+        font-size: 35px;
+    }
+
+    .documentation-container5 {
+        align-self: center;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+@media(max-width: 767px) {
+    .documentation-container3 {
+        background-image: url("/daiki6-1300w.png");
+    }
+}
+
+@media(max-width: 479px) {
+    .documentation-container2 {
+        background-color: rgba(0, 9, 24, 0.9);
+    }
+
+    .documentation-container3 {
+        background-image: url("/daiki6-1300w.png");
+    }
+
+    .documentation-container5 {
+        height: auto;
+    }
+}

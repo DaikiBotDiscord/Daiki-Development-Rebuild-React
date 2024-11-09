@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom'
 
 import PropTypes from 'prop-types'
 
@@ -15,35 +16,42 @@ const NavBar = (props) => {
         />
         <div data-thq="thq-navbar-nav" className="nav-bar-desktop-menu">
           <nav className="nav-bar-links1">
-            <span>
+            <Link to="/">
               {props.link1 ?? (
                 <Fragment>
-                  <span className="nav-bar-link13 thq-body-small thq-link">
+                  <Link
+                    to="/"
+                    className="nav-bar-link13 thq-body-small thq-link"
+                  >
                     <span>Home</span>
                     <br></br>
-                  </span>
+                  </Link>
                 </Fragment>
               )}
-            </span>
-            <span>
+            </Link>
+            <Link to="/docs">
               {props.link2 ?? (
                 <Fragment>
-                  <span className="nav-bar-text22 thq-body-small thq-link">
-                    Docs
-                  </span>
+                  <Link
+                    to="/docs"
+                    className="nav-bar-link23 thq-body-small thq-link"
+                  >
+                    <span>Docs</span>
+                    <br></br>
+                  </Link>
                 </Fragment>
               )}
-            </span>
-            <span>
+            </Link>
+            {/* <Link to="/contact">
               {props.link3 ?? (
                 <Fragment>
-                  <span className="nav-bar-text21 thq-body-small thq-link">
+                  <span className="nav-bar-text16 thq-body-small thq-link">
                     Contact
                   </span>
                 </Fragment>
               )}
-            </span>
-            <span>
+            </Link>
+            <Link to="/commands">
               {props.link4 ?? (
                 <Fragment>
                   <span className="nav-bar-text17 thq-body-small thq-link">
@@ -51,7 +59,7 @@ const NavBar = (props) => {
                   </span>
                 </Fragment>
               )}
-            </span>
+            </Link> */}
           </nav>
           <div className="nav-bar-buttons1">
             <a
@@ -63,7 +71,7 @@ const NavBar = (props) => {
               <span>
                 {props.text ?? (
                   <Fragment>
-                    <span className="nav-bar-text20">Invite Daiki</span>
+                    <span className="nav-bar-text18">Invite Daiki</span>
                   </Fragment>
                 )}
               </span>
@@ -90,7 +98,7 @@ const NavBar = (props) => {
               </div>
             </div>
             <nav className="nav-bar-links2">
-              <a href={props.link1Url}>
+              <Link to="/">
                 {props.link11 ?? (
                   <Fragment>
                     <span className="nav-bar-text19 thq-body-small thq-link">
@@ -98,45 +106,50 @@ const NavBar = (props) => {
                     </span>
                   </Fragment>
                 )}
-              </a>
-              <a href={props.link2Url}>
+              </Link>
+              <Link to="/docs">
                 {props.link21 ?? (
                   <Fragment>
-                    <span className="nav-bar-text12 thq-body-small thq-link">
+                    <span className="nav-bar-text20 thq-body-small thq-link">
                       Docs
                     </span>
                   </Fragment>
                 )}
-              </a>
-              <a href={props.link3Url}>
+              </Link>
+              {/* <Link to="/contact">
                 {props.link31 ?? (
                   <Fragment>
-                    <span className="nav-bar-text18 thq-body-small thq-link">
+                    <span className="nav-bar-text21 thq-body-small thq-link">
                       Contact
                     </span>
                   </Fragment>
                 )}
-              </a>
-              <a href={props.link4Url}>
+              </Link>
+              <Link to="/commands">
                 {props.link41 ?? (
                   <Fragment>
-                    <span className="nav-bar-text16 thq-body-small thq-link">
+                    <span className="nav-bar-text22 thq-body-small thq-link">
                       Commands
                     </span>
                   </Fragment>
                 )}
-              </a>
+              </Link> */}
             </nav>
             <div className="nav-bar-buttons2">
-              <button className="nav-bar-action12 thq-button-filled thq-button-animated">
+              <a
+                href={props.action1Url1}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="nav-bar-action12 thq-button-filled thq-button-animated"
+              >
                 <span>
                   {props.text1 ?? (
                     <Fragment>
-                      <span className="nav-bar-text15">Invite Daiki</span>
+                      <span className="nav-bar-text23">Invite Daiki</span>
                     </Fragment>
                   )}
                 </span>
-              </button>
+              </a>
             </div>
           </div>
           <div className="nav-bar-icon-group">
@@ -167,46 +180,40 @@ const NavBar = (props) => {
 
 NavBar.defaultProps = {
   image1Src: '/daiki6-1500h.png',
-  logoAlt: 'logo',
   image1Alt: 'logo',
-  link21: undefined,
   link1: undefined,
-  logoSrc: '/daiki6-1500h.png',
-  text1: undefined,
-  link41: undefined,
-  link4: undefined,
-  link4Url: 'https://www.teleporthq.io',
-  link31: undefined,
-  link1Url: 'https://www.teleporthq.io',
-  link11: undefined,
-  link3Url: 'https://www.teleporthq.io',
-  text: undefined,
-  link3: undefined,
-  action1Url: 'https://daiki-bot.xyz/invite',
-  link2Url: 'https://www.teleporthq.io',
   link2: undefined,
+  link3: undefined,
+  link4: undefined,
+  action1Url: 'https://daiki-bot.xyz/invite',
+  text: undefined,
+  logoSrc: '/daiki6-1500h.png',
+  logoAlt: 'logo',
+  link11: undefined,
+  link21: undefined,
+  link31: undefined,
+  link41: undefined,
+  action1Url1: 'https://daiki-bot.xyz/invite',
+  text1: undefined,
 }
 
 NavBar.propTypes = {
   image1Src: PropTypes.string,
-  logoAlt: PropTypes.string,
   image1Alt: PropTypes.string,
-  link21: PropTypes.element,
   link1: PropTypes.element,
-  logoSrc: PropTypes.string,
-  text1: PropTypes.element,
-  link41: PropTypes.element,
-  link4: PropTypes.element,
-  link4Url: PropTypes.string,
-  link31: PropTypes.element,
-  link1Url: PropTypes.string,
-  link11: PropTypes.element,
-  link3Url: PropTypes.string,
-  text: PropTypes.element,
-  link3: PropTypes.element,
-  action1Url: PropTypes.string,
-  link2Url: PropTypes.string,
   link2: PropTypes.element,
+  link3: PropTypes.element,
+  link4: PropTypes.element,
+  action1Url: PropTypes.string,
+  text: PropTypes.element,
+  logoSrc: PropTypes.string,
+  logoAlt: PropTypes.string,
+  link11: PropTypes.element,
+  link21: PropTypes.element,
+  link31: PropTypes.element,
+  link41: PropTypes.element,
+  action1Url1: PropTypes.string,
+  text1: PropTypes.element,
 }
 
 export default NavBar

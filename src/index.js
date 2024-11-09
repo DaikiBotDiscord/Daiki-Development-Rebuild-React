@@ -14,6 +14,7 @@ import LendMeATenor from './views/lend-me-a-tenor'
 import TheWeddingSinger from './views/theweddingsinger'
 import AroundTheWorld from './views/around-the-world'
 import WebAlerts from './components/web-alerts'
+import Docs from './views/documentation'
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
       <Switch>
         <Route component={Home} exact path="/" />
         <Route component={Home} exact path="/home" />
+        <Route component={Docs} exact path="/docs" />
         <Route component={LendMeATenor} exact path="/lendmeatenor" />
         <Route component={TheWeddingSinger} exact path="/theweddingsinger" />
         <Route component={AroundTheWorld} exact path="/aroundtheworld" />
