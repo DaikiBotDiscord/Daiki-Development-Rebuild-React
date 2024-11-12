@@ -12,10 +12,10 @@ const Documentation = (props) => {
     return (
         <div className="documentation-container1">
             <Helmet>
-                <title>Documentation - Daiki Development Rebuild</title>
+                <title>Documentation - Daiki Development</title>
                 <meta
                     property="og:title"
-                    content="Documentation - Daiki Development Rebuild"
+                    content="Documentation - Daiki Development"
                 />
             </Helmet>
             <NavBar />
