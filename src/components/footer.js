@@ -18,31 +18,31 @@ const Footer = (props) => {
                         />
                     </div>
                     <div className="footer-links">
-                        <Link to="/" className="footer-link1">
+                        <Link to="/home" className="footer-link1">
                             {props.link1 ?? (
                                 <Fragment>
-                                    <span className="footer-text6 thq-body-small">Home</span>
+                                    <span className="footer-text16 thq-body-small">Home</span>
                                 </Fragment>
                             )}
                         </Link>
-                        <Link to="/docs" className="footer-link2">
+                        <Link to="/documentation" className="footer-link2">
                             {props.link2 ?? (
                                 <Fragment>
-                                    <span className="footer-text7 thq-body-small">Docs</span>
+                                    <span className="footer-text17 thq-body-small">Docs</span>
                                 </Fragment>
                             )}
                         </Link>
                         <Link to="/contact" className="footer-link3">
                             {props.link3 ?? (
                                 <Fragment>
-                                    <span className="footer-text8 thq-body-small">Contact</span>
+                                    <span className="footer-text18 thq-body-small">Contact</span>
                                 </Fragment>
                             )}
                         </Link>
                         <Link to="/commands" className="footer-link4">
                             {props.link4 ?? (
                                 <Fragment>
-                                    <span className="footer-text4 thq-body-small">Commands</span>
+                                    <span className="footer-text14 thq-body-small">Commands</span>
                                 </Fragment>
                             )}
                         </Link>
@@ -86,7 +86,7 @@ const Footer = (props) => {
                             <a href={props.link11Url}>
                                 {props.link11 ?? (
                                     <Fragment>
-                                        <span className="footer-text5 thq-body-small">
+                                        <span className="footer-text15 thq-body-small">
                                             Privacy Policy
                                         </span>
                                     </Fragment>
@@ -108,6 +108,13 @@ const Footer = (props) => {
                         </div>
                     </div>
                 </div>
+                <span>
+                    {props.text ?? (
+                        <Fragment>
+                            <span className="footer-text19">Last Updated 11/13/2024</span>
+                        </Fragment>
+                    )}
+                </span>
             </div>
         </footer>
     )
@@ -128,6 +135,7 @@ Footer.defaultProps = {
     imageUrl: 'https://daiki-bot.xyz/support',
     imageSrc: '/discord%20logo.svg',
     imageAlt: 'image',
+    text: undefined,
 }
 
 Footer.propTypes = {
@@ -145,6 +153,7 @@ Footer.propTypes = {
     imageUrl: PropTypes.string,
     imageSrc: PropTypes.string,
     imageAlt: PropTypes.string,
+    text: PropTypes.element,
 }
 
 export default Footer
