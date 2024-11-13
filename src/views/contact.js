@@ -7,7 +7,13 @@ import './contact.css'
 
 const Contact = (props) => {
     return (
-        <div className="contact-container1">
+        <div className="contact-container1"><Helmet>
+            <title>Contact - Daiki Development</title>
+            <meta
+                property="og:title"
+                content="Documentation - Daiki Development"
+            />
+        </Helmet>
             <NavBar />
             <div className="contact-container2">
                 <div className="contact-container3">
