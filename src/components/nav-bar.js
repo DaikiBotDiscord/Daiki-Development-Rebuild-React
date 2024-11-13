@@ -42,7 +42,7 @@ const NavBar = (props) => {
                 </Fragment>
               )}
             </Link>
-            {/* <Link to="/contact">
+            <Link to="/contact">
               {props.link3 ?? (
                 <Fragment>
                   <span className="nav-bar-text16 thq-body-small thq-link">
@@ -51,7 +51,7 @@ const NavBar = (props) => {
                 </Fragment>
               )}
             </Link>
-            <Link to="/commands">
+            {/* <Link to="/commands">
               {props.link4 ?? (
                 <Fragment>
                   <span className="nav-bar-text17 thq-body-small thq-link">
@@ -116,7 +116,7 @@ const NavBar = (props) => {
                   </Fragment>
                 )}
               </Link>
-              {/* <Link to="/contact">
+              <Link to="/contact">
                 {props.link31 ?? (
                   <Fragment>
                     <span className="nav-bar-text21 thq-body-small thq-link">
@@ -125,7 +125,7 @@ const NavBar = (props) => {
                   </Fragment>
                 )}
               </Link>
-              <Link to="/commands">
+              {/* <Link to="/commands">
                 {props.link41 ?? (
                   <Fragment>
                     <span className="nav-bar-text22 thq-body-small thq-link">

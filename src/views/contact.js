@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 
 import NavBar from '../components/nav-bar'
 import Footer from '../components/footer'
+import { Helmet } from 'react-helmet'
 import './contact.css'
 
 const Contact = (props) => {
