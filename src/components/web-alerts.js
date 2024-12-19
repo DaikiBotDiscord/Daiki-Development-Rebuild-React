@@ -7,40 +7,47 @@ import './web-alerts.css'
 const WebAlerts = (props) => {
   return (
     <div className="web-alerts-web-alerts">
-      <span className="web-alerts-text1">
+      <span className="web-alerts-text10">
         {props.text ?? (
           <Fragment>
-            <span className="web-alerts-text2">
-              <span className="web-alerts-text3">
-                Daiki Developments website is still under development. Some
-                pages may be unavailable at this time. If you believe you
-                received this in error
-                <span
-                  dangerouslySetInnerHTML={{
-                    __html: ' ',
-                  }}
-                />
+            <span className="web-alerts-text12">
+              <span>
+                Are you interested in a custom website? Well look no further,
+                Daiki Development offers custom web development services
               </span>
-              <br className="web-alerts-text4"></br>
-              <span className="web-alerts-text5">Please contact </span>
-              <span className="web-alerts-text6">
-                our support team at +1 ‪(267) 544-9565‬. Thank you!
-              </span>
+              <br></br>
+              <span>Along with web hosting of your custom website!</span>
+              <br></br>
+              <span>Contact our support team today</span>
               <br></br>
             </span>
           </Fragment>
         )}
       </span>
+      <button
+        type="button"
+        className="web-alerts-button thq-button-animated button thq-button-filled"
+      >
+        <span>
+          {props.button ?? (
+            <Fragment>
+              <span className="web-alerts-text19">Contact Support</span>
+            </Fragment>
+          )}
+        </span>
+      </button>
     </div>
   )
 }
 
 WebAlerts.defaultProps = {
   text: undefined,
+  button: undefined,
 }
 
 WebAlerts.propTypes = {
   text: PropTypes.element,
+  button: PropTypes.element,
 }
 
 export default WebAlerts
