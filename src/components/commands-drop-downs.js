@@ -5,12 +5,12 @@ import PropTypes from 'prop-types'
 import './commands-drop-downs.css'
 
 const CommandsDropDowns = (props) => {
-  const [faq6Visible, setFaq6Visible] = useState(true)
-  const [faq1Visible, setFaq1Visible] = useState(true)
-  const [faq5Visible, setFaq5Visible] = useState(true)
-  const [faq4Visible, setFaq4Visible] = useState(true)
-  const [faq3Visible, setFaq3Visible] = useState(true)
-  const [faq2Visible, setFaq2Visible] = useState(true)
+  const [faq6Visible, setFaq6Visible] = useState(false)
+  const [faq1Visible, setFaq1Visible] = useState(false)
+  const [faq5Visible, setFaq5Visible] = useState(false)
+  const [faq4Visible, setFaq4Visible] = useState(false)
+  const [faq3Visible, setFaq3Visible] = useState(false)
+  const [faq2Visible, setFaq2Visible] = useState(false)
   return (
     <div
       className={`commands-drop-downs-faq8 thq-section-padding ${props.rootClassName} `}
