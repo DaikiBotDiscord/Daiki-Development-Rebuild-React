@@ -5,12 +5,12 @@ import PropTypes from 'prop-types'
 import './commands-drop-downs.css'
 
 const CommandsDropDowns = (props) => {
-  const [faq6Visible, setFaq6Visible] = useState(false)
-  const [faq1Visible, setFaq1Visible] = useState(false)
-  const [faq5Visible, setFaq5Visible] = useState(false)
-  const [faq4Visible, setFaq4Visible] = useState(false)
-  const [faq3Visible, setFaq3Visible] = useState(false)
-  const [faq2Visible, setFaq2Visible] = useState(false)
+  const [faq6Visible, setFaq6Visible] = useState(true)
+  const [faq1Visible, setFaq1Visible] = useState(true)
+  const [faq5Visible, setFaq5Visible] = useState(true)
+  const [faq4Visible, setFaq4Visible] = useState(true)
+  const [faq3Visible, setFaq3Visible] = useState(true)
+  const [faq2Visible, setFaq2Visible] = useState(true)
   return (
     <div
       className={`commands-drop-downs-faq8 thq-section-padding ${props.rootClassName} `}
@@ -26,7 +26,7 @@ const CommandsDropDowns = (props) => {
                 <p className="commands-drop-downs-faq1-question1 thq-body-large">
                   {props.faq1Question ?? (
                     <Fragment>
-                      <span className="commands-drop-downs-text234">
+                      <span className="commands-drop-downs-text272">
                         <span>Fun</span>
                         <br></br>
                       </span>
@@ -134,7 +134,7 @@ const CommandsDropDowns = (props) => {
                 <p className="commands-drop-downs-faq2-question1 thq-body-large">
                   {props.faq2Question ?? (
                     <Fragment>
-                      <span className="commands-drop-downs-text233">
+                      <span className="commands-drop-downs-text271">
                         Information
                       </span>
                     </Fragment>
@@ -195,64 +195,111 @@ const CommandsDropDowns = (props) => {
                     </span>
                     <br className="commands-drop-downs-text149"></br>
                     <span>
-                      User - This gets basic user information (Options: User)
+                      User - This gets basic user information (Options:
+                      User)
                     </span>
                     <br className="commands-drop-downs-text151"></br>
+                    <span>
+
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: ' ',
+                        }}
+                      />
+                    </span>
                     <span>Server - This shows server information</span>
-                    <br className="commands-drop-downs-text153"></br>
+                    <br className="commands-drop-downs-text154"></br>
+                    <span>
+
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: ' ',
+                        }}
+                      />
+                    </span>
                     <span>
                       Permissions - This gets user permission information
                       (Options: Target)
                     </span>
-                    <br className="commands-drop-downs-text155"></br>
+                    <br className="commands-drop-downs-text157"></br>
+                    <span>
+
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: ' ',
+                        }}
+                      />
+                    </span>
                     <span>
                       Role - This gets user role information (Options: Role)
                     </span>
-                    <br className="commands-drop-downs-text157"></br>
+                    <br className="commands-drop-downs-text160"></br>
+                    <span>
+
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: ' ',
+                        }}
+                      />
+                    </span>
                     <span>
                       Bot - This command will show you a list of bot stats that
                       are currently available
                     </span>
-                    <br className="commands-drop-downs-text159"></br>
+                    <br className="commands-drop-downs-text163"></br>
+                    <span className="commands-drop-downs-text164">Invite:</span>
+                    <span> Invite Daiki to another one of your servers!</span>
+                    <br className="commands-drop-downs-text166"></br>
+                    <span className="commands-drop-downs-text167">Quote:</span>
                     <span>
-                      Invite: Invite Daiki to another one of your servers!
-                    </span>
-                    <br className="commands-drop-downs-text161"></br>
-                    <span>
-                      Quote: Retrieves and displays a random inspirational or
+                      {' '}
+                      Retrieves and displays a random inspirational or
                       motivational quote
                     </span>
-                    <br className="commands-drop-downs-text163"></br>
-                    <span>
-                      Server Avatar: Shows server avatar (Options: Target
-                      &lt;Optional&gt;)
-                    </span>
-                    <br className="commands-drop-downs-text165"></br>
-                    <span>Support: Show a button to webpage for support</span>
-                    <br className="commands-drop-downs-text167"></br>
-                    <span>
-                      Urban: Searches the Urban Dictionary for the provided term
-                      and displays the definition Options: Term
-                    </span>
                     <br className="commands-drop-downs-text169"></br>
-                    <span>
-                      Voted: Have you voted for Daiki on top.gg? Let&apos;s find
-                      out!
+                    <span className="commands-drop-downs-text170">
+                      Server Avatar:
                     </span>
-                    <br className="commands-drop-downs-text171"></br>
                     <span>
-                      Weather: Many different weather APIs, such as Weather API
-                      and Open Weather Map, could be used to provide weather
-                      embeds to a discord server. You could use slash commands
-                      to fetch the current weather, or make a daily weather
-                      report channel if a discord server is based in a single
-                      area.
+                      {' '}
+                      Shows server avatar (Options: Target &lt;Optional&gt;)
                     </span>
-                    <br className="commands-drop-downs-text173"></br>
-                    <span>
-                      Whois: This gets basic user information (Options: User)
+                    <br className="commands-drop-downs-text172"></br>
+                    <span className="commands-drop-downs-text173">
+                      Support:
                     </span>
+                    <span> Show a button to webpage for support</span>
                     <br className="commands-drop-downs-text175"></br>
+                    <span className="commands-drop-downs-text176">Urban:</span>
+                    <span>
+                      {' '}
+                      Searches the Urban Dictionary for the provided term and
+                      displays the definition Options: Term
+                    </span>
+                    <br className="commands-drop-downs-text178"></br>
+                    <span className="commands-drop-downs-text179">Voted:</span>
+                    <span>
+                      {' '}
+                      Have you voted for Daiki on top.gg? Let&apos;s find out!
+                    </span>
+                    <br className="commands-drop-downs-text181"></br>
+                    <span className="commands-drop-downs-text182">
+                      Weather:
+                    </span>
+                    <span>
+                      {' '}
+                      Many different weather APIs, such as Weather API and Open
+                      Weather Map, could be used to provide weather embeds to a
+                      discord server. You could use slash commands to fetch the
+                      current weather, or make a daily weather report channel if
+                      a discord server is based in a single area.
+                    </span>
+                    <br className="commands-drop-downs-text184"></br>
+                    <span className="commands-drop-downs-text185">Whois:</span>
+                    <span>
+                      {' '}
+                      This gets basic user information (Options: User)
+                    </span>
                     <br></br>
                   </span>
                 </div>
@@ -266,7 +313,7 @@ const CommandsDropDowns = (props) => {
                 <p className="commands-drop-downs-faq2-question2 thq-body-large">
                   {props.faq3Question ?? (
                     <Fragment>
-                      <span className="commands-drop-downs-text237">
+                      <span className="commands-drop-downs-text275">
                         <span>Moderation</span>
                         <br></br>
                       </span>
@@ -298,52 +345,111 @@ const CommandsDropDowns = (props) => {
               </div>
               {faq3Visible && (
                 <div className="commands-drop-downs-container19">
-                  <span className="commands-drop-downs-text177 thq-body-small">
-                    <span className="commands-drop-downs-text178">
-                      Requirements
-                    </span>
-                    <br></br>
+                  <span className="commands-drop-downs-text188 thq-body-small">
+                    <span className="commands-drop-downs-text189">Kick:</span>
                     <span>
-                      Daiki has no requirements besides the proper permissions
-                      to function properly. *
+                      {' '}
+                      Kick a user from the discord server (Options: Target,
+                      Reason)
                     </span>
-                    <span className="commands-drop-downs-text181">
-                      The required permissions can be found in the permission
-                      section
-                    </span>
-                    <span>*</span>
-                    <br></br>
-                    <br></br>
-                    <span className="commands-drop-downs-text185">
-                      Let&apos;s Setup Daiki!
-                    </span>
-                    <br></br>
+                    <br className="commands-drop-downs-text191"></br>
+                    <span className="commands-drop-downs-text192">Mute:</span>
                     <span>
-                      1.
+                      {' '}
+                      Mutes a given user (Options: Minutes, Target, Reason
+                      &lt;Optional&gt;)
+                    </span>
+                    <br className="commands-drop-downs-text194"></br>
+                    <span className="commands-drop-downs-text195">Role:</span>
+                    <span>
                       <span
                         dangerouslySetInnerHTML={{
                           __html: ' ',
                         }}
                       />
                     </span>
-                    <a
-                      href="https://daiki-bot.xyz/invite"
-                      target="_blank"
-                      rel="noreferrer noopener"
-                      className="commands-drop-downs-link"
-                    >
-                      Invite Daiki
-                    </a>
-                    <br></br>
+                    <br className="commands-drop-downs-text197"></br>
                     <span>
-                      2. Double check Daiki has all of the correct permissions *
+                      Add - Add a role to any given member (Options: Role)
                     </span>
-                    <span className="commands-drop-downs-text190">
-                      The required permissions can be found in the permission
-                      section
+                    <br className="commands-drop-downs-text199"></br>
+                    <span>
+
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: ' ',
+                        }}
+                      />
                     </span>
-                    <span>*</span>
-                    <br></br>
+                    <span>
+                      Remove - Remove a role from a given member (Options: Role)
+                    </span>
+                    <br className="commands-drop-downs-text202"></br>
+                    <span className="commands-drop-downs-text203">
+                      Slowmode:
+                    </span>
+                    <span>
+                      {' '}
+                      Set a slowmode in a channel (Options: Time, Reason
+                      &lt;Optional&gt;)
+                    </span>
+                    <br className="commands-drop-downs-text205"></br>
+                    <span className="commands-drop-downs-text206">Unban:</span>
+                    <span>
+                      {' '}
+                      Unban a user from this discord server (Options: Target,
+                      Reason)
+                    </span>
+                    <br className="commands-drop-downs-text208"></br>
+                    <span className="commands-drop-downs-text209">Unmute:</span>
+                    <span> Unmute a given user (Options: User, Reason)</span>
+                    <br className="commands-drop-downs-text211"></br>
+                    <span className="commands-drop-downs-text212">
+                      Warnings:
+                    </span>
+                    <span>
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: ' ',
+                        }}
+                      />
+                    </span>
+                    <br className="commands-drop-downs-text214"></br>
+                    <span>
+
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: ' ',
+                        }}
+                      />
+                    </span>
+                    <span>
+                      Show - Shows all warnings on a user (Options: User)
+                    </span>
+                    <br className="commands-drop-downs-text217"></br>
+                    <span>
+
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: ' ',
+                        }}
+                      />
+                    </span>
+                    <span>Add - Warn a user (Options: Target, Reason)</span>
+                    <br className="commands-drop-downs-text220"></br>
+                    <span>
+
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: ' ',
+                        }}
+                      />
+                    </span>
+                    <span>
+                      Remove - Remove a warning by ID from a user (Options:
+                      Target, Warning ID)
+                    </span>
+                    <br className="commands-drop-downs-text223"></br>
                   </span>
                 </div>
               )}
@@ -356,7 +462,7 @@ const CommandsDropDowns = (props) => {
                 <p className="commands-drop-downs-faq2-question3 thq-body-large">
                   {props.faq4Question ?? (
                     <Fragment>
-                      <span className="commands-drop-downs-text230">
+                      <span className="commands-drop-downs-text268">
                         <span>Server</span>
                         <br></br>
                       </span>
@@ -388,32 +494,74 @@ const CommandsDropDowns = (props) => {
               </div>
               {faq4Visible && (
                 <div className="commands-drop-downs-container22">
-                  <span className="commands-drop-downs-text193 thq-body-small">
+                  <span className="commands-drop-downs-text224 thq-body-small">
+                    <span className="commands-drop-downs-text225">Setup:</span>
+                    <br></br>
                     <span>
-                      Setup:Configured - Shows all configured settings for the
+                      Configured - Shows all configured settings for the
                       discord server
                     </span>
-                    <br className="commands-drop-downs-text195"></br>
+                    <br className="commands-drop-downs-text228"></br>
+                    <span>
+
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: ' ',
+                        }}
+                      />
+                    </span>
                     <span>
                       Reset - Reset Server Configuration (Options: Setting
                       *Which setup setting*)
                     </span>
-                    <br className="commands-drop-downs-text197"></br>
+                    <br className="commands-drop-downs-text231"></br>
+                    <span>
+
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: ' ',
+                        }}
+                      />
+                    </span>
                     <span>
                       Warnings - Configure the way warning commands are
                       interacted with (Options: Role)
                     </span>
-                    <br className="commands-drop-downs-text199"></br>
+                    <br className="commands-drop-downs-text234"></br>
+                    <span>
+
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: ' ',
+                        }}
+                      />
+                    </span>
                     <span>
                       Mute - Configure the mute commands are interacted with
                       (Options: Role, Warn on Mute)
                     </span>
-                    <br className="commands-drop-downs-text201"></br>
+                    <br className="commands-drop-downs-text237"></br>
+                    <span>
+
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: ' ',
+                        }}
+                      />
+                    </span>
                     <span>
                       Kick - Configure the way kick commands are interacted with
                       (Options: Role)
                     </span>
-                    <br className="commands-drop-downs-text203"></br>
+                    <br className="commands-drop-downs-text240"></br>
+                    <span>
+
+                      <span
+                        dangerouslySetInnerHTML={{
+                          __html: ' ',
+                        }}
+                      />
+                    </span>
                     <span>
                       Ban - Configure the way ban commands are interacted with
                       (Options: Role)
@@ -431,7 +579,7 @@ const CommandsDropDowns = (props) => {
                 <p className="commands-drop-downs-faq1-question2 thq-body-large">
                   {props.faq1Question1 ?? (
                     <Fragment>
-                      <span className="commands-drop-downs-text229">Tools</span>
+                      <span className="commands-drop-downs-text267">Tools</span>
                     </Fragment>
                   )}
                 </p>
@@ -460,8 +608,8 @@ const CommandsDropDowns = (props) => {
               </div>
               {faq5Visible && (
                 <div className="commands-drop-downs-container25">
-                  <span className="commands-drop-downs-text206 thq-body-small">
-                    <span className="commands-drop-downs-text207">AFK:</span>
+                  <span className="commands-drop-downs-text244 thq-body-small">
+                    <span className="commands-drop-downs-text245">AFK:</span>
                     <span>
                       {' '}
                       AFK is short for away from the keyboard and it will allow
@@ -470,15 +618,15 @@ const CommandsDropDowns = (props) => {
                       This is a great option when you have to use the restroom
                       or grab a short pause for lunch.
                     </span>
-                    <br className="commands-drop-downs-text209"></br>
-                    <span className="commands-drop-downs-text210">Clear:</span>
+                    <br className="commands-drop-downs-text247"></br>
+                    <span className="commands-drop-downs-text248">Clear:</span>
                     <span>
                       {' '}
                       Deletes a specified number of messages from a channel or
                       user (Options: Amount, Target)
                     </span>
-                    <br className="commands-drop-downs-text212"></br>
-                    <span className="commands-drop-downs-text213">
+                    <br className="commands-drop-downs-text250"></br>
+                    <span className="commands-drop-downs-text251">
                       Generate Password:
                     </span>
                     <span>
@@ -487,13 +635,13 @@ const CommandsDropDowns = (props) => {
                       options like length and character types. It helps users
                       create secure passwords.
                     </span>
-                    <br className="commands-drop-downs-text215"></br>
-                    <span className="commands-drop-downs-text216">
+                    <br className="commands-drop-downs-text253"></br>
+                    <span className="commands-drop-downs-text254">
                       QR Code:
                     </span>
                     <span> generates QR codes for specified text or URLs</span>
-                    <br className="commands-drop-downs-text218"></br>
-                    <span className="commands-drop-downs-text219">
+                    <br className="commands-drop-downs-text256"></br>
+                    <span className="commands-drop-downs-text257">
                       Shorten:
                     </span>
                     <span> Shortens long URLs</span>
@@ -510,7 +658,7 @@ const CommandsDropDowns = (props) => {
                 <p className="commands-drop-downs-faq1-question3 thq-body-large">
                   {props.faq1Question14 ?? (
                     <Fragment>
-                      <span className="commands-drop-downs-text240">
+                      <span className="commands-drop-downs-text278">
                         <span>Utilities</span>
                         <br></br>
                       </span>
@@ -542,20 +690,20 @@ const CommandsDropDowns = (props) => {
               </div>
               {faq6Visible === true && (
                 <div className="commands-drop-downs-container28">
-                  <span className="commands-drop-downs-text222 thq-body-small">
-                    <span className="commands-drop-downs-text223">Embed:</span>
+                  <span className="commands-drop-downs-text260 thq-body-small">
+                    <span className="commands-drop-downs-text261">Embed:</span>
                     <span>
                       {' '}
                       Send an embed in a given chat (Options: Color, Channel)
                     </span>
-                    <br className="commands-drop-downs-text225"></br>
-                    <span className="commands-drop-downs-text226">Say:</span>
+                    <br className="commands-drop-downs-text263"></br>
+                    <span className="commands-drop-downs-text264">Say:</span>
                     <span>
                       {' '}
                       Send a message in a given chat (Options: Channel
                       &lt;Optional&gt;)
                     </span>
-                    <br className="commands-drop-downs-text228"></br>
+                    <br className="commands-drop-downs-text266"></br>
                   </span>
                 </div>
               )}
