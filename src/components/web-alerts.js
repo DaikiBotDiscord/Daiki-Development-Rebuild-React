@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react'
+import { Link } from 'react-router-dom'
 
 import PropTypes from 'prop-types'
 
@@ -24,9 +25,9 @@ const WebAlerts = (props) => {
           </Fragment>
         )}
       </span>
-      <button
-        type="button"
-        className="web-alerts-button thq-button-animated button thq-button-filled"
+      <Link
+        to="/contact"
+        className="web-alerts-navlink thq-button-animated button thq-button-filled"
       >
         <span>
           {props.button ?? (
@@ -35,7 +36,7 @@ const WebAlerts = (props) => {
             </Fragment>
           )}
         </span>
-      </button>
+      </Link>
     </div>
   )
 }
