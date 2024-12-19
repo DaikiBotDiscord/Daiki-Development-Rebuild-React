@@ -11,7 +11,7 @@ const WebAlerts = (props) => {
       <span className="web-alerts-text10">
         {props.text ?? (
           <Fragment>
-            <span className="web-alerts-text12">
+            <span className="web-alerts-text13">
               <span>
                 Are you interested in a custom website? Well look no further,
                 Daiki Development offers custom web development services
@@ -27,12 +27,12 @@ const WebAlerts = (props) => {
       </span>
       <Link
         to="/contact"
-        className="web-alerts-navlink thq-button-animated button thq-button-filled"
+        className="web-alerts-navlink button thq-button-filled thq-button-animated"
       >
         <span>
           {props.button ?? (
             <Fragment>
-              <span className="web-alerts-text19">Contact Support</span>
+              <span className="web-alerts-text12">Contact Support</span>
             </Fragment>
           )}
         </span>
@@ -42,13 +42,13 @@ const WebAlerts = (props) => {
 }
 
 WebAlerts.defaultProps = {
-  text: undefined,
   button: undefined,
+  text: undefined,
 }
 
 WebAlerts.propTypes = {
-  text: PropTypes.element,
   button: PropTypes.element,
+  text: PropTypes.element,
 }
 
 export default WebAlerts
