@@ -195,7 +195,7 @@ const CommandsDropDowns = (props) => {
                     </span>
                     <br className="commands-drop-downs-text149"></br>
                     <span>
-                      User - This gets basic user information (Options:
+                    &nbsp;&nbsp;&nbsp;&nbsp;User - This gets basic user information (Options:
                       User)
                     </span>
                     <br className="commands-drop-downs-text151"></br>
@@ -207,7 +207,7 @@ const CommandsDropDowns = (props) => {
                         }}
                       />
                     </span>
-                    <span>Server - This shows server information</span>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;Server - This shows server information</span>
                     <br className="commands-drop-downs-text154"></br>
                     <span>
 
@@ -218,7 +218,7 @@ const CommandsDropDowns = (props) => {
                       />
                     </span>
                     <span>
-                      Permissions - This gets user permission information
+                    &nbsp;&nbsp;&nbsp;&nbsp;Permissions - This gets user permission information
                       (Options: Target)
                     </span>
                     <br className="commands-drop-downs-text157"></br>
@@ -231,7 +231,7 @@ const CommandsDropDowns = (props) => {
                       />
                     </span>
                     <span>
-                      Role - This gets user role information (Options: Role)
+                    &nbsp;&nbsp;&nbsp;&nbsp;Role - This gets user role information (Options: Role)
                     </span>
                     <br className="commands-drop-downs-text160"></br>
                     <span>
@@ -243,7 +243,7 @@ const CommandsDropDowns = (props) => {
                       />
                     </span>
                     <span>
-                      Bot - This command will show you a list of bot stats that
+                    &nbsp;&nbsp;&nbsp;&nbsp;Bot - This command will show you a list of bot stats that
                       are currently available
                     </span>
                     <br className="commands-drop-downs-text163"></br>
@@ -370,7 +370,7 @@ const CommandsDropDowns = (props) => {
                     </span>
                     <br className="commands-drop-downs-text197"></br>
                     <span>
-                      Add - Add a role to any given member (Options: Role)
+                    &nbsp;&nbsp;&nbsp;&nbsp;Add - Add a role to any given member (Options: Role)
                     </span>
                     <br className="commands-drop-downs-text199"></br>
                     <span>
@@ -382,7 +382,7 @@ const CommandsDropDowns = (props) => {
                       />
                     </span>
                     <span>
-                      Remove - Remove a role from a given member (Options: Role)
+                    &nbsp;&nbsp;&nbsp;&nbsp;Remove - Remove a role from a given member (Options: Role)
                     </span>
                     <br className="commands-drop-downs-text202"></br>
                     <span className="commands-drop-downs-text203">
@@ -424,7 +424,7 @@ const CommandsDropDowns = (props) => {
                       />
                     </span>
                     <span>
-                      Show - Shows all warnings on a user (Options: User)
+                    &nbsp;&nbsp;&nbsp;&nbsp;Show - Shows all warnings on a user (Options: User)
                     </span>
                     <br className="commands-drop-downs-text217"></br>
                     <span>
@@ -435,7 +435,7 @@ const CommandsDropDowns = (props) => {
                         }}
                       />
                     </span>
-                    <span>Add - Warn a user (Options: Target, Reason)</span>
+                    <span>&nbsp;&nbsp;&nbsp;&nbsp;Add - Warn a user (Options: Target, Reason)</span>
                     <br className="commands-drop-downs-text220"></br>
                     <span>
 
@@ -446,7 +446,7 @@ const CommandsDropDowns = (props) => {
                       />
                     </span>
                     <span>
-                      Remove - Remove a warning by ID from a user (Options:
+                    &nbsp;&nbsp;&nbsp;&nbsp;Remove - Remove a warning by ID from a user (Options:
                       Target, Warning ID)
                     </span>
                     <br className="commands-drop-downs-text223"></br>
@@ -498,7 +498,7 @@ const CommandsDropDowns = (props) => {
                     <span className="commands-drop-downs-text225">Setup:</span>
                     <br></br>
                     <span>
-                      Configured - Shows all configured settings for the
+                    &nbsp;&nbsp;&nbsp;&nbsp;Configured - Shows all configured settings for the
                       discord server
                     </span>
                     <br className="commands-drop-downs-text228"></br>
@@ -511,7 +511,7 @@ const CommandsDropDowns = (props) => {
                       />
                     </span>
                     <span>
-                      Reset - Reset Server Configuration (Options: Setting
+                    &nbsp;&nbsp;&nbsp;&nbsp;Reset - Reset Server Configuration (Options: Setting
                       *Which setup setting*)
                     </span>
                     <br className="commands-drop-downs-text231"></br>
@@ -524,7 +524,7 @@ const CommandsDropDowns = (props) => {
                       />
                     </span>
                     <span>
-                      Warnings - Configure the way warning commands are
+                    &nbsp;&nbsp;&nbsp;&nbsp;Warnings - Configure the way warning commands are
                       interacted with (Options: Role)
                     </span>
                     <br className="commands-drop-downs-text234"></br>
@@ -537,7 +537,7 @@ const CommandsDropDowns = (props) => {
                       />
                     </span>
                     <span>
-                      Mute - Configure the mute commands are interacted with
+                    &nbsp;&nbsp;&nbsp;&nbsp;Mute - Configure the mute commands are interacted with
                       (Options: Role, Warn on Mute)
                     </span>
                     <br className="commands-drop-downs-text237"></br>
@@ -550,7 +550,7 @@ const CommandsDropDowns = (props) => {
                       />
                     </span>
                     <span>
-                      Kick - Configure the way kick commands are interacted with
+                    &nbsp;&nbsp;&nbsp;&nbsp;Kick - Configure the way kick commands are interacted with
                       (Options: Role)
                     </span>
                     <br className="commands-drop-downs-text240"></br>
@@ -563,7 +563,7 @@ const CommandsDropDowns = (props) => {
                       />
                     </span>
                     <span>
-                      Ban - Configure the way ban commands are interacted with
+                    &nbsp;&nbsp;&nbsp;&nbsp;Ban - Configure the way ban commands are interacted with
                       (Options: Role)
                     </span>
                     <br></br>
