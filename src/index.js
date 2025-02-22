@@ -1,60 +1,22 @@
-import React, { useEffect } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import {
   BrowserRouter as Router,
   Route,
   Switch,
   Redirect,
-  useHistory
-} from 'react-router-dom';
-import Cookies from 'js-cookie';
+} from 'react-router-dom'
 
-import './style.css';
-import PageNotFound from './views/page-not-found';
-import Home from './views/home';
-import LendMeATenor from './views/lend-me-a-tenor';
-import TheWeddingSinger from './views/theweddingsinger';
-import AroundTheWorld from './views/around-the-world';
-import WebAlerts from './components/web-alerts';
-import Docs from './views/documentation';
-import Contact from './views/contact';
-import Commands from './views/commands';
-
-const SyncSession = () => {
-  const history = useHistory();
-
-  useEffect(() => {
-    const checkSession = async () => {
-      try {
-        const response = await fetch('https://oauth2.daiki-bot.xyz/get-session', {
-          method: 'GET',
-          credentials: 'include',
-        });
-
-        const data = await response.json();
-
-        if (data.session_token) {
-          Cookies.set('session_token', data.session_token, {
-            domain: '.daiki-bot.xyz',
-            path: '/',
-            secure: true,
-            sameSite: 'None',
-          });
-
-          history.push('/');
-        } else {
-          window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
-        }
-      } catch (error) {
-        window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
-      }
-    };
-
-    checkSession();
-  }, [history]);
-
-  return <p>Syncing session, please wait...</p>;
-};
+import './style.css'
+import PageNotFound from './views/page-not-found'
+import Home from './views/home'
+import LendMeATenor from './views/lend-me-a-tenor'
+import TheWeddingSinger from './views/theweddingsinger'
+import AroundTheWorld from './views/around-the-world'
+import WebAlerts from './components/web-alerts'
+import Docs from './views/documentation'
+import Contact from './views/contact'
+import Commands from './views/commands'
 
 const App = () => {
   return (
@@ -62,7 +24,6 @@ const App = () => {
       <WebAlerts />
       <Switch>
         <Route component={Home} exact path="/" />
-        <Route component={SyncSession} exact path="/sync-session" />
         <Route component={Home} exact path="/home" />
         <Route component={Docs} exact path="/docs" />
         <Route component={Docs} exact path="/documentation" />
