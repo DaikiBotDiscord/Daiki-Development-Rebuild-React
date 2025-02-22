@@ -33,7 +33,10 @@ const SyncSession = () => {
         });
 
         const data = await response.json();
+
         if (data.session_token) {
+          console.log("Session token received:", data.session_token); // Debugging
+
           // Store session token as a cookie
           Cookies.set('session_token', data.session_token, {
             domain: '.daiki-bot.xyz', // ✅ Allows all subdomains
@@ -45,7 +48,7 @@ const SyncSession = () => {
           // Redirect user to dashboard
           history.push('/dashboard');
         } else {
-          console.error("Session token not received");
+          console.warn("Session token not received, redirecting to auth");
           window.location.href = 'https://oauth2.daiki-bot.xyz/auth'; // ✅ Redirect to login
         }
       } catch (error) {
@@ -59,6 +62,7 @@ const SyncSession = () => {
 
   return <p>Syncing session, please wait...</p>;
 };
+
 
 const App = () => {
   return (
