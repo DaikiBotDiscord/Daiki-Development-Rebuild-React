@@ -46,11 +46,11 @@ const SyncSession = () => {
           history.push('/dashboard');
         } else {
           console.error("Session token not received");
-          history.push('/login'); // Redirect to login if token is missing
+          window.location.href = 'https://oauth2.daiki-bot.xyz/auth'; // ✅ Redirect to login
         }
       } catch (error) {
         console.error("Error fetching session:", error);
-        history.push('/login'); // Redirect to login on error
+        window.location.href = 'https://oauth2.daiki-bot.xyz/auth'; // ✅ Redirect to login on error
       }
     };
 
@@ -75,7 +75,7 @@ const App = () => {
         <Route component={TheWeddingSinger} exact path="/theweddingsinger" />
         <Route component={AroundTheWorld} exact path="/aroundtheworld" />
 
-        {/* Add Sync Session Route */}
+        {/* Fix: Add Sync Session Route with Component */}
         <Route component={SyncSession} exact path="/sync-session" />
 
         <Route path='/staff' component={() => {
