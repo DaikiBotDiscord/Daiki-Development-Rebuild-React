@@ -12,11 +12,14 @@ import Cookies from 'js-cookie';
 import './style.css';
 import PageNotFound from './views/page-not-found';
 import Home from './views/home';
+import LendMeATenor from './views/lend-me-a-tenor';
+import TheWeddingSinger from './views/theweddingsinger';
+import AroundTheWorld from './views/around-the-world';
+import WebAlerts from './components/web-alerts';
 import Docs from './views/documentation';
 import Contact from './views/contact';
 import Commands from './views/commands';
 
-// Sync Session Component
 const SyncSession = () => {
   const history = useHistory();
 
@@ -25,15 +28,12 @@ const SyncSession = () => {
       try {
         const response = await fetch('https://oauth2.daiki-bot.xyz/get-session', {
           method: 'GET',
-          credentials: 'include', // ✅ Ensures cookies are sent
+          credentials: 'include',
         });
 
         const data = await response.json();
 
         if (data.session_token) {
-          console.log("✅ Session token received:", data.session_token);
-
-          // Store session token as a cookie
           Cookies.set('session_token', data.session_token, {
             domain: '.daiki-bot.xyz',
             path: '/',
@@ -41,14 +41,12 @@ const SyncSession = () => {
             sameSite: 'None',
           });
 
-          history.push('/dashboard'); // ✅ Redirect user to dashboard
+          history.push('/');
         } else {
-          console.warn("❌ No session found, redirecting...");
-          window.location.href = 'https://oauth2.daiki-bot.xyz/auth'; // ✅ Redirect to login
+          window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
         }
       } catch (error) {
-        console.error("❌ Error fetching session:", error);
-        window.location.href = 'https://oauth2.daiki-bot.xyz/auth'; // ✅ Redirect to login
+        window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
       }
     };
 
@@ -64,7 +62,7 @@ const App = () => {
       <WebAlerts />
       <Switch>
         <Route component={Home} exact path="/" />
-        <Route component={SyncSession} path='sync-session' />
+        <Route component={SyncSession} exact path="/sync-session" />
         <Route component={Home} exact path="/home" />
         <Route component={Docs} exact path="/docs" />
         <Route component={Docs} exact path="/documentation" />
