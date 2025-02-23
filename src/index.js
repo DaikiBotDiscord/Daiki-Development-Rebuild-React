@@ -25,17 +25,30 @@ const DashboardSync = () => {
     fetch('https://oauth2.daiki-bot.xyz/dashboard', {
       method: 'GET',
       credentials: 'include', // ✅ Include cookies in request
-    }).then(response => response.json())
+    })
+      .then(response => response.json())
       .then(data => {
         if (data.success) {
           console.log("✅ Session Token Found:", data.session_token);
-          localStorage.setItem('discord.oauth2', data.session_token); // ✅ Store token
-          window.location.href = "/dashboard"; // ✅ Redirect
+
+          // ✅ Store session in cookie & localStorage
+          Cookies.set('discord.oauth2', data.session_token, {
+            domain: '.daiki-bot.xyz',
+            path: '/',
+            secure: true,
+            sameSite: 'None',
+          });
+
+          localStorage.setItem('discord.oauth2', data.session_token);
+
+          // ✅ Redirect user to actual dashboard
+          window.location.href = "/dashboard";
         } else {
           console.warn("❌ No session found, redirecting...");
-          window.location.href = 'https://oauth2.daiki-bot.xyz/auth'; // ✅ Redirect to login
+          window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
         }
-      }).catch(error => {
+      })
+      .catch(error => {
         console.error("❌ Error fetching session:", error);
         window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
       });
