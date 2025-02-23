@@ -27,7 +27,7 @@ const DashboardSync = () => {
     if (sessionToken) {
       console.log("✅ Session Token Found:", sessionToken);
       localStorage.setItem('discord.oauth2', sessionToken); // ✅ Store it
-      window.location.href = "/dashboard"; // ✅ Redirect
+      window.location.href = "/"; // ✅ Redirect
     } else {
       console.warn("❌ No session found, redirecting...");
       window.location.href = 'https://oauth2.daiki-bot.xyz/auth'; // ✅ Redirect to login
