@@ -37,7 +37,7 @@ const DashboardSync = () => {
           if (data.success) {
             console.log("✅ Session Valid:", data.session_token);
             localStorage.setItem('discord.oauth2', sessionToken); // ✅ Store valid token
-            window.location.href = "/dashboard"; // ✅ Redirect
+            window.location.href = "/"; // ✅ Redirect
           } else {
             console.warn("❌ Session invalid, clearing...");
             Cookies.remove('discord.oauth2', { domain: '.daiki-bot.xyz', path: '/' });
