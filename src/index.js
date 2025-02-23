@@ -22,41 +22,22 @@ import Commands from './views/commands'
 
 const DashboardSync = () => {
   useEffect(() => {
-    fetch('https://oauth2.daiki-bot.xyz/dashboard', {
-      method: 'GET',
-      credentials: 'include', // ✅ Ensures cookies are sent/received
-    })
-      .then(response => response.json())
-      .then(data => {
-        if (data.success) {
-          console.log("✅ Session Token Found:", data.session_token);
+    const sessionToken = Cookies.get('discord.oauth2'); // ✅ Read session cookie
 
-          // ✅ Store session token in a cookie
-          Cookies.set('discord.oauth2', data.session_token, {
-            domain: '.daiki-bot.xyz',
-            path: '/',
-            secure: true,
-            sameSite: 'None',
-          });
-
-          // ✅ Redirect user to dashboard
-          window.location.href = "https://daiki-bot.xyz/dashboard";
-        } else {
-          console.warn("❌ No session found, redirecting...");
-          window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
-        }
-      })
-      .catch(error => {
-        console.error("❌ Error fetching session:", error);
-        window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
-      });
+    if (sessionToken) {
+      console.log("✅ Session Token Found:", sessionToken);
+      localStorage.setItem('discord.oauth2', sessionToken); // ✅ Store it
+      window.location.href = "/dashboard"; // ✅ Redirect
+    } else {
+      console.warn("❌ No session found, redirecting...");
+      window.location.href = 'https://oauth2.daiki-bot.xyz/auth'; // ✅ Redirect to login
+    }
   }, []);
 
   return <p>Syncing session, please wait...</p>;
 };
 
 export default DashboardSync;
-
 
 const App = () => {
   return (
