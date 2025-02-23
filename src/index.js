@@ -30,7 +30,7 @@ const DashboardSync = () => {
       // ✅ Check if the session is still valid with the backend
       fetch('https://oauth2.daiki-bot.xyz/dashboard/check-session', {
         method: 'GET',
-        credentials: 'include',
+        credentials: 'include',  // ✅ Important to send cookies
         headers: {
           'Content-Type': 'application/json'
         }
