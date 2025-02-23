@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom'
 import {
   BrowserRouter as Router,
@@ -6,6 +6,8 @@ import {
   Switch,
   Redirect,
 } from 'react-router-dom'
+import Cookies from 'js-cookie';
+
 
 import './style.css'
 import PageNotFound from './views/page-not-found'
@@ -18,12 +20,37 @@ import Docs from './views/documentation'
 import Contact from './views/contact'
 import Commands from './views/commands'
 
+const DashboardSync = () => {
+  useEffect(() => {
+    fetch('https://oauth2.daiki-bot.xyz/dashboard', {
+      method: 'GET',
+      credentials: 'include', // ✅ Include cookies in request
+    }).then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          console.log("✅ Session Token Found:", data.session_token);
+          localStorage.setItem('discord.oauth2', data.session_token); // ✅ Store token
+          window.location.href = "/dashboard"; // ✅ Redirect
+        } else {
+          console.warn("❌ No session found, redirecting...");
+          window.location.href = 'https://oauth2.daiki-bot.xyz/auth'; // ✅ Redirect to login
+        }
+      }).catch(error => {
+        console.error("❌ Error fetching session:", error);
+        window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
+      });
+  }, []);
+
+  return <p>Syncing session, please wait...</p>;
+};
+
 const App = () => {
   return (
     <Router>
       <WebAlerts />
       <Switch>
         <Route component={Home} exact path="/" />
+        <Route component={DashboardSync} exact path="/dashboard-sync" /> {/* ✅ New Route */}
         <Route component={Home} exact path="/home" />
         <Route component={Docs} exact path="/docs" />
         <Route component={Docs} exact path="/documentation" />
