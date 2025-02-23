@@ -5,6 +5,7 @@ import {
   Route,
   Switch,
   Redirect,
+  useHistory
 } from 'react-router-dom'
 import Cookies from 'js-cookie';
 
