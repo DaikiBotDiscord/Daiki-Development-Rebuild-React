@@ -24,14 +24,14 @@ const DashboardSync = () => {
   useEffect(() => {
     fetch('https://oauth2.daiki-bot.xyz/dashboard', {
       method: 'GET',
-      credentials: 'include', // ✅ Include cookies in request
+      credentials: 'include', // ✅ Ensures cookies are sent/received
     })
       .then(response => response.json())
       .then(data => {
         if (data.success) {
           console.log("✅ Session Token Found:", data.session_token);
 
-          // ✅ Store session in cookie & localStorage
+          // ✅ Store session token in a cookie
           Cookies.set('discord.oauth2', data.session_token, {
             domain: '.daiki-bot.xyz',
             path: '/',
@@ -39,10 +39,8 @@ const DashboardSync = () => {
             sameSite: 'None',
           });
 
-          localStorage.setItem('discord.oauth2', data.session_token);
-
-          // ✅ Redirect user to actual dashboard
-          window.location.href = "/dashboard";
+          // ✅ Redirect user to dashboard
+          window.location.href = "https://daiki-bot.xyz/dashboard";
         } else {
           console.warn("❌ No session found, redirecting...");
           window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
@@ -56,6 +54,9 @@ const DashboardSync = () => {
 
   return <p>Syncing session, please wait...</p>;
 };
+
+export default DashboardSync;
+
 
 const App = () => {
   return (
