@@ -43,7 +43,7 @@ const DashboardSync = () => {
         if (data.success) {
           console.log("✅ Token is valid:", token);
           localStorage.setItem('discord.oauth2', token);
-          history.push('/dashboard');
+          history.push('/');
         } else {
           console.warn("❌ Invalid token, redirecting...");
           localStorage.removeItem('discord.oauth2');
