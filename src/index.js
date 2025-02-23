@@ -30,27 +30,26 @@ const DashboardSync = () => {
       // ✅ Check if the session is still valid with the backend
       fetch('https://oauth2.daiki-bot.xyz/dashboard/check-session', {
         method: 'GET',
-        credentials: 'include', // ✅ Include cookies
-      })
-        .then(response => response.json())
-        .then(data => {
-          if (data.success) {
-            console.log("✅ Session Valid:", data.session_token);
-            localStorage.setItem('discord.oauth2', sessionToken); // ✅ Store valid token
-            window.location.href = "/"; // ✅ Redirect
-          } else {
-            console.warn("❌ Session invalid, clearing...");
-            Cookies.remove('discord.oauth2', { domain: '.daiki-bot.xyz', path: '/' });
-            localStorage.removeItem('discord.oauth2');
-            window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
-          }
-        })
-        .catch(error => {
-          console.error("❌ Error checking session:", error);
-          Cookies.remove('discord.oauth2', { domain: '.daiki-bot.xyz', path: '/' });
-          localStorage.removeItem('discord.oauth2');
+        credentials: 'include',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      }).then(response => {
+        console.log("Headers:", response.headers); // ✅ Debug headers
+        return response.json();
+      }).then(data => {
+        if (data.success) {
+          console.log("✅ Session Token Found:", data.session_token);
+          localStorage.setItem('discord.oauth2', data.session_token);
+          window.location.href = "/";
+        } else {
+          console.warn("❌ No session found, redirecting...");
           window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
-        });
+        }
+      }).catch(error => {
+        console.error("❌ Error fetching session:", error);
+      });
+
     } else {
       console.warn("❌ No session token found, redirecting...");
       window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
