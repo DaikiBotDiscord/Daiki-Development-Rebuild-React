@@ -6,6 +6,7 @@ import {
   Switch,
   Redirect,
 } from 'react-router-dom'
+import Cookies from 'js-cookie';
 
 import './style.css'
 import PageNotFound from './views/page-not-found'
@@ -18,12 +19,53 @@ import Docs from './views/documentation'
 import Contact from './views/contact'
 import Commands from './views/commands'
 
+const DashboardSync = () => {
+  const history = useHistory();
+
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const token = urlParams.get('token') || localStorage.getItem('discord.oauth2');
+
+    if (!token) {
+      console.warn("❌ No token found, redirecting...");
+      window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
+      return;
+    }
+
+    // ✅ Validate token with backend
+    fetch(`https://oauth2.daiki-bot.xyz/dashboard/check-session?token=${token}`, {
+      method: 'GET',
+      credentials: 'include'
+    })
+      .then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          console.log("✅ Token is valid:", token);
+          localStorage.setItem('discord.oauth2', token);
+          history.push('/dashboard');
+        } else {
+          console.warn("❌ Invalid token, redirecting...");
+          localStorage.removeItem('discord.oauth2');
+          window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
+        }
+      })
+      .catch(error => {
+        console.error("❌ Error checking session:", error);
+        window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
+      });
+
+  }, [history]);
+
+  return <p>Syncing session, please wait...</p>;
+};
+
 const App = () => {
   return (
     <Router>
       <WebAlerts />
       <Switch>
         <Route component={Home} exact path="/" />
+        <Route component={DashboardSync} exact path="/dashboard-sync" />
         <Route component={Home} exact path="/home" />
         <Route component={Docs} exact path="/docs" />
         <Route component={Docs} exact path="/documentation" />
