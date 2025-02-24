@@ -19,6 +19,7 @@ import WebAlerts from './components/web-alerts'
 import Docs from './views/documentation'
 import Contact from './views/contact'
 import Commands from './views/commands'
+import { OrbitProgress } from 'react-loading-indicators'
 
 const DashboardSync = () => {
   useEffect(() => {
@@ -40,7 +41,7 @@ const DashboardSync = () => {
       });
   }, []);
 
-  return <p>Syncing session, please wait...</p>;
+  return <p><OrbitProgress variant="disc" dense color="#6141acff" size="medium" text="" textColor="#ff0000" /></p>;
 };
 
 
