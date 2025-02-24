@@ -19,7 +19,7 @@ import WebAlerts from './components/web-alerts'
 import Docs from './views/documentation'
 import Contact from './views/contact'
 import Commands from './views/commands'
-import { OrbitProgress } from 'react-loading-indicators'
+import { LifeLine, OrbitProgress } from 'react-loading-indicators'
 
 const DashboardSync = () => {
   useEffect(() => {
@@ -50,7 +50,7 @@ const DashboardSync = () => {
       width: '100%',  // Full viewport width
       marginTop: '100px',
     }}>
-      <OrbitProgress
+      <LifeLine
         variant="disc"
         dense
         color="#6141acff"
