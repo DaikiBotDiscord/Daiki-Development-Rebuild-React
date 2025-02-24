@@ -30,14 +30,14 @@ const DashboardSync = () => {
       .then(data => {
         if (data.success) {
           console.log("✅ Session Valid");
-          //window.location.href = "/"; // ✅ Redirect to actual dashboard
+          window.location.href = "/"; // ✅ Redirect to actual dashboard
         } else {
           console.warn("❌ Session Invalid, redirecting...");
-          //window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
+          window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
         }
       }).catch(error => {
         console.error("❌ Error checking session:", error);
-        //window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
+        window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
       });
   }, []);
 
