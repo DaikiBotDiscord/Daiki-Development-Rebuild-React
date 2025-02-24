@@ -21,6 +21,30 @@ import Contact from './views/contact'
 import Commands from './views/commands'
 
 const DashboardSync = () => {
+  useEffect(() => {
+    fetch('https://oauth2.daiki-bot.xyz/dashboard/check-session', {
+      method: 'GET',
+      credentials: 'include' // ✅ Send cookies with request
+    }).then(response => response.json())
+      .then(data => {
+        if (data.success) {
+          console.log("✅ Session Valid");
+          window.location.href = "/dashboard"; // ✅ Redirect to actual dashboard
+        } else {
+          console.warn("❌ Session Invalid, redirecting...");
+          window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
+        }
+      }).catch(error => {
+        console.error("❌ Error checking session:", error);
+        window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
+      });
+  }, []);
+
+  return <p>Syncing session, please wait...</p>;
+};
+
+
+/* const DashboardSync = () => {
   const history = useHistory();
 
   useEffect(() => {
@@ -58,7 +82,7 @@ const DashboardSync = () => {
   }, [history]);
 
   return <p>Syncing session, please wait...</p>;
-};
+}; */
 
 const App = () => {
   return (
