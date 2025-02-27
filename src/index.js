@@ -20,6 +20,7 @@ import Docs from './views/documentation'
 import Contact from './views/contact'
 import Commands from './views/commands'
 import { LifeLine, OrbitProgress } from 'react-loading-indicators'
+import Dashboard from './views/dashboard';
 
 const DashboardSync = () => {
   useEffect(() => {
@@ -113,6 +114,7 @@ const App = () => {
         <Route component={Home} exact path="/home" />
         <Route component={Docs} exact path="/docs" />
         <Route component={Docs} exact path="/documentation" />
+        <Route component={Dashboard} exact path="/dashboard" />
         <Route component={Commands} exact path="/commands" />
         <Route component={Contact} exact path='/contact' />
         <Route component={LendMeATenor} exact path="/lendmeatenor" />

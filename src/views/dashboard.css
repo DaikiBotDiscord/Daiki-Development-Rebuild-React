@@ -1,0 +1,170 @@
+.dashboard-container1 {
+    width: 100%;
+    display: flex;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+    background-size: cover;
+    background-image: url("/daiki-webpage-background-1500w.png");
+    background-position: center;
+}
+
+.dashboard-text10 {
+    display: inline-block;
+}
+
+.dashboard-text11 {
+    fill: var(--dl-color-theme-primary2);
+    color: var(--dl-color-theme-primary2);
+    display: inline-block;
+    font-size: 18px;
+    font-style: normal;
+    text-align: center;
+    font-weight: 700;
+}
+
+.dashboard-text18 {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.dashboard-link1 {
+    fill: var(--dl-color-theme-accent1);
+    color: rgb(255, 255, 255);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.dashboard-text21 {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.dashboard-text22 {
+    display: inline-block;
+}
+
+.dashboard-text23 {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.dashboard-text24 {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.dashboard-link2 {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.dashboard-text27 {
+    display: inline-block;
+}
+
+.dashboard-text28 {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.dashboard-text29 {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.dashboard-container2 {
+    flex: 0 0 auto;
+    width: 85%;
+    height: auto;
+    display: flex;
+    margin-top: 168px;
+    align-items: flex-start;
+    border-radius: 45px;
+    margin-bottom: var(--dl-space-space-threeunits);
+    flex-direction: column;
+    background-color: rgba(0, 9, 24, 0.8);
+}
+
+.dashboard-container3 {
+    flex: 0 0 auto;
+    width: 100%;
+    height: 400px;
+    display: flex;
+    align-items: flex-start;
+    border-radius: 45px;
+    animation-name: none;
+    flex-direction: column;
+    animation-delay: 0s;
+    background-size: cover, auto;
+    justify-content: flex-end;
+    background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.2) 0.00%, rgba(0, 9, 24, 0.2) 98.00%), url("/daiki6-1300w.png");
+    background-repeat: repeat, no-repeat;
+    animation-duration: 300ms;
+    animation-direction: normal;
+    background-position: bottom, center;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+}
+
+.dashboard-container4 {
+    flex: 0 0 auto;
+    width: auto;
+    height: auto;
+    display: flex;
+    align-items: flex-start;
+    margin-left: var(--dl-space-space-threeunits);
+    margin-bottom: var(--dl-space-space-threeunits);
+    flex-direction: column;
+}
+
+.dashboard-text30 {
+    fill: var(--dl-color-theme-neutral-light);
+    color: var(--dl-color-theme-neutral-light);
+    font-size: 40px;
+    font-family: "Poppins";
+    font-weight: 700;
+}
+
+.dashboard-text31 {
+    font-style: normal;
+}
+
+.dashboard-text32 {
+    font-style: normal;
+}
+
+.dashboard-text33 {
+    font-size: 35px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+.dashboard-text34 {
+    font-style: normal;
+}
+
+.dashboard-action1 {
+    display: flex;
+    margin-top: var(--dl-space-space-oneandhalfunits);
+    border-color: var(--dl-color-theme-primary2);
+    flex-direction: row;
+    text-decoration: none;
+    background-color: var(--dl-color-theme-primary2);
+}
+
+@media(max-width: 991px) {
+    .dashboard-text30 {
+        font-size: 35px;
+    }
+}
+
+@media(max-width: 479px) {
+    .dashboard-container2 {
+        background-color: rgba(0, 9, 24, 0.9);
+    }
+
+    .dashboard-container3 {
+        background-image: url("/daiki6-1300w.png");
+    }
+}
