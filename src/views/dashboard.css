@@ -161,10 +161,10 @@
 
 @media(max-width: 479px) {
     .dashboard-container2 {
-        background-color: rgba(0, 9, 24, 0.9);
+        background-color: rgba(0, 9, 24, 0.8);
     }
 
     .dashboard-container3 {
-        background-image: url("/daiki6-1300w.png");
+        background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.9) 0.00%, rgba(0, 9, 24, 0.9) 98.00%), url("/daiki6-1300w.png");
     }
 }
