@@ -98,7 +98,7 @@
     animation-delay: 0s;
     background-size: cover, auto;
     justify-content: flex-end;
-    background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.4) 0.00%, rgba(0, 9, 24, 0.4) 98.00%), url("/daiki6-1300w.png");
+    background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.9) 0.00%, rgba(0, 9, 24, 0.9) 98.00%), url("/daiki6-1300w.png");
     background-repeat: repeat, no-repeat;
     animation-duration: 300ms;
     animation-direction: normal;
