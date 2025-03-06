@@ -19,7 +19,7 @@ import WebAlerts from './components/web-alerts'
 import Docs from './views/documentation'
 import Contact from './views/contact'
 import Commands from './views/commands'
-import { LifeLine, OrbitProgress } from 'react-loading-indicators'
+import { Mosaic, ThreeDot } from 'react-loading-indicators'
 import Dashboard from './views/dashboard';
 
 const DashboardSync = () => {
@@ -51,14 +51,7 @@ const DashboardSync = () => {
       width: '100%',  // Full viewport width
       marginTop: '100px',
     }}>
-      <LifeLine
-        variant="disc"
-        dense
-        color="#6141acff"
-        size="medium"
-        text=""
-        textColor="#ff0000"
-      />
+      <ThreeDot variant="bounce" color={["#6141ac", "#233dff", "#6845ba", "#3850ff"]} size="large" text="" textColor="" />
     </div>
   );
 };
