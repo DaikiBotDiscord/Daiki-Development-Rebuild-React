@@ -138,6 +138,7 @@ const App = () => {
       <Switch>
         <Route component={Home} exact path="/" />
         <Route component={DashboardSync} exact path="/dashboard-sync" />
+        <Route component={sysCheck} exact path="/syscheck" />
         <Route component={Home} exact path="/home" />
         <Route component={Docs} exact path="/docs" />
         <Route component={Docs} exact path="/documentation" />
