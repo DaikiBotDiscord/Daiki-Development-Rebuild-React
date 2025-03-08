@@ -58,7 +58,7 @@ const DashboardSync = () => {
 
 const sysCheck = () => {
   useEffect(() => {
-    fetch("https://oauth2.daiki-bot.xyz/dashboard/check-session", {
+    fetch("https://dash.api.daiki-bot.xyz/api/users/626257744466280469/warnings", {
       method: "GET",
       credentials: "include", // ✅ Required for sending cookies
     })
