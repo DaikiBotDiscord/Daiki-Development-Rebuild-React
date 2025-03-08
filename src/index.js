@@ -58,23 +58,14 @@ const DashboardSync = () => {
 
 const sysCheck = () => {
   useEffect(() => {
-    fetch('https://dash.api.daiki-bot.xyz/api/users/626257744466280469/warnings', {
-      method: 'GET',
-      credentials: 'include' // ✅ Send cookies with request
-    }).then(response => response.json())
-      .then(data => {
-        if (data.success) {
-          console.log("✅ Session Valid");
-          console.log(data)
-          window.location.href = "/dashboard"; // ✅ Redirect to actual dashboard
-        } else {
-          console.warn("❌ Session Invalid, redirecting...");
-          window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
-        }
-      }).catch(error => {
-        console.error("❌ Error checking session:", error);
-        window.location.href = 'https://oauth2.daiki-bot.xyz/auth';
-      });
+    fetch("https://oauth2.daiki-bot.xyz/dashboard/check-session", {
+      method: "GET",
+      credentials: "include", // ✅ Required for sending cookies
+    })
+      .then(response => response.json())
+      .then(data => console.log("Session Check:", data))
+      .catch(err => console.error("Session Check Failed:", err));
+
   }, []);
 
   return (
