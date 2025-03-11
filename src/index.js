@@ -21,6 +21,7 @@ import Contact from './views/contact'
 import Commands from './views/commands'
 import { Mosaic, ThreeDot } from 'react-loading-indicators'
 import Dashboard from './views/dashboard';
+import axios from 'axios';
 
 const DashboardSync = () => {
   useEffect(() => {
@@ -58,14 +59,11 @@ const DashboardSync = () => {
 
 const sysCheck = () => {
   useEffect(() => {
-    fetch("https://dash.api.daiki-bot.xyz/api/users/626257744466280469/warnings", {
-      method: "GET",
-      credentials: "include", // ✅ Required for sending cookies
+    axios.get("https://dash.api.daiki-bot.xyz/api/users/626257744466280469/warnings", {
+      withCredentials: true // ✅ Ensures session cookies are sent
     })
-      .then(response => response.json())
-      .then(data => console.log("Session Check:", data))
-      .catch(err => console.error("Session Check Failed:", err));
-
+      .then(response => console.log("User Warnings:", response.data))
+      .catch(err => console.error("Error fetching warnings:", err));
   }, []);
 
   return (
