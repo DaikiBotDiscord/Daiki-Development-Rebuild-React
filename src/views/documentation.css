@@ -68,7 +68,7 @@
     margin-top: 168px;
     align-items: flex-start;
     border-radius: 0px;
-    margin-bottom: var(--dl-space-space-threeunits);
+    margin-bottom: var(--dl-layout-space-threeunits);
     flex-direction: column;
     background-color: rgba(0, 9, 24, 0.8);
     border-top-left-radius: 45px;
@@ -106,8 +106,8 @@
     height: auto;
     display: flex;
     align-items: flex-start;
-    margin-left: var(--dl-space-space-threeunits);
-    margin-bottom: var(--dl-space-space-threeunits);
+    margin-left: var(--dl-layout-space-threeunits);
+    margin-bottom: var(--dl-layout-space-threeunits);
     flex-direction: column;
 }
 
@@ -159,8 +159,7 @@
 }
 
 .documentation-text37 {
-    fill: var(--dl-color-theme-secondary1);
-    color: var(--dl-color-theme-secondary1);
+    color: #132441;
     display: inline-block;
 }
 
@@ -183,6 +182,12 @@
 }
 
 .documentation-text41 {
+    fill: var(--dl-color-theme-secondary1);
+    color: var(--dl-color-theme-secondary1);
+    display: inline-block;
+}
+
+.documentation-text42 {
     fill: var(--dl-color-theme-secondary2);
     color: var(--dl-color-theme-secondary2);
     display: inline-block;
@@ -216,8 +221,7 @@
 
 @media(max-width: 767px) {
     .documentation-container3 {
-        background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.6) 1.00%, rgba(0, 9, 24, 0.2) 96.00%),
-            url("/daiki6-1300w.png");
+        background-image: url("/daiki6-1300w.png");
     }
 }
 
@@ -227,8 +231,7 @@
     }
 
     .documentation-container3 {
-        background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.6) 1.00%, rgba(0, 9, 24, 0.2) 96.00%),
-            url("/daiki6-1300w.png");
+        background-image: url("/daiki6-1300w.png");
     }
 
     .documentation-container5 {

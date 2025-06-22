@@ -10,14 +10,14 @@
 }
 
 .docs-max-width {
-    gap: var(--dl-space-space-threeunits);
+    gap: var(--dl-layout-space-threeunits);
     display: flex;
     align-items: flex-start;
     flex-direction: column;
 }
 
 .docs-list {
-    gap: var(--dl-space-space-twounits);
+    gap: var(--dl-layout-space-twounits);
     flex: 1;
     width: 100%;
     display: flex;
@@ -38,7 +38,7 @@
 
 .docs-trigger1 {
     display: flex;
-    padding: var(--dl-space-space-unit);
+    padding: var(--dl-layout-space-unit);
     align-self: stretch;
     align-items: center;
     flex-direction: row;
@@ -74,7 +74,7 @@
 
 .docs-container13 {
     display: flex;
-    padding: var(--dl-space-space-unit);
+    padding: var(--dl-layout-space-unit);
     align-self: stretch;
     align-items: flex-start;
     animation-name: fadeIn;
@@ -134,7 +134,7 @@
 
 .docs-trigger2 {
     display: flex;
-    padding: var(--dl-space-space-unit);
+    padding: var(--dl-layout-space-unit);
     align-self: stretch;
     align-items: center;
     flex-direction: row;
@@ -170,7 +170,7 @@
 
 .docs-container16 {
     display: flex;
-    padding: var(--dl-space-space-unit);
+    padding: var(--dl-layout-space-unit);
     align-self: stretch;
     align-items: flex-start;
     animation-name: fadeIn;
@@ -214,7 +214,7 @@
 
 .docs-trigger3 {
     display: flex;
-    padding: var(--dl-space-space-unit);
+    padding: var(--dl-layout-space-unit);
     align-self: stretch;
     align-items: center;
     flex-direction: row;
@@ -250,7 +250,7 @@
 
 .docs-container19 {
     display: flex;
-    padding: var(--dl-space-space-unit);
+    padding: var(--dl-layout-space-unit);
     align-self: stretch;
     align-items: flex-start;
     animation-name: fadeIn;
@@ -301,7 +301,7 @@
 
 .docs-trigger4 {
     display: flex;
-    padding: var(--dl-space-space-unit);
+    padding: var(--dl-layout-space-unit);
     align-self: stretch;
     align-items: center;
     flex-direction: row;
@@ -337,7 +337,7 @@
 
 .docs-container22 {
     display: flex;
-    padding: var(--dl-space-space-unit);
+    padding: var(--dl-layout-space-unit);
     align-self: stretch;
     align-items: flex-start;
     animation-name: fadeIn;
@@ -412,7 +412,7 @@
 
 .docs-trigger5 {
     display: flex;
-    padding: var(--dl-space-space-unit);
+    padding: var(--dl-layout-space-unit);
     align-self: stretch;
     align-items: center;
     flex-direction: row;
@@ -447,7 +447,7 @@
 
 .docs-container25 {
     display: flex;
-    padding: var(--dl-space-space-unit);
+    padding: var(--dl-layout-space-unit);
     align-self: stretch;
     align-items: flex-start;
     animation-name: fadeIn;
@@ -506,7 +506,7 @@
 
 .docs-trigger6 {
     display: flex;
-    padding: var(--dl-space-space-unit);
+    padding: var(--dl-layout-space-unit);
     align-self: stretch;
     align-items: center;
     flex-direction: row;
@@ -542,7 +542,7 @@
 
 .docs-container28 {
     display: flex;
-    padding: var(--dl-space-space-unit);
+    padding: var(--dl-layout-space-unit);
     align-self: stretch;
     align-items: flex-start;
     animation-name: fadeIn;
@@ -613,13 +613,15 @@
     display: inline-block;
 }
 
-.docs-text249 {
+.docs-text251 {
     display: inline-block;
 }
 
-.docs-text250 {
+.docs-text252 {
     display: inline-block;
 }
+
+
 
 @media(max-width: 991px) {
     .docs-container10 {
@@ -629,6 +631,6 @@
 
 @media(max-width: 479px) {
     .docs-max-width {
-        gap: var(--dl-space-space-oneandhalfunits);
+        gap: var(--dl-layout-space-oneandhalfunits);
     }
 }

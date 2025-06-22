@@ -68,7 +68,7 @@
     margin-top: 168px;
     align-items: flex-start;
     border-radius: 0px;
-    margin-bottom: var(--dl-space-space-threeunits);
+    margin-bottom: var(--dl-layout-space-threeunits);
     flex-direction: column;
     background-color: rgba(0, 9, 24, 0.8);
     border-top-left-radius: 45px;
@@ -106,8 +106,8 @@
     height: auto;
     display: flex;
     align-items: flex-start;
-    margin-left: var(--dl-space-space-threeunits);
-    margin-bottom: var(--dl-space-space-threeunits);
+    margin-left: var(--dl-layout-space-threeunits);
+    margin-bottom: var(--dl-layout-space-threeunits);
     flex-direction: column;
 }
 
@@ -143,14 +143,14 @@
 }
 
 .contact-max-width {
-    gap: var(--dl-space-space-twounits);
+    gap: var(--dl-layout-space-twounits);
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
 .contact-section-title {
-    gap: var(--dl-space-space-unit);
+    gap: var(--dl-layout-space-unit);
     width: auto;
     display: flex;
     max-width: 800px;
@@ -160,7 +160,7 @@
 }
 
 .contact-content1 {
-    gap: var(--dl-space-space-oneandhalfunits);
+    gap: var(--dl-layout-space-oneandhalfunits);
     display: flex;
     align-self: stretch;
     align-items: center;
@@ -174,14 +174,14 @@
 }
 
 .contact-row {
-    gap: var(--dl-space-space-threeunits);
+    gap: var(--dl-layout-space-threeunits);
     display: flex;
     align-self: stretch;
     align-items: center;
 }
 
 .contact-content2 {
-    gap: var(--dl-space-space-oneandhalfunits);
+    gap: var(--dl-layout-space-oneandhalfunits);
     flex: 1;
     width: 100%;
     display: flex;
@@ -194,7 +194,7 @@
 }
 
 .contact-contact-info1 {
-    gap: var(--dl-space-space-oneandhalfunits);
+    gap: var(--dl-layout-space-oneandhalfunits);
     display: flex;
     align-self: stretch;
     align-items: center;
@@ -202,7 +202,7 @@
 }
 
 .contact-content4 {
-    gap: var(--dl-space-space-unit);
+    gap: var(--dl-layout-space-unit);
     display: flex;
     align-self: stretch;
     align-items: stretch;
@@ -234,7 +234,7 @@
 }
 
 .contact-content5 {
-    gap: var(--dl-space-space-oneandhalfunits);
+    gap: var(--dl-layout-space-oneandhalfunits);
     flex: 1;
     width: 100%;
     display: flex;
@@ -247,7 +247,7 @@
 }
 
 .contact-contact-info2 {
-    gap: var(--dl-space-space-oneandhalfunits);
+    gap: var(--dl-layout-space-oneandhalfunits);
     display: flex;
     align-self: stretch;
     align-items: center;
@@ -255,7 +255,7 @@
 }
 
 .contact-content6 {
-    gap: var(--dl-space-space-unit);
+    gap: var(--dl-layout-space-unit);
     display: flex;
     align-self: stretch;
     align-items: stretch;
@@ -287,7 +287,7 @@
 }
 
 .contact-content7 {
-    gap: var(--dl-space-space-oneandhalfunits);
+    gap: var(--dl-layout-space-oneandhalfunits);
     flex: 1;
     width: 100%;
     height: auto;
@@ -302,7 +302,7 @@
 }
 
 .contact-contact-info3 {
-    gap: var(--dl-space-space-oneandhalfunits);
+    gap: var(--dl-layout-space-oneandhalfunits);
     display: flex;
     align-self: stretch;
     align-items: center;
@@ -310,7 +310,7 @@
 }
 
 .contact-content8 {
-    gap: var(--dl-space-space-unit);
+    gap: var(--dl-layout-space-unit);
     display: flex;
     align-self: stretch;
     align-items: stretch;

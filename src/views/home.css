@@ -10,6 +10,10 @@
   background-position: center;
 }
 
+.home-text10 {
+  display: inline-block;
+}
+
 .home-link1 {
   fill: var(--dl-color-theme-accent1);
   color: rgb(255, 255, 255);
@@ -22,11 +26,6 @@
   text-decoration: none;
 }
 
-.home-text14 {
-  display: inline-block;
-  text-decoration: none;
-}
-
 .home-text15 {
   display: inline-block;
   text-decoration: none;
@@ -34,11 +33,11 @@
 
 .home-text16 {
   display: inline-block;
+  text-decoration: none;
 }
 
 .home-text17 {
   display: inline-block;
-  text-decoration: none;
 }
 
 .home-text18 {
@@ -58,6 +57,7 @@
 
 .home-text21 {
   display: inline-block;
+  text-decoration: none;
 }
 
 .home-container2 {
@@ -68,7 +68,7 @@
   margin-top: 168px;
   align-items: flex-start;
   border-radius: 0px;
-  margin-bottom: var(--dl-space-space-threeunits);
+  margin-bottom: var(--dl-layout-space-threeunits);
   flex-direction: column;
   background-color: rgba(0, 9, 24, 0.8);
   border-top-left-radius: 45px;
@@ -106,8 +106,8 @@
   height: auto;
   display: flex;
   align-items: flex-start;
-  margin-left: var(--dl-space-space-threeunits);
-  margin-bottom: var(--dl-space-space-threeunits);
+  margin-left: var(--dl-layout-space-threeunits);
+  margin-bottom: var(--dl-layout-space-threeunits);
   flex-direction: column;
 }
 
@@ -125,11 +125,11 @@
 }
 
 .home-exclude {
-  width: var(--dl-size-size-xxlarge);
+  width: var(--dl-layout-size-xxlarge);
   height: auto;
   z-index: 5;
   box-sizing: content-box;
-  margin-top: var(--dl-space-space-oneandhalfunits);
+  margin-top: var(--dl-layout-space-oneandhalfunits);
   transition: 0.3s;
   text-decoration: none;
 }
@@ -205,7 +205,7 @@
   fill: var(--dl-color-theme-secondary1);
   color: var(--dl-color-theme-secondary1);
   font-size: 18px;
-  margin-top: var(--dl-space-space-halfunit);
+  margin-top: var(--dl-layout-space-halfunit);
   font-family: "Poppins";
 }
 
@@ -221,7 +221,7 @@
   box-shadow: 2px 2px 10px 0px #6141ac;
   transition: 0.3s;
   align-items: center;
-  margin-left: var(--dl-space-space-unit);
+  margin-left: var(--dl-layout-space-unit);
   border-color: var(--dl-color-theme-accent2);
   border-width: 4px;
   flex-direction: column;
@@ -251,7 +251,7 @@
   fill: var(--dl-color-theme-secondary1);
   color: var(--dl-color-theme-secondary1);
   font-size: 20px;
-  margin-top: var(--dl-space-space-halfunit);
+  margin-top: var(--dl-layout-space-halfunit);
   font-family: "Poppins";
 }
 
@@ -267,7 +267,7 @@
   box-shadow: 2px 2px 10px 0px #6141ac;
   transition: 0.3s;
   align-items: center;
-  margin-left: var(--dl-space-space-unit);
+  margin-left: var(--dl-layout-space-unit);
   border-color: var(--dl-color-theme-accent2);
   border-width: 4px;
   flex-direction: column;
@@ -297,13 +297,12 @@
   fill: var(--dl-color-theme-secondary1);
   color: var(--dl-color-theme-secondary1);
   font-size: 20px;
-  margin-top: var(--dl-space-space-halfunit);
+  margin-top: var(--dl-layout-space-halfunit);
   font-family: "Poppins";
 }
 
 .home-text34 {
-  fill: var(--dl-color-theme-secondary1);
-  color: var(--dl-color-theme-secondary1);
+  color: #132441;
   display: inline-block;
 }
 
@@ -326,6 +325,12 @@
 }
 
 .home-text38 {
+  fill: var(--dl-color-theme-secondary1);
+  color: var(--dl-color-theme-secondary1);
+  display: inline-block;
+}
+
+.home-text39 {
   fill: var(--dl-color-theme-secondary2);
   color: var(--dl-color-theme-secondary2);
   display: inline-block;
@@ -351,7 +356,7 @@
   }
 
   .home-exclude {
-    width: var(--dl-size-size-xlarge);
+    width: var(--dl-layout-size-xlarge);
   }
 
   .home-container5 {
@@ -363,7 +368,7 @@
 
 @media(max-width: 767px) {
   .home-container3 {
-    background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.6) 1.00%, rgba(0, 9, 24, 0.2) 96.00%), url("/daiki6-1300w.png");
+    background-image: url("/daiki6-1300w.png");
   }
 
   .home-container7 {
@@ -385,7 +390,7 @@
   }
 
   .home-container3 {
-    background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.6) 1.00%, rgba(0, 9, 24, 0.2) 96.00%), url("/daiki6-1300w.png");
+    background-image: url("/daiki6-1300w.png");
   }
 
   .home-container5 {
@@ -405,13 +410,13 @@
 
   .home-container8 {
     width: 250px;
-    margin-top: var(--dl-space-space-unit);
+    margin-top: var(--dl-layout-space-unit);
     margin-left: 0px;
   }
 
   .home-container9 {
     width: 250px;
-    margin-top: var(--dl-space-space-unit);
+    margin-top: var(--dl-layout-space-unit);
     margin-left: 0px;
   }
 }

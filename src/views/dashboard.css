@@ -13,21 +13,6 @@
     display: inline-block;
 }
 
-.dashboard-text11 {
-    fill: var(--dl-color-theme-primary2);
-    color: var(--dl-color-theme-primary2);
-    display: inline-block;
-    font-size: 18px;
-    font-style: normal;
-    text-align: center;
-    font-weight: 700;
-}
-
-.dashboard-text18 {
-    display: inline-block;
-    text-decoration: none;
-}
-
 .dashboard-link1 {
     fill: var(--dl-color-theme-accent1);
     color: rgb(255, 255, 255);
@@ -35,13 +20,44 @@
     text-decoration: none;
 }
 
-.dashboard-text21 {
+.dashboard-link2 {
     display: inline-block;
     text-decoration: none;
 }
 
+.dashboard-text15 {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.dashboard-text16 {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.dashboard-text17 {
+    display: inline-block;
+}
+
+.dashboard-text18 {
+    display: inline-block;
+}
+
+.dashboard-text19 {
+    display: inline-block;
+}
+
+.dashboard-text20 {
+    display: inline-block;
+}
+
+.dashboard-text21 {
+    display: inline-block;
+}
+
 .dashboard-text22 {
     display: inline-block;
+    text-decoration: none;
 }
 
 .dashboard-text23 {
@@ -54,21 +70,7 @@
     text-decoration: none;
 }
 
-.dashboard-link2 {
-    display: inline-block;
-    text-decoration: none;
-}
-
-.dashboard-text27 {
-    display: inline-block;
-}
-
-.dashboard-text28 {
-    display: inline-block;
-    text-decoration: none;
-}
-
-.dashboard-text29 {
+.dashboard-text25 {
     display: inline-block;
     text-decoration: none;
 }
@@ -81,25 +83,25 @@
     margin-top: 168px;
     align-items: flex-start;
     border-radius: 45px;
-    margin-bottom: var(--dl-space-space-threeunits);
+    margin-bottom: var(--dl-layout-space-threeunits);
     flex-direction: column;
-    background-color: rgba(0, 9, 24, 0.8);
+    background-color: rgba(0, 9, 24, 0.95);
 }
 
 .dashboard-container3 {
     flex: 0 0 auto;
     width: 100%;
-    height: 400px;
+    height: auto;
     display: flex;
     align-items: flex-start;
     border-radius: 45px;
     animation-name: none;
-    flex-direction: column;
+    flex-direction: row;
     animation-delay: 0s;
     background-size: cover, auto;
-    justify-content: flex-end;
-    background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.9) 0.00%, rgba(0, 9, 24, 0.9) 98.00%), url("/daiki6-1300w.png");
-    background-repeat: repeat, no-repeat;
+    justify-content: center;
+    background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.2) 0.00%, rgba(0, 9, 24, 0.2) 98.00%);
+    background-repeat: repeat;
     animation-duration: 300ms;
     animation-direction: normal;
     background-position: bottom, center;
@@ -112,59 +114,69 @@
     width: auto;
     height: auto;
     display: flex;
-    align-items: flex-start;
-    margin-left: var(--dl-space-space-threeunits);
-    margin-bottom: var(--dl-space-space-threeunits);
+    margin-top: var(--dl-layout-space-unit);
+    align-items: center;
+    margin-left: var(--dl-layout-space-unit);
+    margin-right: var(--dl-layout-space-unit);
+    margin-bottom: var(--dl-layout-space-halfunit);
     flex-direction: column;
 }
 
-.dashboard-text30 {
+.dashboard-text26 {
     fill: var(--dl-color-theme-neutral-light);
     color: var(--dl-color-theme-neutral-light);
     font-size: 40px;
+    align-self: center;
+    font-style: normal;
+    text-align: center;
     font-family: "Poppins";
     font-weight: 700;
 }
 
-.dashboard-text31 {
-    font-style: normal;
+.dashboard-separator {
+    width: 100%;
+    height: 1px;
+    background-color: #595959;
 }
 
-.dashboard-text32 {
-    font-style: normal;
-}
-
-.dashboard-text33 {
-    font-size: 35px;
-    font-style: italic;
-    font-weight: 500;
-}
-
-.dashboard-text34 {
-    font-style: normal;
-}
-
-.dashboard-action1 {
+.dashboard-container5 {
+    flex: 0 0 auto;
+    width: 100%;
+    border: 2px dashed rgba(120, 120, 120, 0.4);
+    height: 400px;
     display: flex;
-    margin-top: var(--dl-space-space-oneandhalfunits);
-    border-color: var(--dl-color-theme-primary2);
+    align-items: flex-start;
+    border-radius: 45px;
+    animation-name: none;
     flex-direction: row;
-    text-decoration: none;
-    background-color: var(--dl-color-theme-primary2);
+    animation-delay: 0s;
+    background-size: cover, auto;
+    justify-content: center;
+    background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.2) 0.00%, rgba(0, 9, 24, 0.2) 98.00%);
+    background-repeat: repeat;
+    animation-duration: 300ms;
+    animation-direction: normal;
+    background-position: bottom, center;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
 }
 
 @media(max-width: 991px) {
-    .dashboard-text30 {
+    .dashboard-text26 {
         font-size: 35px;
     }
 }
 
 @media(max-width: 479px) {
     .dashboard-container2 {
-        background-color: rgba(0, 9, 24, 0.8);
+        background-color: rgba(0, 9, 24, 0.9);
     }
 
     .dashboard-container3 {
-        background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.9) 0.00%, rgba(0, 9, 24, 0.9) 98.00%), url("/daiki6-1300w.png");
+        background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.6) 0.00%, rgba(0, 9, 24, 0.6) 100.00%), 7a0bfb67-99d1-4c36-9e8e-f37a12ce4f6f;
+    }
+
+    .dashboard-container5 {
+        background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.6) 0.00%, rgba(0, 9, 24, 0.6) 100.00%), 7a0bfb67-99d1-4c36-9e8e-f37a12ce4f6f;
     }
 }
