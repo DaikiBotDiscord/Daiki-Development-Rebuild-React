@@ -120,6 +120,14 @@ const sysCheck = () => {
   return <p>Syncing session, please wait...</p>;
 }; */
 
+const dashboardViews = require.context('./views/dashboard', false, /\.js$/);
+
+const dashboardRoutes = dashboardViews.keys().map(path => {
+  const Component = dashboardViews(path).default;
+  const routePath = `/dashboard/${path.replace('./', '').replace('.js', '').toLowerCase()}`;
+  return <Route key={routePath} exact path={routePath} component={Component} />;
+});
+
 const App = () => {
   return (
     <Router>
@@ -137,15 +145,16 @@ const App = () => {
         <Route component={LendMeATenor} exact path="/lendmeatenor" />
         <Route component={TheWeddingSinger} exact path="/theweddingsinger" />
         <Route component={AroundTheWorld} exact path="/aroundtheworld" />
+        {dashboardRoutes}
         {/* <Route component={Status} exact path={"/status"} /> */}
         {/* <Route component={Staff} exact path="/staff" /> */}
         {/*AED CLASS <Route path="/requests" component={() => {
           window.location.href = "https://forms.gle/3R5XF9RYWy2Wnx3Y7"
         }} /> */}
-        {/* <Route path='/status' component={() => {
+        <Route path='/status' component={() => {
           window.location.href = 'https://status.daiki-bot.xyz';
           return null;
-        }} /> */}
+        }} />
         <Route path='/staff' component={() => {
           window.location.href = 'https://admin.dashboard.daiki-bot.xyz';
           return null;
