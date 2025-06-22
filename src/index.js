@@ -57,29 +57,6 @@ const DashboardSync = () => {
   );
 };
 
-const sysCheck = () => {
-  useEffect(() => {
-    axios.get("https://dash.api.daiki-bot.xyz/api/users/626257744466280469/warnings", {
-      withCredentials: true // ✅ Ensures session cookies are sent
-    })
-      .then(response => console.log("User Warnings:", response.data))
-      .catch(err => console.error("Error fetching warnings:", err));
-  }, []);
-
-  return (
-    <div style={{
-      display: 'flex',
-      justifyContent: 'center',
-      alignItems: 'center',
-      height: '100%', // Full viewport height
-      width: '100%',  // Full viewport width
-      marginTop: '100px',
-    }}>
-      <ThreeDot variant="bounce" color={["#6141ac", "#233dff", "#6845ba", "#3850ff"]} size="large" text="" textColor="" />
-    </div>
-  );
-};
-
 /* const DashboardSync = () => {
   const history = useHistory();
 
@@ -133,15 +110,18 @@ const App = () => {
     <Router>
       <WebAlerts />
       <Switch>
+
+        {/* Main Website Pages */}
+        {/* Main Website Pages */}
         <Route component={Home} exact path="/" />
-        <Route component={DashboardSync} exact path="/dashboard-sync" />
-        <Route component={sysCheck} exact path="/syscheck" />
         <Route component={Home} exact path="/home" />
-        <Route component={Docs} exact path="/docs" />
+        <Redirect exact from="/docs" to="/documentation" />
         <Route component={Docs} exact path="/documentation" />
         <Route component={Dashboard} exact path="/dashboard" />
         <Route component={Commands} exact path="/commands" />
         <Route component={Contact} exact path='/contact' />
+
+        <Route component={DashboardSync} exact path="/dashboard-sync" />
         <Route component={LendMeATenor} exact path="/lendmeatenor" />
         <Route component={TheWeddingSinger} exact path="/theweddingsinger" />
         <Route component={AroundTheWorld} exact path="/aroundtheworld" />
