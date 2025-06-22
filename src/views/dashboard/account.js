@@ -56,7 +56,7 @@ const Account = () => {
                     <div className="account-container6">
                         <img
                             alt="image"
-                            src="https://play.teleporthq.io/static/svg/default-img.svg"
+                            src={`https://cdn.discordapp.com/avatars/${userData.discordId}/${userData.avatar}.png`}
                             className="account-image"
                         />
                         <div className="account-container7">
