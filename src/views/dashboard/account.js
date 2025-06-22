@@ -61,11 +61,11 @@ const Account = () => {
                         />
                         <div className="account-container7">
                             <span className="account-text29">
-                                <span>&lt;{userData.displayName}&gt;</span>
+                                <span>{userData.displayName}&gt;</span>
                                 <br></br>
                             </span>
                             <span className="account-text32">
-                                <span className="account-text33">&lt;{userData.discordId}&gt;</span>
+                                <span className="account-text33">{userData.discordId}&gt;</span>
                                 <br></br>
                             </span>
                         </div>
@@ -78,23 +78,23 @@ const Account = () => {
                             </span>
                             <hr className="account-separator2"></hr>
                             <span className="account-text38">
-                                <span>Email: &lt;{userData.email}&gt;</span>
+                                <span>Email: {userData.email}&gt;</span>
                                 <br></br>
                             </span>
                             <span className="account-text41">
-                                <span>Total Servers: &lt;{userData.totalServers}&gt;</span>
+                                <span>Total Servers: {userData.guildCount}&gt;</span>
                                 <br></br>
                             </span>
                             <span className="account-text44">
-                                <span>Total Servers with Daiki: &lt;{userData.mutualCount}&gt;</span>
+                                <span>Total Servers with Daiki: {userData.mutualCount}&gt;</span>
                                 <br></br>
                             </span>
                             <span className="account-text47">
-                                <span>Total Manageable Servers: &lt;{userData.manageableCount}&gt;</span>
+                                <span>Total Manageable Servers: {userData.manageableCount}&gt;</span>
                                 <br></br>
                             </span>
                             <span className="account-text50">
-                                <span>Daiki Account Created: &lt;{new Date(userData.createdAt).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}&gt;</span>
+                                <span>Daiki Account Created: {new Date(userData.createdAt).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}&gt;</span>
                                 <br></br>
                             </span>
                         </div>
