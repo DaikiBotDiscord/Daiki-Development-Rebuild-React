@@ -115,8 +115,8 @@ const App = () => {
         {/* Main Website Pages */}
         <Route component={Home} exact path="/" />
         <Route component={Home} exact path="/home" />
-        <Redirect exact from="/docs" to="/documentation" />
-        <Route component={Docs} exact path="/documentation" />
+        <Redirect exact from="/documentation" to="/docs" />
+        <Route component={Docs} exact path="/docs" />
         <Route component={Dashboard} exact path="/dashboard" />
         <Route component={Commands} exact path="/commands" />
         <Route component={Contact} exact path='/contact' />
