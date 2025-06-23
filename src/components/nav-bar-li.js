@@ -30,7 +30,6 @@ const NavBarLI = (props) => {
             width: '100%',  // Full viewport width
             marginTop: '100px',
         }}>
-            <ThreeDot variant="bounce" color={["#6141ac", "#233dff", "#6845ba", "#3850ff"]} size="large" text="" textColor="" />
         </div>;
     }
     return (
