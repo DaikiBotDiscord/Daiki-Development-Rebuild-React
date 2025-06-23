@@ -22,14 +22,7 @@ const NavBarLI = (props) => {
     }, []);
 
     if (!userData) {
-        return <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100%', // Full viewport height
-            width: '100%',  // Full viewport width
-            marginTop: '100px',
-        }}>
+        return <div>
             <ThreeDot variant="bounce" color={["#6141ac", "#233dff", "#6845ba", "#3850ff"]} size="large" text="" textColor="" />
         </div>;
     }
