@@ -2,7 +2,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom'
-
+import { Mosaic, ThreeDot } from 'react-loading-indicators'
 import PropTypes from 'prop-types'
 
 import './nav-bar-li.css'
@@ -30,6 +30,7 @@ const NavBarLI = (props) => {
             width: '100%',  // Full viewport width
             marginTop: '100px',
         }}>
+            <ThreeDot variant="bounce" color={["#6141ac", "#233dff", "#6845ba", "#3850ff"]} size="large" text="" textColor="" />
         </div>;
     }
     return (
