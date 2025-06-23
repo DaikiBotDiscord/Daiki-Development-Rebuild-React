@@ -99,14 +99,13 @@ const NavBarLI = (props) => {
                     </div>
                     <div className="nav-bar-li-container">
                         <img
-                            src={props.imageSrc}
-                            alt={props.imageAlt}
+                            src={`https://cdn.discordapp.com/avatars/${userData.discordId}/${userData.avatar}.png`}
                             className="nav-bar-li-image"
                         />
                         <span className="nav-bar-li-text11">
                             {props.text2 ?? (
                                 <Fragment>
-                                    <span className="nav-bar-li-text28">&lt;username&gt;</span>
+                                    <span className="nav-bar-li-text28">{userData.displayName}</span>
                                 </Fragment>
                             )}
                         </span>
