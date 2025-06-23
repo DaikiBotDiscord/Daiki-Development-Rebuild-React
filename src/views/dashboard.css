@@ -142,7 +142,6 @@
 .dashboard-container5 {
     flex: 0 0 auto;
     width: 100%;
-    border: 2px dashed rgba(120, 120, 120, 0.4);
     height: 400px;
     display: flex;
     align-items: flex-start;
@@ -161,8 +160,126 @@
     animation-timing-function: ease;
 }
 
+.dashboard-container6 {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: flex-start;
+}
+
+.dashboard-container7 {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    margin-top: var(--dl-layout-space-twounits);
+    align-items: center;
+    margin-left: var(--dl-layout-space-unit);
+    margin-right: var(--dl-layout-space-unit);
+    border-radius: var(--dl-layout-radius-radius8);
+    flex-direction: column;
+    justify-content: center;
+    background-color: #0f1d37;
+}
+
+.dashboard-icon1 {
+    fill: var(--dl-color-theme-neutral-dark);
+    color: #ffffff;
+    width: var(--dl-layout-size-medium);
+    height: var(--dl-layout-size-medium);
+}
+
+.dashboard-text29 {
+    fill: var(--dl-color-theme-neutral-light);
+    color: var(--dl-color-theme-neutral-light);
+    font-size: 30px;
+    align-self: center;
+    font-style: normal;
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 700;
+}
+
+.dashboard-container8 {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    margin-top: var(--dl-layout-space-twounits);
+    align-items: center;
+    margin-left: var(--dl-layout-space-unit);
+    margin-right: var(--dl-layout-space-unit);
+    border-radius: var(--dl-layout-radius-radius8);
+    flex-direction: column;
+    justify-content: center;
+    background-color: #0f1d37;
+}
+
+.dashboard-icon3 {
+    fill: var(--dl-color-theme-neutral-dark);
+    color: #ffffff;
+    width: var(--dl-layout-size-medium);
+    height: var(--dl-layout-size-medium);
+    margin-bottom: var(--dl-layout-space-halfunit);
+}
+
+.dashboard-text32 {
+    fill: var(--dl-color-theme-neutral-light);
+    color: var(--dl-color-theme-neutral-light);
+    font-size: 30px;
+    align-self: center;
+    font-style: normal;
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 700;
+}
+
+.dashboard-container9 {
+    flex: 0 0 auto;
+    width: 250px;
+    height: 250px;
+    display: flex;
+    margin-top: var(--dl-layout-space-twounits);
+    align-items: center;
+    margin-left: var(--dl-layout-space-unit);
+    margin-right: var(--dl-layout-space-unit);
+    border-radius: var(--dl-layout-radius-radius8);
+    flex-direction: column;
+    justify-content: center;
+    background-color: #0f1d37;
+}
+
+.dashboard-icon5 {
+    fill: var(--dl-color-theme-neutral-dark);
+    color: #ffffff;
+    width: var(--dl-layout-size-medium);
+    height: var(--dl-layout-size-medium);
+}
+
+.dashboard-text35 {
+    fill: var(--dl-color-theme-neutral-light);
+    color: var(--dl-color-theme-neutral-light);
+    font-size: 30px;
+    align-self: center;
+    font-style: normal;
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 700;
+}
+
 @media(max-width: 991px) {
     .dashboard-text26 {
+        font-size: 35px;
+    }
+
+    .dashboard-text29 {
+        font-size: 35px;
+    }
+
+    .dashboard-text32 {
+        font-size: 35px;
+    }
+
+    .dashboard-text35 {
         font-size: 35px;
     }
 }
