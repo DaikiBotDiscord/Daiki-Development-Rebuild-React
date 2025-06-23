@@ -1,4 +1,6 @@
-import React, { Fragment } from 'react'
+
+import React, { useState, useEffect, Fragment } from 'react';
+import axios from 'axios';
 import { Link } from 'react-router-dom'
 
 import PropTypes from 'prop-types'
@@ -6,6 +8,31 @@ import PropTypes from 'prop-types'
 import './nav-bar-li.css'
 
 const NavBarLI = (props) => {
+    const [userData, setUserData] = useState(null);
+
+    useEffect(() => {
+        axios.get("https://dash.api.daiki-bot.xyz/api/users/@me", {
+            withCredentials: true
+        })
+            .then(res => setUserData(res.data))
+            .catch(err => {
+                console.error("❌ Error fetching user data:", err);
+                window.location.href = "https://daiki-bot.xyz/dashboard-sync";
+            });
+    }, []);
+
+    if (!userData) {
+        return <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100%', // Full viewport height
+            width: '100%',  // Full viewport width
+            marginTop: '100px',
+        }}>
+            <ThreeDot variant="bounce" color={["#6141ac", "#233dff", "#6845ba", "#3850ff"]} size="large" text="" textColor="" />
+        </div>;
+    }
     return (
         <div className={`nav-bar-li-nav-bar ${props.rootClassName} `}>
             <header data-thq="thq-navbar" className="nav-bar-li-navbar-interactive">
