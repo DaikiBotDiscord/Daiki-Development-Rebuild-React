@@ -64,7 +64,7 @@ const NavBarLI = (props) => {
                         <Link to="/contact">
                             {props.link3 ?? (
                                 <Fragment>
-                                    <span className="nav-bar-li-text28 thq-body-small thq-link">
+                                    <span className="nav-bar-li-text26 thq-body-small thq-link">
                                         Contact
                                     </span>
                                 </Fragment>
@@ -73,7 +73,7 @@ const NavBarLI = (props) => {
                         <Link to="/commands">
                             {props.link4 ?? (
                                 <Fragment>
-                                    <span className="nav-bar-li-text33 thq-body-small thq-link">
+                                    <span className="nav-bar-li-text32 thq-body-small thq-link">
                                         Commands
                                     </span>
                                 </Fragment>
@@ -90,7 +90,7 @@ const NavBarLI = (props) => {
                             <span>
                                 {props.text ?? (
                                     <Fragment>
-                                        <span className="nav-bar-li-text32">Invite Daiki</span>
+                                        <span className="nav-bar-li-text31">Invite Daiki</span>
                                     </Fragment>
                                 )}
                             </span>
@@ -104,15 +104,15 @@ const NavBarLI = (props) => {
                             className="nav-bar-li-link5"
                         >
                             <img
-                                alt={props.imageAlt}
+                                alt={props.imageAlt21}
                                 src={`https://cdn.discordapp.com/avatars/${userData.discordId}/${userData.avatar}.png`}
                                 className="nav-bar-li-image2"
                             />
                         </a>
                         <span className="nav-bar-li-text11">
-                            {props.text2 ?? (
+                            {props.text221 ?? (
                                 <Fragment>
-                                    <span className="nav-bar-li-text23">{userData.displayName}</span>
+                                    <span className="nav-bar-li-text36">{userData.displayName}</span>
                                 </Fragment>
                             )}
                         </span>
@@ -151,9 +151,9 @@ const NavBarLI = (props) => {
                                             className="nav-bar-li-dropdown-toggle2"
                                         >
                                             <span className="nav-bar-li-text12">
-                                                {props.text4 ?? (
+                                                {props.text421 ?? (
                                                     <Fragment>
-                                                        <span className="nav-bar-li-text27">Account</span>
+                                                        <span className="nav-bar-li-text37">Account</span>
                                                     </Fragment>
                                                 )}
                                             </span>
@@ -174,9 +174,9 @@ const NavBarLI = (props) => {
                                             className="nav-bar-li-dropdown-toggle3"
                                         >
                                             <span className="nav-bar-li-text13">
-                                                {props.text5 ?? (
+                                                {props.text521 ?? (
                                                     <Fragment>
-                                                        <span className="nav-bar-li-text21">Warnings</span>
+                                                        <span className="nav-bar-li-text38">Warnings</span>
                                                     </Fragment>
                                                 )}
                                             </span>
@@ -197,9 +197,9 @@ const NavBarLI = (props) => {
                                             className="nav-bar-li-dropdown-toggle4"
                                         >
                                             <span className="nav-bar-li-text14">
-                                                {props.text6 ?? (
+                                                {props.text621 ?? (
                                                     <Fragment>
-                                                        <span className="nav-bar-li-text22">Servers</span>
+                                                        <span className="nav-bar-li-text39">Servers</span>
                                                     </Fragment>
                                                 )}
                                             </span>
@@ -239,7 +239,7 @@ const NavBarLI = (props) => {
                                 <span className="nav-bar-li-text15">
                                     {props.text22 ?? (
                                         <Fragment>
-                                            <span className="nav-bar-li-text36">
+                                            <span className="nav-bar-li-text27">
                                                 {userData.displayName}
                                             </span>
                                         </Fragment>
@@ -282,7 +282,7 @@ const NavBarLI = (props) => {
                                                     <span className="nav-bar-li-text16">
                                                         {props.text42 ?? (
                                                             <Fragment>
-                                                                <span className="nav-bar-li-text37">
+                                                                <span className="nav-bar-li-text25">
                                                                     Account
                                                                 </span>
                                                             </Fragment>
@@ -307,7 +307,7 @@ const NavBarLI = (props) => {
                                                     <span className="nav-bar-li-text17">
                                                         {props.text52 ?? (
                                                             <Fragment>
-                                                                <span className="nav-bar-li-text38">
+                                                                <span className="nav-bar-li-text33">
                                                                     Warnings
                                                                 </span>
                                                             </Fragment>
@@ -332,7 +332,7 @@ const NavBarLI = (props) => {
                                                     <span className="nav-bar-li-text18">
                                                         {props.text62 ?? (
                                                             <Fragment>
-                                                                <span className="nav-bar-li-text39">
+                                                                <span className="nav-bar-li-text21">
                                                                     Servers
                                                                 </span>
                                                             </Fragment>
@@ -363,7 +363,7 @@ const NavBarLI = (props) => {
                             <Link to="/docs">
                                 {props.link21 ?? (
                                     <Fragment>
-                                        <span className="nav-bar-li-text31 thq-body-small thq-link">
+                                        <span className="nav-bar-li-text30 thq-body-small thq-link">
                                             Docs
                                         </span>
                                     </Fragment>
@@ -398,7 +398,7 @@ const NavBarLI = (props) => {
                                 <span>
                                     {props.text1 ?? (
                                         <Fragment>
-                                            <span className="nav-bar-li-text26">Invite Daiki</span>
+                                            <span className="nav-bar-li-text24">Invite Daiki</span>
                                         </Fragment>
                                     )}
                                 </span>
@@ -414,65 +414,65 @@ const NavBarLI = (props) => {
 NavBarLI.defaultProps = {
     link31: undefined,
     action1Url: 'https://daiki-bot.xyz/invite',
-    text5: undefined,
-    text6: undefined,
-    imageSrc: 'https://play.teleporthq.io/static/svg/default-img.svg',
-    text2: undefined,
+    imageAlt2: 'image',
+    text62: undefined,
     link1: undefined,
     image1Alt: 'logo',
     text1: undefined,
+    text42: undefined,
+    imageSrc2: 'https://play.teleporthq.io/static/svg/default-img.svg',
     rootClassName: '',
     logoAlt: 'logo',
-    text4: undefined,
     link3: undefined,
-    imageAlt: 'image',
+    text22: undefined,
     image1Src: '/daiki6-1500h.png',
     link2: undefined,
     logoSrc: '/daiki6-1500h.png',
     link21: undefined,
     text: undefined,
     link4: undefined,
+    text52: undefined,
     action1Url1: 'https://daiki-bot.xyz/invite',
     link11: undefined,
     link41: undefined,
-    imageSrc2: 'https://play.teleporthq.io/static/svg/default-img.svg',
-    imageAlt2: 'image',
-    text22: undefined,
-    text42: undefined,
-    text52: undefined,
-    text62: undefined,
+    imageAlt21: 'image',
+    imageSrc21: 'https://play.teleporthq.io/static/svg/default-img.svg',
+    text221: undefined,
+    text421: undefined,
+    text521: undefined,
+    text621: undefined,
 }
 
 NavBarLI.propTypes = {
     link31: PropTypes.element,
     action1Url: PropTypes.string,
-    text5: PropTypes.element,
-    text6: PropTypes.element,
-    imageSrc: PropTypes.string,
-    text2: PropTypes.element,
+    imageAlt2: PropTypes.string,
+    text62: PropTypes.element,
     link1: PropTypes.element,
     image1Alt: PropTypes.string,
     text1: PropTypes.element,
+    text42: PropTypes.element,
+    imageSrc2: PropTypes.string,
     rootClassName: PropTypes.string,
     logoAlt: PropTypes.string,
-    text4: PropTypes.element,
     link3: PropTypes.element,
-    imageAlt: PropTypes.string,
+    text22: PropTypes.element,
     image1Src: PropTypes.string,
     link2: PropTypes.element,
     logoSrc: PropTypes.string,
     link21: PropTypes.element,
     text: PropTypes.element,
     link4: PropTypes.element,
+    text52: PropTypes.element,
     action1Url1: PropTypes.string,
     link11: PropTypes.element,
     link41: PropTypes.element,
-    imageSrc2: PropTypes.string,
-    imageAlt2: PropTypes.string,
-    text22: PropTypes.element,
-    text42: PropTypes.element,
-    text52: PropTypes.element,
-    text62: PropTypes.element,
+    imageAlt21: PropTypes.string,
+    imageSrc21: PropTypes.string,
+    text221: PropTypes.element,
+    text421: PropTypes.element,
+    text521: PropTypes.element,
+    text621: PropTypes.element,
 }
 
 export default NavBarLI
