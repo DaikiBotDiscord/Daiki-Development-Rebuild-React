@@ -41,38 +41,38 @@
 
 .dashboard-text18 {
     display: inline-block;
+    text-decoration: none;
 }
 
 .dashboard-text19 {
     display: inline-block;
+    text-decoration: none;
 }
 
 .dashboard-text20 {
     display: inline-block;
+    text-decoration: none;
 }
 
 .dashboard-text21 {
     display: inline-block;
+    text-decoration: none;
 }
 
 .dashboard-text22 {
     display: inline-block;
-    text-decoration: none;
 }
 
 .dashboard-text23 {
     display: inline-block;
-    text-decoration: none;
 }
 
 .dashboard-text24 {
     display: inline-block;
-    text-decoration: none;
 }
 
 .dashboard-text25 {
     display: inline-block;
-    text-decoration: none;
 }
 
 .dashboard-text26 {
@@ -192,6 +192,7 @@
     height: 250px;
     display: flex;
     margin-top: var(--dl-layout-space-twounits);
+    transition: 0.3s;
     align-items: center;
     margin-left: var(--dl-layout-space-unit);
     margin-right: var(--dl-layout-space-unit);
@@ -200,6 +201,10 @@
     justify-content: center;
     text-decoration: none;
     background-color: #0f1d37;
+}
+
+.dashboard-container7:hover {
+    background-color: #595959;
 }
 
 .dashboard-icon1 {
@@ -230,6 +235,7 @@
     height: 250px;
     display: flex;
     margin-top: var(--dl-layout-space-twounits);
+    transition: 0.3s;
     align-items: center;
     margin-left: var(--dl-layout-space-unit);
     margin-right: var(--dl-layout-space-unit);
@@ -238,6 +244,10 @@
     justify-content: center;
     text-decoration: none;
     background-color: #0f1d37;
+}
+
+.dashboard-container8:hover {
+    background-color: #595959;
 }
 
 .dashboard-icon3 {
@@ -269,6 +279,7 @@
     height: 250px;
     display: flex;
     margin-top: var(--dl-layout-space-twounits);
+    transition: 0.3s;
     align-items: center;
     margin-left: var(--dl-layout-space-unit);
     margin-right: var(--dl-layout-space-unit);
@@ -277,6 +288,10 @@
     justify-content: center;
     text-decoration: none;
     background-color: #0f1d37;
+}
+
+.dashboard-container9:hover {
+    background-color: #595959;
 }
 
 .dashboard-icon5 {
