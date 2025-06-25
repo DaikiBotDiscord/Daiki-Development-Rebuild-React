@@ -164,7 +164,7 @@ const Dashboard = (props) => {
                             </div>
                         </a>
                         <a
-                            href="https://dashboard/warnings"
+                            href="dashboard/warnings"
                             target="_blank"
                             rel="noreferrer noopener"
                             className="dashboard-link4"
