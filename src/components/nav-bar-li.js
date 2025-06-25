@@ -132,11 +132,7 @@ const NavBarLI = (props) => {
                                 data-thq="thq-dropdown-list"
                                 className="nav-bar-li-dropdown-list1"
                             >
-                                <a
-                                    href="/dashboard/account"
-                                    target="_blank"
-                                    rel="noreferrer noopener"
-                                >
+                                <a href="/dashboard/account">
                                     <li
                                         data-thq="thq-dropdown"
                                         className="nav-bar-li-dropdown1 list-item"
@@ -155,11 +151,7 @@ const NavBarLI = (props) => {
                                         </div>
                                     </li>
                                 </a>
-                                <a
-                                    href="/dashboard/warnings"
-                                    target="_blank"
-                                    rel="noreferrer noopener"
-                                >
+                                <a href="/dashboard/warnings">
                                     <li
                                         data-thq="thq-dropdown"
                                         className="nav-bar-li-dropdown2 list-item"
@@ -178,11 +170,7 @@ const NavBarLI = (props) => {
                                         </div>
                                     </li>
                                 </a>
-                                <a
-                                    href="/dashboard/servers"
-                                    target="_blank"
-                                    rel="noreferrer noopener"
-                                >
+                                <a href="/dashboard/servers">
                                     <li
                                         data-thq="thq-dropdown"
                                         className="nav-bar-li-dropdown3 list-item"
