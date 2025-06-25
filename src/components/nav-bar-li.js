@@ -114,14 +114,14 @@ const NavBarLI = (props) => {
                         <a href="/dashboard" className="nav-bar-li-link6">
                             <img
                                 alt={props.imageAlt21}
-                                src={props.imageSrc21}
+                                src={`https://cdn.discordapp.com/avatars/${userData.discordId}/${userData.avatar}.png`}
                                 className="nav-bar-li-image2"
                             />
                         </a>
                         <span className="nav-bar-li-text11">
                             {props.text221 ?? (
                                 <Fragment>
-                                    <span className="nav-bar-li-text22">&lt;username&gt;</span>
+                                    <span className="nav-bar-li-text22">{userData.displayName}</span>
                                 </Fragment>
                             )}
                         </span>
@@ -224,7 +224,7 @@ const NavBarLI = (props) => {
                                 <a href="/dashboard" className="nav-bar-li-link10">
                                     <img
                                         alt={props.imageAlt2}
-                                        src={props.imageSrc2}
+                                        src={`https://cdn.discordapp.com/avatars/${userData.discordId}/${userData.avatar}.png`}
                                         className="nav-bar-li-image3"
                                     />
                                 </a>
@@ -232,7 +232,7 @@ const NavBarLI = (props) => {
                                     {props.text22 ?? (
                                         <Fragment>
                                             <span className="nav-bar-li-text31">
-                                                &lt;username&gt;
+                                                {userData.displayName}
                                             </span>
                                         </Fragment>
                                     )}
