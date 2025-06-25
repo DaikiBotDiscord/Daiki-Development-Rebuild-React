@@ -13,11 +13,124 @@ const Dashboard = (props) => {
                 <title>Dashboard - Daiki Development</title>
                 <meta property="og:title" content="Dashboard - Daiki Development" />
             </Helmet>
-            <NavBarLI />
+            <NavBarLI
+                text={
+                    <Fragment>
+                        <span className="dashboard-text10">Invite Daiki</span>
+                    </Fragment>
+                }
+                link1={
+                    <Fragment>
+                        <Link to="/" className="dashboard-link1 thq-body-small thq-link">
+                            <span>Home</span>
+                            <br></br>
+                        </Link>
+                    </Fragment>
+                }
+                link2={
+                    <Fragment>
+                        <Link
+                            to="/docs"
+                            className="dashboard-link2 thq-body-small thq-link"
+                        >
+                            <span>Docs</span>
+                            <br></br>
+                        </Link>
+                    </Fragment>
+                }
+                link3={
+                    <Fragment>
+                        <span className="dashboard-text15 thq-body-small thq-link">
+                            Contact
+                        </span>
+                    </Fragment>
+                }
+                link4={
+                    <Fragment>
+                        <span className="dashboard-text16 thq-body-small thq-link">
+                            Commands
+                        </span>
+                    </Fragment>
+                }
+                text1={
+                    <Fragment>
+                        <span className="dashboard-text17">Invite Daiki</span>
+                    </Fragment>
+                }
+                text2={
+                    <Fragment>
+                        <span className="dashboard-text18">&lt;username&gt;</span>
+                    </Fragment>
+                }
+                text4={
+                    <Fragment>
+                        <span className="dashboard-text19">Account</span>
+                    </Fragment>
+                }
+                text5={
+                    <Fragment>
+                        <span className="dashboard-text20">Warnings</span>
+                    </Fragment>
+                }
+                text6={
+                    <Fragment>
+                        <span className="dashboard-text21">Servers</span>
+                    </Fragment>
+                }
+                link11={
+                    <Fragment>
+                        <span className="dashboard-text22 thq-body-small thq-link">
+                            Home
+                        </span>
+                    </Fragment>
+                }
+                link21={
+                    <Fragment>
+                        <span className="dashboard-text23 thq-body-small thq-link">
+                            Docs
+                        </span>
+                    </Fragment>
+                }
+                link31={
+                    <Fragment>
+                        <span className="dashboard-text24 thq-body-small thq-link">
+                            Contact
+                        </span>
+                    </Fragment>
+                }
+                link41={
+                    <Fragment>
+                        <span className="dashboard-text25 thq-body-small thq-link">
+                            Commands
+                        </span>
+                    </Fragment>
+                }
+                rootClassName="nav-bar-l-iroot-class-name"
+                text22={
+                    <Fragment>
+                        <span className="dashboard-text26">&lt;username&gt;</span>
+                    </Fragment>
+                }
+                text42={
+                    <Fragment>
+                        <span className="dashboard-text27">Account</span>
+                    </Fragment>
+                }
+                text52={
+                    <Fragment>
+                        <span className="dashboard-text28">Warnings</span>
+                    </Fragment>
+                }
+                text62={
+                    <Fragment>
+                        <span className="dashboard-text29">Servers</span>
+                    </Fragment>
+                }
+            ></NavBarLI>
             <div className="dashboard-container2">
                 <div className="dashboard-container3">
                     <div className="dashboard-container4">
-                        <span className="dashboard-text26">
+                        <span className="dashboard-text30">
                             <span>Dashboard</span>
                             <br></br>
                         </span>
@@ -26,63 +139,83 @@ const Dashboard = (props) => {
                 <hr className="dashboard-separator"></hr>
                 <div className="dashboard-container5">
                     <div className="dashboard-container6">
-                        <div className="dashboard-container7">
-                            <svg
-                                height="24"
-                                width="24"
-                                viewBox="0 0 24 24"
-                                className="dashboard-icon1"
-                            >
-                                <path
-                                    fill="currentColor"
-                                    d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"
-                                ></path>
-                            </svg>
-                            <span className="dashboard-text29">
-                                <span>Account</span>
-                                <br></br>
-                            </span>
-                        </div>
-                        <div className="dashboard-container8">
-                            <svg
-                                height="24"
-                                width="24"
-                                viewBox="0 0 24 24"
-                                className="dashboard-icon3"
-                            >
-                                <path
-                                    fill="currentColor"
-                                    fill-rule="evenodd"
-                                    d="M9.616 3.642c1.058-1.839 3.71-1.839 4.768 0l8.043 13.988c1.054 1.833-.27 4.12-2.384 4.12H3.957c-2.115 0-3.438-2.287-2.384-4.12zM12 8.25a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75m.568 9.25a.75.75 0 0 0-1.115-1.003l-.01.011a.75.75 0 0 0 1.114 1.004z"
-                                    clip-rule="evenodd"
-                                ></path>
-                            </svg>
-                            <span className="dashboard-text32">
-                                <span>Warnings</span>
-                                <br></br>
-                            </span>
-                        </div>
-                        <div className="dashboard-container9">
-                            <svg
-                                height="24"
-                                width="24"
-                                viewBox="0 0 24 24"
-                                className="dashboard-icon5"
-                            >
-                                <path
-                                    fill="currentColor"
-                                    d="M15 17a1 1 0 1 0 1 1a1 1 0 0 0-1-1m-6 0H6a1 1 0 0 0 0 2h3a1 1 0 0 0 0-2m9 0a1 1 0 1 0 1 1a1 1 0 0 0-1-1m-3-6a1 1 0 1 0 1 1a1 1 0 0 0-1-1m-6 0H6a1 1 0 0 0 0 2h3a1 1 0 0 0 0-2m9-6a1 1 0 1 0 1 1a1 1 0 0 0-1-1m0 6a1 1 0 1 0 1 1a1 1 0 0 0-1-1m4-6a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3v2a3 3 0 0 0 .78 2A3 3 0 0 0 2 11v2a3 3 0 0 0 .78 2A3 3 0 0 0 2 17v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a3 3 0 0 0-.78-2a3 3 0 0 0 .78-2v-2a3 3 0 0 0-.78-2A3 3 0 0 0 22 7Zm-2 14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1Zm0-6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1Zm0-6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1Zm-5-2a1 1 0 1 0 1 1a1 1 0 0 0-1-1M9 5H6a1 1 0 0 0 0 2h3a1 1 0 0 0 0-2"
-                                ></path>
-                            </svg>
-                            <span className="dashboard-text35">
-                                <span>Servers</span>
-                                <br></br>
-                            </span>
-                        </div>
+                        <a
+                            href="/dashboard/account"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className="dashboard-link3"
+                        >
+                            <div className="dashboard-container7">
+                                <svg
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    className="dashboard-icon1"
+                                >
+                                    <path
+                                        d="M12 4a4 4 0 0 1 4 4a4 4 0 0 1-4 4a4 4 0 0 1-4-4a4 4 0 0 1 4-4m0 10c4.42 0 8 1.79 8 4v2H4v-2c0-2.21 3.58-4 8-4"
+                                        fill="currentColor"
+                                    ></path>
+                                </svg>
+                                <span className="dashboard-text33">
+                                    <span>Account</span>
+                                    <br></br>
+                                </span>
+                            </div>
+                        </a>
+                        <a
+                            href="https://dashboard/warnings"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className="dashboard-link4"
+                        >
+                            <div className="dashboard-container8">
+                                <svg
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    className="dashboard-icon3"
+                                >
+                                    <path
+                                        d="M9.616 3.642c1.058-1.839 3.71-1.839 4.768 0l8.043 13.988c1.054 1.833-.27 4.12-2.384 4.12H3.957c-2.115 0-3.438-2.287-2.384-4.12zM12 8.25a.75.75 0 0 1 .75.75v4a.75.75 0 0 1-1.5 0V9a.75.75 0 0 1 .75-.75m.568 9.25a.75.75 0 0 0-1.115-1.003l-.01.011a.75.75 0 0 0 1.114 1.004z"
+                                        fill="currentColor"
+                                        clip-rule="evenodd"
+                                        fill-rule="evenodd"
+                                    ></path>
+                                </svg>
+                                <span className="dashboard-text36">
+                                    <span>Warnings</span>
+                                    <br></br>
+                                </span>
+                            </div>
+                        </a>
+                        <a
+                            href="/dashboard/servers"
+                            target="_blank"
+                            rel="noreferrer noopener"
+                            className="dashboard-link5"
+                        >
+                            <div className="dashboard-container9">
+                                <svg
+                                    width="24"
+                                    height="24"
+                                    viewBox="0 0 24 24"
+                                    className="dashboard-icon5"
+                                >
+                                    <path
+                                        d="M15 17a1 1 0 1 0 1 1a1 1 0 0 0-1-1m-6 0H6a1 1 0 0 0 0 2h3a1 1 0 0 0 0-2m9 0a1 1 0 1 0 1 1a1 1 0 0 0-1-1m-3-6a1 1 0 1 0 1 1a1 1 0 0 0-1-1m-6 0H6a1 1 0 0 0 0 2h3a1 1 0 0 0 0-2m9-6a1 1 0 1 0 1 1a1 1 0 0 0-1-1m0 6a1 1 0 1 0 1 1a1 1 0 0 0-1-1m4-6a3 3 0 0 0-3-3H5a3 3 0 0 0-3 3v2a3 3 0 0 0 .78 2A3 3 0 0 0 2 11v2a3 3 0 0 0 .78 2A3 3 0 0 0 2 17v2a3 3 0 0 0 3 3h14a3 3 0 0 0 3-3v-2a3 3 0 0 0-.78-2a3 3 0 0 0 .78-2v-2a3 3 0 0 0-.78-2A3 3 0 0 0 22 7Zm-2 14a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1Zm0-6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1v-2a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1Zm0-6a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1Zm-5-2a1 1 0 1 0 1 1a1 1 0 0 0-1-1M9 5H6a1 1 0 0 0 0 2h3a1 1 0 0 0 0-2"
+                                        fill="currentColor"
+                                    ></path>
+                                </svg>
+                                <span className="dashboard-text39">
+                                    <span>Servers</span>
+                                    <br></br>
+                                </span>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </div>
-            <footer />
         </div>
     )
 }
