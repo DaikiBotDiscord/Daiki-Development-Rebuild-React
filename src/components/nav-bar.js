@@ -7,7 +7,7 @@ import './nav-bar.css'
 
 const NavBar = (props) => {
   return (
-    <div className="nav-bar-nav-bar">
+    <div className={`nav-bar-nav-bar ${props.rootClassName} `}>
       <header data-thq="thq-navbar" className="nav-bar-navbar-interactive">
         <img
           alt={props.image1Alt}
@@ -45,7 +45,7 @@ const NavBar = (props) => {
             <Link to="/contact">
               {props.link3 ?? (
                 <Fragment>
-                  <span className="nav-bar-text16 thq-body-small thq-link">
+                  <span className="nav-bar-text17 thq-body-small thq-link">
                     Contact
                   </span>
                 </Fragment>
@@ -54,12 +54,26 @@ const NavBar = (props) => {
             <Link to="/commands">
               {props.link4 ?? (
                 <Fragment>
-                  <span className="nav-bar-text17 thq-body-small thq-link">
+                  <span className="nav-bar-text15 thq-body-small thq-link">
                     Commands
                   </span>
                 </Fragment>
               )}
             </Link>
+            <a
+              href="/dashboard"
+              target="_blank"
+              rel="noreferrer noopener"
+              className="nav-bar-link51"
+            >
+              {props.link42 ?? (
+                <Fragment>
+                  <span className="nav-bar-text24 thq-body-small thq-link">
+                    Dashboard
+                  </span>
+                </Fragment>
+              )}
+            </a>
           </nav>
           <div className="nav-bar-buttons1">
             <a
@@ -71,7 +85,7 @@ const NavBar = (props) => {
               <span>
                 {props.text ?? (
                   <Fragment>
-                    <span className="nav-bar-text18">Invite Daiki</span>
+                    <span className="nav-bar-text21">Invite Daiki</span>
                   </Fragment>
                 )}
               </span>
@@ -101,7 +115,7 @@ const NavBar = (props) => {
               <Link to="/">
                 {props.link11 ?? (
                   <Fragment>
-                    <span className="nav-bar-text19 thq-body-small thq-link">
+                    <span className="nav-bar-text12 thq-body-small thq-link">
                       Home
                     </span>
                   </Fragment>
@@ -110,7 +124,7 @@ const NavBar = (props) => {
               <Link to="/docs">
                 {props.link21 ?? (
                   <Fragment>
-                    <span className="nav-bar-text20 thq-body-small thq-link">
+                    <span className="nav-bar-text22 thq-body-small thq-link">
                       Docs
                     </span>
                   </Fragment>
@@ -119,7 +133,7 @@ const NavBar = (props) => {
               <Link to="/contact">
                 {props.link31 ?? (
                   <Fragment>
-                    <span className="nav-bar-text21 thq-body-small thq-link">
+                    <span className="nav-bar-text23 thq-body-small thq-link">
                       Contact
                     </span>
                   </Fragment>
@@ -128,12 +142,26 @@ const NavBar = (props) => {
               <Link to="/commands">
                 {props.link41 ?? (
                   <Fragment>
-                    <span className="nav-bar-text22 thq-body-small thq-link">
+                    <span className="nav-bar-text18 thq-body-small thq-link">
                       Commands
                     </span>
                   </Fragment>
                 )}
               </Link>
+              <a
+                href="/dashboard"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="nav-bar-link52"
+              >
+                {props.link411 ?? (
+                  <Fragment>
+                    <span className="nav-bar-text25 thq-body-small thq-link">
+                      Dashboard
+                    </span>
+                  </Fragment>
+                )}
+              </a>
             </nav>
             <div className="nav-bar-buttons2">
               <a
@@ -145,7 +173,7 @@ const NavBar = (props) => {
                 <span>
                   {props.text1 ?? (
                     <Fragment>
-                      <span className="nav-bar-text23">Invite Daiki</span>
+                      <span className="nav-bar-text16">Invite Daiki</span>
                     </Fragment>
                   )}
                 </span>
@@ -179,41 +207,47 @@ const NavBar = (props) => {
 }
 
 NavBar.defaultProps = {
-  image1Src: '/daiki6-1500h.png',
-  image1Alt: 'logo',
-  link1: undefined,
-  link2: undefined,
-  link3: undefined,
-  link4: undefined,
-  action1Url: 'https://daiki-bot.xyz/invite',
-  text: undefined,
-  logoSrc: '/daiki6-1500h.png',
-  logoAlt: 'logo',
   link11: undefined,
+  action1Url: 'https://daiki-bot.xyz/invite',
+  link1: undefined,
+  link4: undefined,
+  text1: undefined,
+  image1Alt: 'logo',
+  link3: undefined,
+  link41: undefined,
+  logoAlt: 'logo',
+  rootClassName: '',
+  logoSrc: '/daiki6-1500h.png',
+  image1Src: '/daiki6-1500h.png',
+  link2: undefined,
+  text: undefined,
+  action1Url1: 'https://daiki-bot.xyz/invite',
   link21: undefined,
   link31: undefined,
-  link41: undefined,
-  action1Url1: 'https://daiki-bot.xyz/invite',
-  text1: undefined,
+  link42: undefined,
+  link411: undefined,
 }
 
 NavBar.propTypes = {
-  image1Src: PropTypes.string,
-  image1Alt: PropTypes.string,
-  link1: PropTypes.element,
-  link2: PropTypes.element,
-  link3: PropTypes.element,
-  link4: PropTypes.element,
-  action1Url: PropTypes.string,
-  text: PropTypes.element,
-  logoSrc: PropTypes.string,
-  logoAlt: PropTypes.string,
   link11: PropTypes.element,
+  action1Url: PropTypes.string,
+  link1: PropTypes.element,
+  link4: PropTypes.element,
+  text1: PropTypes.element,
+  image1Alt: PropTypes.string,
+  link3: PropTypes.element,
+  link41: PropTypes.element,
+  logoAlt: PropTypes.string,
+  rootClassName: PropTypes.string,
+  logoSrc: PropTypes.string,
+  image1Src: PropTypes.string,
+  link2: PropTypes.element,
+  text: PropTypes.element,
+  action1Url1: PropTypes.string,
   link21: PropTypes.element,
   link31: PropTypes.element,
-  link41: PropTypes.element,
-  action1Url1: PropTypes.string,
-  text1: PropTypes.element,
+  link42: PropTypes.element,
+  link411: PropTypes.element,
 }
 
 export default NavBar

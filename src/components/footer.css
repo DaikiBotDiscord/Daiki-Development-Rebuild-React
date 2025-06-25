@@ -67,6 +67,10 @@
     text-decoration: none;
 }
 
+.footer-link5 {
+    text-decoration: none;
+}
+
 .footer-social-links {
     gap: var(--dl-layout-space-unit);
     display: flex;
@@ -75,7 +79,7 @@
     justify-content: flex-end;
 }
 
-.footer-link5 {
+.footer-link6 {
     display: contents;
 }
 
@@ -155,6 +159,12 @@
 
 .footer-text19 {
     color: #132441;
+    display: inline-block;
+}
+
+.footer-text20 {
+    fill: var(--dl-color-theme-secondary1);
+    color: var(--dl-color-theme-secondary1);
     display: inline-block;
 }
 

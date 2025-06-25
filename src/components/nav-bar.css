@@ -49,6 +49,10 @@
   justify-content: center;
 }
 
+.nav-bar-link51 {
+  text-decoration: none;
+}
+
 .nav-bar-buttons1 {
   gap: var(--dl-layout-space-twounits);
   display: flex;
@@ -126,6 +130,10 @@
   flex-direction: column;
 }
 
+.nav-bar-link52 {
+  text-decoration: none;
+}
+
 .nav-bar-buttons2 {
   gap: var(--dl-layout-space-twounits);
   display: flex;
@@ -193,6 +201,16 @@
 }
 
 .nav-bar-text23 {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.nav-bar-text24 {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.nav-bar-text25 {
   display: inline-block;
   text-decoration: none;
 }
