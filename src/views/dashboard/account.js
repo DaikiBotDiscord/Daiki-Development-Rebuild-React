@@ -18,7 +18,7 @@ const Account = () => {
             .then(res => setUserData(res.data))
             .catch(err => {
                 console.error("❌ Error fetching user data:", err);
-                //window.location.href = "https://daiki-bot.xyz/dashboard-sync";
+                window.location.href = "https://daiki-bot.xyz/dashboard-sync";
             });
     }, []);
 
