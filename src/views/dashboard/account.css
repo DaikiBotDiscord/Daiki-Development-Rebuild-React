@@ -41,18 +41,22 @@
 
 .account-text18 {
     display: inline-block;
+    text-decoration: none;
 }
 
 .account-text19 {
     display: inline-block;
+    text-decoration: none;
 }
 
 .account-text20 {
     display: inline-block;
+    text-decoration: none;
 }
 
 .account-text21 {
     display: inline-block;
+    text-decoration: none;
 }
 
 .account-text22 {
@@ -62,17 +66,39 @@
 
 .account-text23 {
     display: inline-block;
-    text-decoration: none;
 }
 
 .account-text24 {
     display: inline-block;
-    text-decoration: none;
 }
 
 .account-text25 {
     display: inline-block;
+}
+
+.account-text26 {
+    display: inline-block;
+}
+
+.account-text27 {
+    display: inline-block;
     text-decoration: none;
+}
+
+.account-text28 {
+    display: inline-block;
+}
+
+.account-text29 {
+    display: inline-block;
+}
+
+.account-text30 {
+    display: inline-block;
+}
+
+.account-text31 {
+    display: inline-block;
 }
 
 .account-container2 {
@@ -122,7 +148,7 @@
     flex-direction: column;
 }
 
-.account-text26 {
+.account-text32 {
     fill: var(--dl-color-theme-neutral-light);
     color: var(--dl-color-theme-neutral-light);
     font-size: 40px;
@@ -182,7 +208,7 @@
     flex-direction: column;
 }
 
-.account-text29 {
+.account-text35 {
     fill: var(--dl-color-theme-neutral-light);
     color: var(--dl-color-theme-neutral-light);
     font-size: 30px;
@@ -193,7 +219,7 @@
     font-weight: 600;
 }
 
-.account-text32 {
+.account-text38 {
     fill: var(--dl-color-theme-neutral-light);
     color: var(--dl-color-theme-neutral-light);
     font-size: 30px;
@@ -204,8 +230,7 @@
     font-weight: 600;
 }
 
-.account-text33 {
-    font-size: 15px;
+.account-text39 {
     font-style: normal;
     font-weight: 300;
 }
@@ -225,7 +250,7 @@
     flex-direction: column;
 }
 
-.account-text35 {
+.account-text41 {
     fill: var(--dl-color-theme-neutral-light);
     color: var(--dl-color-theme-neutral-light);
     font-size: 30px;
@@ -236,41 +261,17 @@
     font-weight: 600;
 }
 
-.account-text36 {
-    font-size: 35px;
-}
-
 .account-separator2 {
     width: 100%;
     height: 1px;
     background-color: #595959;
 }
 
-.account-text38 {
-    fill: var(--dl-color-theme-neutral-light);
-    color: var(--dl-color-theme-neutral-light);
-    align-self: center;
-    margin-top: var(--dl-layout-space-halfunit);
-    text-align: center;
-    font-family: "Poppins";
-    font-weight: 600;
-}
-
-.account-text41 {
-    fill: var(--dl-color-theme-neutral-light);
-    color: var(--dl-color-theme-neutral-light);
-    align-self: center;
-    margin-top: 4px;
-    text-align: center;
-    font-family: "Poppins";
-    font-weight: 600;
-}
-
 .account-text44 {
     fill: var(--dl-color-theme-neutral-light);
     color: var(--dl-color-theme-neutral-light);
     align-self: center;
-    margin-top: 4px;
+    margin-top: var(--dl-layout-space-halfunit);
     text-align: center;
     font-family: "Poppins";
     font-weight: 600;
@@ -296,41 +297,122 @@
     font-weight: 600;
 }
 
+.account-text53 {
+    fill: var(--dl-color-theme-neutral-light);
+    color: var(--dl-color-theme-neutral-light);
+    align-self: center;
+    margin-top: 4px;
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 600;
+}
+
+.account-text56 {
+    fill: var(--dl-color-theme-neutral-light);
+    color: var(--dl-color-theme-neutral-light);
+    align-self: center;
+    margin-top: 4px;
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 600;
+}
+
 @media(max-width: 991px) {
-    .account-text26 {
-        font-size: 35px;
-    }
-
-    .account-text29 {
-        font-size: 35px;
-    }
-
     .account-text32 {
         font-size: 35px;
     }
 
+    .account-container5 {
+        height: auto;
+        align-items: center;
+        padding-top: var(--dl-layout-space-twounits);
+        padding-bottom: var(--dl-layout-space-twounits);
+    }
+
+    .account-image {
+        width: 100px;
+        height: 100px;
+    }
+
     .account-text35 {
-        font-size: 35px;
+        font-size: 25px;
     }
 
     .account-text38 {
-        font-size: 35px;
+        font-size: 20px;
     }
 
     .account-text41 {
-        font-size: 35px;
+        font-size: 20px;
     }
 
     .account-text44 {
-        font-size: 35px;
+        font-size: 20px;
     }
 
     .account-text47 {
-        font-size: 35px;
+        font-size: 20px;
     }
 
     .account-text50 {
-        font-size: 35px;
+        font-size: 20px;
+    }
+
+    .account-text53 {
+        font-size: 20px;
+    }
+
+    .account-text56 {
+        font-size: 20px;
+    }
+}
+
+@media(max-width: 767px) {
+    .account-container5 {
+        align-self: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .account-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .account-text35 {
+        font-size: 25px;
+    }
+
+    .account-text38 {
+        font-size: 20px;
+    }
+
+    .account-container9 {
+        margin-left: 0px;
+    }
+
+    .account-text41 {
+        font-size: 25px;
+    }
+
+    .account-text44 {
+        font-size: 25px;
+    }
+
+    .account-text47 {
+        font-size: 25px;
+    }
+
+    .account-text50 {
+        font-size: 25px;
+    }
+
+    .account-text53 {
+        font-size: 25px;
+    }
+
+    .account-text56 {
+        font-size: 25px;
     }
 }
 
@@ -340,10 +422,68 @@
     }
 
     .account-container3 {
-        background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.6) 0.00%, rgba(0, 9, 24, 0.6) 100.00%), 7a0bfb67-99d1-4c36-9e8e-f37a12ce4f6f;
+        background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.6) 0.00%, rgba(0, 9, 24, 0.6) 100.00%);
+        background-repeat: bottom;
     }
 
     .account-container5 {
-        background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.6) 0.00%, rgba(0, 9, 24, 0.6) 100.00%), 7a0bfb67-99d1-4c36-9e8e-f37a12ce4f6f;
+        align-items: center;
+        flex-direction: column;
+        background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.6) 0.00%, rgba(0, 9, 24, 0.6) 100.00%);
+    }
+
+    .account-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .account-text35 {
+        font-size: 25px;
+    }
+
+    .account-text38 {
+        font-size: 15px;
+    }
+
+    .account-container8 {
+        justify-content: center;
+    }
+
+    .account-container9 {
+        margin-left: 0px;
+    }
+
+    .account-text41 {
+        display: block;
+        font-size: 25px;
+    }
+
+    .account-separator2 {
+        display: block;
+    }
+
+    .account-text44 {
+        display: block;
+        font-size: 18px;
+    }
+
+    .account-text47 {
+        display: block;
+        font-size: 18px;
+    }
+
+    .account-text50 {
+        display: block;
+        font-size: 18px;
+    }
+
+    .account-text53 {
+        display: block;
+        font-size: 18px;
+    }
+
+    .account-text56 {
+        display: block;
+        font-size: 18px;
     }
 }

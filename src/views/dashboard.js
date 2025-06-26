@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet'
 
 import NavBarLI from '../components/nav-bar-li'
 import './dashboard.css'
+import Footer from '../components/footer'
 
 const Dashboard = (props) => {
     return (
@@ -57,80 +58,94 @@ const Dashboard = (props) => {
                         <span className="dashboard-text17">Invite Daiki</span>
                     </Fragment>
                 }
-                text2={
-                    <Fragment>
-                        <span className="dashboard-text18">&lt;username&gt;</span>
-                    </Fragment>
-                }
-                text4={
-                    <Fragment>
-                        <span className="dashboard-text19">Account</span>
-                    </Fragment>
-                }
-                text5={
-                    <Fragment>
-                        <span className="dashboard-text20">Warnings</span>
-                    </Fragment>
-                }
-                text6={
-                    <Fragment>
-                        <span className="dashboard-text21">Servers</span>
-                    </Fragment>
-                }
                 link11={
                     <Fragment>
-                        <span className="dashboard-text22 thq-body-small thq-link">
+                        <span className="dashboard-text18 thq-body-small thq-link">
                             Home
                         </span>
                     </Fragment>
                 }
                 link21={
                     <Fragment>
-                        <span className="dashboard-text23 thq-body-small thq-link">
+                        <span className="dashboard-text19 thq-body-small thq-link">
                             Docs
                         </span>
                     </Fragment>
                 }
                 link31={
                     <Fragment>
-                        <span className="dashboard-text24 thq-body-small thq-link">
+                        <span className="dashboard-text20 thq-body-small thq-link">
                             Contact
                         </span>
                     </Fragment>
                 }
                 link41={
                     <Fragment>
-                        <span className="dashboard-text25 thq-body-small thq-link">
+                        <span className="dashboard-text21 thq-body-small thq-link">
                             Commands
                         </span>
                     </Fragment>
                 }
-                rootClassName="nav-bar-l-iroot-class-name"
+                link42={
+                    <Fragment>
+                        <span className="dashboard-text22 thq-body-small thq-link">
+                            Dashboard
+                        </span>
+                    </Fragment>
+                }
                 text22={
                     <Fragment>
-                        <span className="dashboard-text26">&lt;username&gt;</span>
+                        <span className="dashboard-text23">&lt;username&gt;</span>
                     </Fragment>
                 }
                 text42={
                     <Fragment>
-                        <span className="dashboard-text27">Account</span>
+                        <span className="dashboard-text24">Account</span>
                     </Fragment>
                 }
                 text52={
                     <Fragment>
-                        <span className="dashboard-text28">Warnings</span>
+                        <span className="dashboard-text25">Warnings</span>
                     </Fragment>
                 }
                 text62={
                     <Fragment>
-                        <span className="dashboard-text29">Servers</span>
+                        <span className="dashboard-text26">Servers</span>
                     </Fragment>
                 }
+                link411={
+                    <Fragment>
+                        <span className="dashboard-text27 thq-body-small thq-link">
+                            Dashboard
+                        </span>
+                    </Fragment>
+                }
+                text221={
+                    <Fragment>
+                        <span className="dashboard-text28">&lt;username&gt;</span>
+                    </Fragment>
+                }
+                text421={
+                    <Fragment>
+                        <span className="dashboard-text29">Account</span>
+                    </Fragment>
+                }
+                text521={
+                    <Fragment>
+                        <span className="dashboard-text30">Warnings</span>
+                    </Fragment>
+                }
+                text621={
+                    <Fragment>
+                        <span className="dashboard-text31">Servers</span>
+                    </Fragment>
+                }
+                rootClassName="nav-bar-l-iroot-class-name"
             ></NavBarLI>
             <div className="dashboard-container2">
                 <div className="dashboard-container3">
                     <div className="dashboard-container4">
-                        <span className="dashboard-text30">
+                        <span className="dashboard-text32">
                             <span>Dashboard</span>
                             <br></br>
                         </span>
@@ -139,16 +154,11 @@ const Dashboard = (props) => {
                 <hr className="dashboard-separator"></hr>
                 <div className="dashboard-container5">
                     <div className="dashboard-container6">
-                        <a
-                            href="/dashboard/account"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            className="dashboard-link3"
-                        >
+                        <a href="/dashboard/account" className="dashboard-link3">
                             <div className="dashboard-container7">
                                 <svg
-                                    width="24"
-                                    height="24"
+                                    width="16"
+                                    height="16"
                                     viewBox="0 0 24 24"
                                     className="dashboard-icon1"
                                 >
@@ -157,18 +167,13 @@ const Dashboard = (props) => {
                                         fill="currentColor"
                                     ></path>
                                 </svg>
-                                <span className="dashboard-text33">
+                                <span className="dashboard-text35">
                                     <span>Account</span>
                                     <br></br>
                                 </span>
                             </div>
                         </a>
-                        <a
-                            href="dashboard/warnings"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            className="dashboard-link4"
-                        >
+                        <a href="/dashboard/warnings" className="dashboard-link4">
                             <div className="dashboard-container8">
                                 <svg
                                     width="24"
@@ -183,18 +188,13 @@ const Dashboard = (props) => {
                                         fill-rule="evenodd"
                                     ></path>
                                 </svg>
-                                <span className="dashboard-text36">
+                                <span className="dashboard-text38">
                                     <span>Warnings</span>
                                     <br></br>
                                 </span>
                             </div>
                         </a>
-                        <a
-                            href="/dashboard/servers"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            className="dashboard-link5"
-                        >
+                        <a href="/dashboard/servers" className="dashboard-link5">
                             <div className="dashboard-container9">
                                 <svg
                                     width="24"
@@ -207,7 +207,7 @@ const Dashboard = (props) => {
                                         fill="currentColor"
                                     ></path>
                                 </svg>
-                                <span className="dashboard-text39">
+                                <span className="dashboard-text41">
                                     <span>Servers</span>
                                     <br></br>
                                 </span>
@@ -216,6 +216,7 @@ const Dashboard = (props) => {
                     </div>
                 </div>
             </div>
+            <Footer />
         </div>
     )
 }
