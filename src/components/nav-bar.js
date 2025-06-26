@@ -60,15 +60,10 @@ const NavBar = (props) => {
                 </Fragment>
               )}
             </Link>
-            <a
-              href="/dashboard"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="nav-bar-link51"
-            >
+            <a href="/dashboard" className="nav-bar-link51">
               {props.link42 ?? (
                 <Fragment>
-                  <span className="nav-bar-text24 thq-body-small thq-link">
+                  <span className="nav-bar-text23 thq-body-small thq-link">
                     Dashboard
                   </span>
                 </Fragment>
@@ -85,7 +80,7 @@ const NavBar = (props) => {
               <span>
                 {props.text ?? (
                   <Fragment>
-                    <span className="nav-bar-text21">Invite Daiki</span>
+                    <span className="nav-bar-text22">Invite Daiki</span>
                   </Fragment>
                 )}
               </span>
@@ -124,7 +119,7 @@ const NavBar = (props) => {
               <Link to="/docs">
                 {props.link21 ?? (
                   <Fragment>
-                    <span className="nav-bar-text22 thq-body-small thq-link">
+                    <span className="nav-bar-text24 thq-body-small thq-link">
                       Docs
                     </span>
                   </Fragment>
@@ -133,7 +128,7 @@ const NavBar = (props) => {
               <Link to="/contact">
                 {props.link31 ?? (
                   <Fragment>
-                    <span className="nav-bar-text23 thq-body-small thq-link">
+                    <span className="nav-bar-text25 thq-body-small thq-link">
                       Contact
                     </span>
                   </Fragment>
@@ -156,7 +151,7 @@ const NavBar = (props) => {
               >
                 {props.link411 ?? (
                   <Fragment>
-                    <span className="nav-bar-text25 thq-body-small thq-link">
+                    <span className="nav-bar-text19 thq-body-small thq-link">
                       Dashboard
                     </span>
                   </Fragment>
@@ -215,6 +210,7 @@ NavBar.defaultProps = {
   image1Alt: 'logo',
   link3: undefined,
   link41: undefined,
+  link411: undefined,
   logoAlt: 'logo',
   rootClassName: '',
   logoSrc: '/daiki6-1500h.png',
@@ -222,10 +218,9 @@ NavBar.defaultProps = {
   link2: undefined,
   text: undefined,
   action1Url1: 'https://daiki-bot.xyz/invite',
+  link42: undefined,
   link21: undefined,
   link31: undefined,
-  link42: undefined,
-  link411: undefined,
 }
 
 NavBar.propTypes = {
@@ -237,6 +232,7 @@ NavBar.propTypes = {
   image1Alt: PropTypes.string,
   link3: PropTypes.element,
   link41: PropTypes.element,
+  link411: PropTypes.element,
   logoAlt: PropTypes.string,
   rootClassName: PropTypes.string,
   logoSrc: PropTypes.string,
@@ -244,10 +240,9 @@ NavBar.propTypes = {
   link2: PropTypes.element,
   text: PropTypes.element,
   action1Url1: PropTypes.string,
+  link42: PropTypes.element,
   link21: PropTypes.element,
   link31: PropTypes.element,
-  link42: PropTypes.element,
-  link411: PropTypes.element,
 }
 
 export default NavBar

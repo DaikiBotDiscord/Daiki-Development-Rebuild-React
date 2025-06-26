@@ -79,15 +79,10 @@ const NavBarLI = (props) => {
                                 </Fragment>
                             )}
                         </Link>
-                        <a
-                            href="/dashboard"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            className="nav-bar-li-link51"
-                        >
+                        <a href="/dashboard" className="nav-bar-li-link51">
                             {props.link42 ?? (
                                 <Fragment>
-                                    <span className="nav-bar-li-text40 thq-body-small thq-link">
+                                    <span className="nav-bar-li-text21 thq-body-small thq-link">
                                         Dashboard
                                     </span>
                                 </Fragment>
