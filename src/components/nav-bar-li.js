@@ -1,7 +1,7 @@
-import React, { useState, useEffect, Fragment } from 'react';
-import axios from 'axios';
+import React, { Fragment, useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Mosaic, ThreeDot } from 'react-loading-indicators'
+import axios from 'axios'
+import { ThreeDot } from 'react-loading-indicators'
 import PropTypes from 'prop-types'
 
 import './nav-bar-li.css'
@@ -21,7 +21,14 @@ const NavBarLI = (props) => {
     }, []);
 
     if (!userData) {
-        return <div>
+        return <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100%', // Full viewport height
+            width: '100%',  // Full viewport width
+            marginTop: '100px',
+        }}>
             <ThreeDot variant="bounce" color={["#6141ac", "#233dff", "#6845ba", "#3850ff"]} size="large" text="" textColor="" />
         </div>;
     }
@@ -80,18 +87,9 @@ const NavBarLI = (props) => {
                             )}
                         </Link>
                         <a href="/dashboard" className="nav-bar-li-link51">
-                            {props.link421 ?? (
-                                <Fragment>
-                                    <span className="nav-bar-li-text26 thq-body-small thq-link">
-                                        Dashboard
-                                    </span>
-                                </Fragment>
-                            )}
-                        </a>
-                        <a href="/dashboard" className="nav-bar-li-link52">
                             {props.link422 ?? (
                                 <Fragment>
-                                    <span className="nav-bar-li-text38 thq-body-small thq-link">
+                                    <span className="nav-bar-li-text37 thq-body-small thq-link">
                                         Dashboard
                                     </span>
                                 </Fragment>
@@ -108,7 +106,7 @@ const NavBarLI = (props) => {
                             <span>
                                 {props.text7 ?? (
                                     <Fragment>
-                                        <span className="nav-bar-li-text27">Invite Daiki</span>
+                                        <span className="nav-bar-li-text26">Invite Daiki</span>
                                     </Fragment>
                                 )}
                             </span>
@@ -125,7 +123,7 @@ const NavBarLI = (props) => {
                         <span className="nav-bar-li-text11">
                             {props.text2211 ?? (
                                 <Fragment>
-                                    <span className="nav-bar-li-text34">&lt;username&gt;</span>
+                                    <span className="nav-bar-li-text33">&lt;username&gt;</span>
                                 </Fragment>
                             )}
                         </span>
@@ -162,7 +160,7 @@ const NavBarLI = (props) => {
                                             <span className="nav-bar-li-text12">
                                                 {props.text4211 ?? (
                                                     <Fragment>
-                                                        <span className="nav-bar-li-text35">Account</span>
+                                                        <span className="nav-bar-li-text34">Account</span>
                                                     </Fragment>
                                                 )}
                                             </span>
@@ -181,7 +179,7 @@ const NavBarLI = (props) => {
                                             <span className="nav-bar-li-text13">
                                                 {props.text5211 ?? (
                                                     <Fragment>
-                                                        <span className="nav-bar-li-text36">Warnings</span>
+                                                        <span className="nav-bar-li-text35">Warnings</span>
                                                     </Fragment>
                                                 )}
                                             </span>
@@ -200,7 +198,7 @@ const NavBarLI = (props) => {
                                             <span className="nav-bar-li-text14">
                                                 {props.text6211 ?? (
                                                     <Fragment>
-                                                        <span className="nav-bar-li-text37">Servers</span>
+                                                        <span className="nav-bar-li-text36">Servers</span>
                                                     </Fragment>
                                                 )}
                                             </span>
@@ -235,7 +233,7 @@ const NavBarLI = (props) => {
                                 <span className="nav-bar-li-text15">
                                     {props.text222 ?? (
                                         <Fragment>
-                                            <span className="nav-bar-li-text39">
+                                            <span className="nav-bar-li-text38">
                                                 &lt;username&gt;
                                             </span>
                                         </Fragment>
@@ -281,7 +279,7 @@ const NavBarLI = (props) => {
                                                     <span className="nav-bar-li-text16">
                                                         {props.text422 ?? (
                                                             <Fragment>
-                                                                <span className="nav-bar-li-text40">
+                                                                <span className="nav-bar-li-text39">
                                                                     Account
                                                                 </span>
                                                             </Fragment>
@@ -306,7 +304,7 @@ const NavBarLI = (props) => {
                                                     <span className="nav-bar-li-text17">
                                                         {props.text522 ?? (
                                                             <Fragment>
-                                                                <span className="nav-bar-li-text41">
+                                                                <span className="nav-bar-li-text40">
                                                                     Warnings
                                                                 </span>
                                                             </Fragment>
@@ -331,7 +329,7 @@ const NavBarLI = (props) => {
                                                     <span className="nav-bar-li-text18">
                                                         {props.text622 ?? (
                                                             <Fragment>
-                                                                <span className="nav-bar-li-text42">
+                                                                <span className="nav-bar-li-text41">
                                                                     Servers
                                                                 </span>
                                                             </Fragment>
@@ -353,7 +351,7 @@ const NavBarLI = (props) => {
                             <Link to="/">
                                 {props.link111 ?? (
                                     <Fragment>
-                                        <span className="nav-bar-li-text28 thq-body-small thq-link">
+                                        <span className="nav-bar-li-text27 thq-body-small thq-link">
                                             Home
                                         </span>
                                     </Fragment>
@@ -362,7 +360,7 @@ const NavBarLI = (props) => {
                             <Link to="/docs">
                                 {props.link211 ?? (
                                     <Fragment>
-                                        <span className="nav-bar-li-text29 thq-body-small thq-link">
+                                        <span className="nav-bar-li-text28 thq-body-small thq-link">
                                             Docs
                                         </span>
                                     </Fragment>
@@ -371,7 +369,7 @@ const NavBarLI = (props) => {
                             <Link to="/contact">
                                 {props.link311 ?? (
                                     <Fragment>
-                                        <span className="nav-bar-li-text30 thq-body-small thq-link">
+                                        <span className="nav-bar-li-text29 thq-body-small thq-link">
                                             Contact
                                         </span>
                                     </Fragment>
@@ -380,7 +378,7 @@ const NavBarLI = (props) => {
                             <Link to="/commands">
                                 {props.link412 ?? (
                                     <Fragment>
-                                        <span className="nav-bar-li-text31 thq-body-small thq-link">
+                                        <span className="nav-bar-li-text30 thq-body-small thq-link">
                                             Commands
                                         </span>
                                     </Fragment>
@@ -390,11 +388,11 @@ const NavBarLI = (props) => {
                                 href="/dashboard"
                                 target="_blank"
                                 rel="noreferrer noopener"
-                                className="nav-bar-li-link53"
+                                className="nav-bar-li-link52"
                             >
                                 {props.link4111 ?? (
                                     <Fragment>
-                                        <span className="nav-bar-li-text32 thq-body-small thq-link">
+                                        <span className="nav-bar-li-text31 thq-body-small thq-link">
                                             Dashboard
                                         </span>
                                     </Fragment>
@@ -411,7 +409,7 @@ const NavBarLI = (props) => {
                                 <span>
                                     {props.text11 ?? (
                                         <Fragment>
-                                            <span className="nav-bar-li-text33">Invite Daiki</span>
+                                            <span className="nav-bar-li-text32">Invite Daiki</span>
                                         </Fragment>
                                     )}
                                 </span>
@@ -452,7 +450,6 @@ NavBarLI.defaultProps = {
     link22: undefined,
     link32: undefined,
     link43: undefined,
-    link421: undefined,
     action1Url2: 'https://daiki-bot.xyz/invite',
     text7: undefined,
     logoAlt1: 'logo',
@@ -487,7 +484,6 @@ NavBarLI.propTypes = {
     link22: PropTypes.element,
     link32: PropTypes.element,
     link43: PropTypes.element,
-    link421: PropTypes.element,
     action1Url2: PropTypes.string,
     text7: PropTypes.element,
     logoAlt1: PropTypes.string,
