@@ -337,6 +337,7 @@
 .nav-bar-li-container2 {
     flex: 0 0 auto;
     display: flex;
+    margin-top: var(--dl-layout-space-unit);
     align-items: center;
 }
 
