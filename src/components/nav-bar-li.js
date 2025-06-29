@@ -7,7 +7,7 @@ import { ThreeDot } from 'react-loading-indicators'
 import './nav-bar-li.css'
 
 const NavBarLI = (props) => {
-    const [userData, setUserData] = useState(null);
+    /* const [userData, setUserData] = useState(null);
 
     useEffect(() => {
         axios.get("https://dash.api.daiki-bot.xyz/api/users/@me", {
@@ -24,7 +24,7 @@ const NavBarLI = (props) => {
         return <div>
             <ThreeDot variant="bounce" color={["#6141ac", "#233dff", "#6845ba", "#3850ff"]} size="large" text="" textColor="" />
         </div>;
-    }
+    } */
 
     return (
         <div className="nav-bar-li-nav-bar">
