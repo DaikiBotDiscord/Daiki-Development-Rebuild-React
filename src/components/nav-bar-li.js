@@ -1,11 +1,31 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-
+import axios from 'axios'
 import PropTypes from 'prop-types'
+import { ThreeDot } from 'react-loading-indicators'
 
 import './nav-bar-li.css'
 
 const NavBarLI = (props) => {
+    const [userData, setUserData] = useState(null);
+
+    useEffect(() => {
+        axios.get("https://dash.api.daiki-bot.xyz/api/users/@me", {
+            withCredentials: true
+        })
+            .then(res => setUserData(res.data))
+            .catch(err => {
+                console.error("❌ Error fetching user data:", err);
+                window.location.href = "https://daiki-bot.xyz/dashboard-sync";
+            });
+    }, []);
+
+    if (!userData) {
+        return <div>
+            <ThreeDot variant="bounce" color={["#6141ac", "#233dff", "#6845ba", "#3850ff"]} size="large" text="" textColor="" />
+        </div>;
+    }
+
     return (
         <div className="nav-bar-li-nav-bar">
             <header data-thq="thq-navbar" className="nav-bar-li-navbar-interactive">
@@ -90,14 +110,14 @@ const NavBarLI = (props) => {
                         <a href="/dashboard" className="nav-bar-li-link6">
                             <img
                                 alt={props.imageAlt21112}
-                                src={props.imageSrc21112}
+                                src={`https://cdn.discordapp.com/avatars/${userData.discordId}/${userData.avatar}.png`}
                                 className="nav-bar-li-image2"
                             />
                         </a>
                         <span className="nav-bar-li-text11">
                             {props.text221112 ?? (
                                 <Fragment>
-                                    <span className="nav-bar-li-text38">&lt;username&gt;</span>
+                                    <span className="nav-bar-li-text38">{userData.displayName}</span>
                                 </Fragment>
                             )}
                         </span>
@@ -269,14 +289,14 @@ const NavBarLI = (props) => {
                             <a href="/dashboard" className="nav-bar-li-link10">
                                 <img
                                     alt={props.imageAlt21111}
-                                    src={props.imageSrc21111}
+                                    src={`https://cdn.discordapp.com/avatars/${userData.discordId}/${userData.avatar}.png`}
                                     className="nav-bar-li-image3"
                                 />
                             </a>
                             <span className="nav-bar-li-text16">
                                 {props.text221111 ?? (
                                     <Fragment>
-                                        <span className="nav-bar-li-text34">&lt;username&gt;</span>
+                                        <span className="nav-bar-li-text34">{userData.displayName}</span>
                                     </Fragment>
                                 )}
                             </span>
