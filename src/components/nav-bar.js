@@ -143,12 +143,7 @@ const NavBar = (props) => {
                   </Fragment>
                 )}
               </Link>
-              <a
-                href="/dashboard"
-                target="_blank"
-                rel="noreferrer noopener"
-                className="nav-bar-link52"
-              >
+              <a href="/dashboard" className="nav-bar-li-link51">
                 {props.link411 ?? (
                   <Fragment>
                     <span className="nav-bar-text19 thq-body-small thq-link">
