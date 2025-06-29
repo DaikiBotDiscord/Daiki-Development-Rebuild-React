@@ -33,17 +33,17 @@ const NavBarLI = (props) => {
         </div>;
     }
     return (
-        <div className={`nav-bar-li-nav-bar ${props.rootClassName} `}>
+        <div className="nav-bar-li-nav-bar">
             <header data-thq="thq-navbar" className="nav-bar-li-navbar-interactive">
                 <img
-                    alt={props.image1Alt2}
-                    src={props.image1Src2}
+                    alt={props.image1Alt}
+                    src={props.image1Src}
                     className="nav-bar-li-image1"
                 />
                 <div data-thq="thq-navbar-nav" className="nav-bar-li-desktop-menu">
                     <nav className="nav-bar-li-links1">
                         <Link to="/">
-                            {props.link13 ?? (
+                            {props.link1 ?? (
                                 <Fragment>
                                     <Link
                                         to="/"
@@ -56,7 +56,7 @@ const NavBarLI = (props) => {
                             )}
                         </Link>
                         <Link to="/docs">
-                            {props.link23 ?? (
+                            {props.link2 ?? (
                                 <Fragment>
                                     <Link
                                         to="/docs"
@@ -69,27 +69,27 @@ const NavBarLI = (props) => {
                             )}
                         </Link>
                         <Link to="/contact">
-                            {props.link33 ?? (
+                            {props.link3 ?? (
                                 <Fragment>
-                                    <span className="nav-bar-li-text28 thq-body-small thq-link">
+                                    <span className="nav-bar-li-text24 thq-body-small thq-link">
                                         Contact
                                     </span>
                                 </Fragment>
                             )}
                         </Link>
                         <Link to="/commands">
-                            {props.link44 ?? (
+                            {props.link4 ?? (
                                 <Fragment>
-                                    <span className="nav-bar-li-text29 thq-body-small thq-link">
+                                    <span className="nav-bar-li-text25 thq-body-small thq-link">
                                         Commands
                                     </span>
                                 </Fragment>
                             )}
                         </Link>
                         <a href="/dashboard" className="nav-bar-li-link51">
-                            {props.link423 ?? (
+                            {props.link42 ?? (
                                 <Fragment>
-                                    <span className="nav-bar-li-text30 thq-body-small thq-link">
+                                    <span className="nav-bar-li-text26 thq-body-small thq-link">
                                         Dashboard
                                     </span>
                                 </Fragment>
@@ -98,15 +98,15 @@ const NavBarLI = (props) => {
                     </nav>
                     <div className="nav-bar-li-buttons1">
                         <a
-                            href={props.action1Url3}
+                            href={props.action1Url}
                             target="_blank"
                             rel="noreferrer noopener"
                             className="nav-bar-li-action11 thq-button-filled thq-button-animated"
                         >
                             <span>
-                                {props.text8 ?? (
+                                {props.text ?? (
                                     <Fragment>
-                                        <span className="nav-bar-li-text31">Invite Daiki</span>
+                                        <span className="nav-bar-li-text27">Invite Daiki</span>
                                     </Fragment>
                                 )}
                             </span>
@@ -115,18 +115,12 @@ const NavBarLI = (props) => {
                     <div className="nav-bar-li-container1">
                         <a href="/dashboard" className="nav-bar-li-link6">
                             <img
-                                alt={props.imageAlt211}
-                                src={`https://cdn.discordapp.com/avatars/${userData.discordId}/${userData.avatar}.png`}
+                                alt="image"
+                                src="https://play.teleporthq.io/static/svg/default-img.svg"
                                 className="nav-bar-li-image2"
                             />
                         </a>
-                        <span className="nav-bar-li-text11">
-                            {props.text2211 ?? (
-                                <Fragment>
-                                    <span className="nav-bar-li-text21">{userData.displayName}</span>
-                                </Fragment>
-                            )}
-                        </span>
+                        <span className="nav-bar-li-text11">&lt;username&gt;</span>
                         <div
                             data-thq="thq-dropdown"
                             className="nav-bar-li-thq-dropdown1 list-item"
@@ -157,13 +151,7 @@ const NavBarLI = (props) => {
                                             data-thq="thq-dropdown-toggle"
                                             className="nav-bar-li-dropdown-toggle2"
                                         >
-                                            <span className="nav-bar-li-text12">
-                                                {props.text4211 ?? (
-                                                    <Fragment>
-                                                        <span className="nav-bar-li-text20">Account</span>
-                                                    </Fragment>
-                                                )}
-                                            </span>
+                                            <span className="nav-bar-li-text12">Sub-menu Item</span>
                                         </div>
                                     </li>
                                 </a>
@@ -176,13 +164,7 @@ const NavBarLI = (props) => {
                                             data-thq="thq-dropdown-toggle"
                                             className="nav-bar-li-dropdown-toggle3"
                                         >
-                                            <span className="nav-bar-li-text13">
-                                                {props.text5211 ?? (
-                                                    <Fragment>
-                                                        <span className="nav-bar-li-text22">Warnings</span>
-                                                    </Fragment>
-                                                )}
-                                            </span>
+                                            <span className="nav-bar-li-text13">Sub-menu Item</span>
                                         </div>
                                     </li>
                                 </a>
@@ -195,13 +177,7 @@ const NavBarLI = (props) => {
                                             data-thq="thq-dropdown-toggle"
                                             className="nav-bar-li-dropdown-toggle4"
                                         >
-                                            <span className="nav-bar-li-text14">
-                                                {props.text6211 ?? (
-                                                    <Fragment>
-                                                        <span className="nav-bar-li-text23">Servers</span>
-                                                    </Fragment>
-                                                )}
-                                            </span>
+                                            <span className="nav-bar-li-text14">Sub-menu Item</span>
                                         </div>
                                     </li>
                                 </a>
@@ -218,8 +194,8 @@ const NavBarLI = (props) => {
                     <div className="nav-bar-li-nav">
                         <div className="nav-bar-li-top">
                             <img
-                                alt={props.logoAlt2}
-                                src={props.logoSrc2}
+                                alt={props.logoAlt}
+                                src={props.logoSrc}
                                 className="nav-bar-li-logo"
                             />
                             <div data-thq="thq-close-menu" className="nav-bar-li-close-menu">
@@ -230,36 +206,36 @@ const NavBarLI = (props) => {
                         </div>
                         <nav className="nav-bar-li-links2">
                             <Link to="/">
-                                {props.link112 ?? (
+                                {props.link11 ?? (
                                     <Fragment>
-                                        <span className="nav-bar-li-text32 thq-body-small thq-link">
+                                        <span className="nav-bar-li-text28 thq-body-small thq-link">
                                             Home
                                         </span>
                                     </Fragment>
                                 )}
                             </Link>
                             <Link to="/docs">
-                                {props.link212 ?? (
+                                {props.link21 ?? (
                                     <Fragment>
-                                        <span className="nav-bar-li-text33 thq-body-small thq-link">
+                                        <span className="nav-bar-li-text29 thq-body-small thq-link">
                                             Docs
                                         </span>
                                     </Fragment>
                                 )}
                             </Link>
                             <Link to="/contact">
-                                {props.link312 ?? (
+                                {props.link31 ?? (
                                     <Fragment>
-                                        <span className="nav-bar-li-text34 thq-body-small thq-link">
+                                        <span className="nav-bar-li-text30 thq-body-small thq-link">
                                             Contact
                                         </span>
                                     </Fragment>
                                 )}
                             </Link>
                             <Link to="/commands">
-                                {props.link413 ?? (
+                                {props.link41 ?? (
                                     <Fragment>
-                                        <span className="nav-bar-li-text35 thq-body-small thq-link">
+                                        <span className="nav-bar-li-text31 thq-body-small thq-link">
                                             Commands
                                         </span>
                                     </Fragment>
@@ -271,9 +247,9 @@ const NavBarLI = (props) => {
                                 rel="noreferrer noopener"
                                 className="nav-bar-li-link52"
                             >
-                                {props.link4112 ?? (
+                                {props.link411 ?? (
                                     <Fragment>
-                                        <span className="nav-bar-li-text36 thq-body-small thq-link">
+                                        <span className="nav-bar-li-text32 thq-body-small thq-link">
                                             Dashboard
                                         </span>
                                     </Fragment>
@@ -282,15 +258,15 @@ const NavBarLI = (props) => {
                         </nav>
                         <div className="nav-bar-li-buttons2">
                             <a
-                                href={props.action1Url12}
+                                href={props.action1Url1}
                                 target="_blank"
                                 rel="noreferrer noopener"
                                 className="nav-bar-li-action12 thq-button-filled thq-button-animated"
                             >
                                 <span>
-                                    {props.text12 ?? (
+                                    {props.text1 ?? (
                                         <Fragment>
-                                            <span className="nav-bar-li-text37">Invite Daiki</span>
+                                            <span className="nav-bar-li-text33">Invite Daiki</span>
                                         </Fragment>
                                     )}
                                 </span>
@@ -299,18 +275,12 @@ const NavBarLI = (props) => {
                         <div className="nav-bar-li-container2">
                             <a href="/dashboard" className="nav-bar-li-link10">
                                 <img
-                                    alt={props.imageAlt2111}
-                                    src={`https://cdn.discordapp.com/avatars/${userData.discordId}/${userData.avatar}.png`}
+                                    alt="image"
+                                    src="https://play.teleporthq.io/static/svg/default-img.svg"
                                     className="nav-bar-li-image3"
                                 />
                             </a>
-                            <span className="nav-bar-li-text16">
-                                {props.text22111 ?? (
-                                    <Fragment>
-                                        <span className="nav-bar-li-text38">{userData.displayName}</span>
-                                    </Fragment>
-                                )}
-                            </span>
+                            <span className="nav-bar-li-text16">&lt;username&gt;</span>
                             <div
                                 data-thq="thq-dropdown"
                                 className="nav-bar-li-thq-dropdown2 list-item"
@@ -341,13 +311,7 @@ const NavBarLI = (props) => {
                                                 data-thq="thq-dropdown-toggle"
                                                 className="nav-bar-li-dropdown-toggle6"
                                             >
-                                                <span className="nav-bar-li-text17">
-                                                    {props.text42111 ?? (
-                                                        <Fragment>
-                                                            <span className="nav-bar-li-text39">Account</span>
-                                                        </Fragment>
-                                                    )}
-                                                </span>
+                                                <span className="nav-bar-li-text17">Sub-menu Item</span>
                                             </div>
                                         </li>
                                     </a>
@@ -360,15 +324,7 @@ const NavBarLI = (props) => {
                                                 data-thq="thq-dropdown-toggle"
                                                 className="nav-bar-li-dropdown-toggle7"
                                             >
-                                                <span className="nav-bar-li-text18">
-                                                    {props.text52111 ?? (
-                                                        <Fragment>
-                                                            <span className="nav-bar-li-text40">
-                                                                Warnings
-                                                            </span>
-                                                        </Fragment>
-                                                    )}
-                                                </span>
+                                                <span className="nav-bar-li-text18">Sub-menu Item</span>
                                             </div>
                                         </li>
                                     </a>
@@ -381,13 +337,7 @@ const NavBarLI = (props) => {
                                                 data-thq="thq-dropdown-toggle"
                                                 className="nav-bar-li-dropdown-toggle8"
                                             >
-                                                <span className="nav-bar-li-text19">
-                                                    {props.text62111 ?? (
-                                                        <Fragment>
-                                                            <span className="nav-bar-li-text41">Servers</span>
-                                                        </Fragment>
-                                                    )}
-                                                </span>
+                                                <span className="nav-bar-li-text19">Sub-menu Item</span>
                                             </div>
                                         </li>
                                     </a>
@@ -422,71 +372,47 @@ const NavBarLI = (props) => {
 }
 
 NavBarLI.defaultProps = {
-    imageAlt211: 'image',
-    text4211: undefined,
-    text2211: undefined,
-    text5211: undefined,
     rootClassName: '',
-    text6211: undefined,
-    imageSrc211: 'https://play.teleporthq.io/static/svg/default-img.svg',
-    image1Alt2: 'logo',
-    image1Src2: '/daiki6-1500h.png',
-    link13: undefined,
-    link23: undefined,
-    link33: undefined,
-    link44: undefined,
-    link423: undefined,
-    action1Url3: 'https://daiki-bot.xyz/invite',
-    text8: undefined,
-    logoAlt2: 'logo',
-    logoSrc2: '/daiki6-1500h.png',
-    link112: undefined,
-    link212: undefined,
-    link312: undefined,
-    link413: undefined,
-    link4112: undefined,
-    action1Url12: 'https://daiki-bot.xyz/invite',
-    text12: undefined,
-    imageAlt2111: 'image',
-    imageSrc2111: 'https://play.teleporthq.io/static/svg/default-img.svg',
-    text22111: undefined,
-    text42111: undefined,
-    text52111: undefined,
-    text62111: undefined,
+    image1Alt: 'logo',
+    image1Src: '/daiki6-1500h.png',
+    link1: undefined,
+    link2: undefined,
+    link3: undefined,
+    link4: undefined,
+    link42: undefined,
+    action1Url: 'https://daiki-bot.xyz/invite',
+    text: undefined,
+    logoAlt: 'logo',
+    logoSrc: '/daiki6-1500h.png',
+    link11: undefined,
+    link21: undefined,
+    link31: undefined,
+    link41: undefined,
+    link411: undefined,
+    action1Url1: 'https://daiki-bot.xyz/invite',
+    text1: undefined,
 }
 
 NavBarLI.propTypes = {
-    imageAlt211: PropTypes.string,
-    text4211: PropTypes.element,
-    text2211: PropTypes.element,
-    text5211: PropTypes.element,
     rootClassName: PropTypes.string,
-    text6211: PropTypes.element,
-    imageSrc211: PropTypes.string,
-    image1Alt2: PropTypes.string,
-    image1Src2: PropTypes.string,
-    link13: PropTypes.element,
-    link23: PropTypes.element,
-    link33: PropTypes.element,
-    link44: PropTypes.element,
-    link423: PropTypes.element,
-    action1Url3: PropTypes.string,
-    text8: PropTypes.element,
-    logoAlt2: PropTypes.string,
-    logoSrc2: PropTypes.string,
-    link112: PropTypes.element,
-    link212: PropTypes.element,
-    link312: PropTypes.element,
-    link413: PropTypes.element,
-    link4112: PropTypes.element,
-    action1Url12: PropTypes.string,
-    text12: PropTypes.element,
-    imageAlt2111: PropTypes.string,
-    imageSrc2111: PropTypes.string,
-    text22111: PropTypes.element,
-    text42111: PropTypes.element,
-    text52111: PropTypes.element,
-    text62111: PropTypes.element,
+    image1Alt: PropTypes.string,
+    image1Src: PropTypes.string,
+    link1: PropTypes.element,
+    link2: PropTypes.element,
+    link3: PropTypes.element,
+    link4: PropTypes.element,
+    link42: PropTypes.element,
+    action1Url: PropTypes.string,
+    text: PropTypes.element,
+    logoAlt: PropTypes.string,
+    logoSrc: PropTypes.string,
+    link11: PropTypes.element,
+    link21: PropTypes.element,
+    link31: PropTypes.element,
+    link41: PropTypes.element,
+    link411: PropTypes.element,
+    action1Url1: PropTypes.string,
+    text1: PropTypes.element,
 }
 
 export default NavBarLI
