@@ -20,6 +20,19 @@ const NavBarLI = (props) => {
             });
     }, []);
 
+    if (!userData) {
+        return <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100%', // Full viewport height
+            width: '100%',  // Full viewport width
+            marginTop: '100px',
+        }}>
+            <ThreeDot variant="bounce" color={["#6141ac", "#233dff", "#6845ba", "#3850ff"]} size="large" text="" textColor="" />
+        </div>;
+    }
+
     return (
         <div className="nav-bar-li-nav-bar">
             <header data-thq="thq-navbar" className="nav-bar-li-navbar-interactive">
