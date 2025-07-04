@@ -9,19 +9,22 @@ import NavBar from '../components/nav-bar'
 import NavBarLI from '../components/nav-bar-li'
 
 const PageNotFound = (props) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    fetch('/api/users/@me')
-      .then((res) => {
+    fetch('https://dash.api.daiki-bot.xyz/api/users/@me', {
+      credentials: 'include'
+    })
+      .then(res => {
         if (res.ok) {
-          setIsLoggedIn(true)
+          setIsLoggedIn(true);
         } else {
-          setIsLoggedIn(false)
+          setIsLoggedIn(false);
         }
       })
-      .catch(() => setIsLoggedIn(false))
-  }, [])
+      .catch(() => setIsLoggedIn(false));
+  }, []);
+
 
   return (
     <div className="page-not-found-container1">
@@ -32,7 +35,7 @@ const PageNotFound = (props) => {
           content="Page-Not-Found - Daiki Development"
         />
       </Helmet>
-      {isLoggedIn ? <NavBarLI /> : <NavBar />}
+      {isLoggedIn ? <NavBarLI id="top" /> : <NavBar id="top" />}
       <div className="page-not-found-container2">
         <div className="page-not-found-container3">
           <div className="page-not-found-container4">

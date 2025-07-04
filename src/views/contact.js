@@ -8,18 +8,20 @@ import { Helmet } from 'react-helmet'
 import './contact.css'
 
 const Contact = (props) => {
-    const [loggedIn, setLoggedIn] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
-        fetch('/api/users/@me', { credentials: 'include' })
+        fetch('https://dash.api.daiki-bot.xyz/api/users/@me', {
+            credentials: 'include'
+        })
             .then(res => {
                 if (res.ok) {
-                    setLoggedIn(true);
+                    setIsLoggedIn(true);
                 } else {
-                    setLoggedIn(false);
+                    setIsLoggedIn(false);
                 }
             })
-            .catch(() => setLoggedIn(false));
+            .catch(() => setIsLoggedIn(false));
     }, []);
 
     return (
@@ -30,7 +32,7 @@ const Contact = (props) => {
                 content="Documentation - Daiki Development"
             />
         </Helmet>
-            {loggedIn ? <NavBarLI /> : <NavBar />}
+            {isLoggedIn ? <NavBarLI id="top" /> : <NavBar id="top" />}
             <div className="contact-container2">
                 <div className="contact-container3">
                     <div className="contact-container4">

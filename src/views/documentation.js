@@ -13,9 +13,11 @@ const Documentation = (props) => {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
-        fetch('/api/users/@me')
-            .then(response => {
-                if (response.ok) {
+        fetch('https://dash.api.daiki-bot.xyz/api/users/@me', {
+            credentials: 'include'
+        })
+            .then(res => {
+                if (res.ok) {
                     setIsLoggedIn(true);
                 } else {
                     setIsLoggedIn(false);
@@ -33,7 +35,7 @@ const Documentation = (props) => {
                     content="Documentation - Daiki Development"
                 />
             </Helmet>
-            {isLoggedIn ? <NavBarLI /> : <NavBar />}
+            {isLoggedIn ? <NavBarLI id="top" /> : <NavBar id="top" />}
             <div className="documentation-container2">
                 <div className="documentation-container3">
                     <div className="documentation-container4">
