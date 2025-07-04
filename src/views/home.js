@@ -1,20 +1,37 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Helmet } from 'react-helmet'
 
 import NavBar from '../components/nav-bar'
+import NavBarLI from '../components/nav-bar-li';
 import Footer from '../components/footer'
 import './home.css'
 
 const Home = (props) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    fetch('https://dash.api.daiki-bot.xyz/api/users/@me', {
+      credentials: 'include'
+    })
+      .then(res => {
+        if (res.ok) {
+          setIsLoggedIn(true);
+        } else {
+          setIsLoggedIn(false);
+        }
+      })
+      .catch(() => setIsLoggedIn(false));
+  }, []);
+
   return (
     <div className="home-container1">
       <Helmet>
         <title>Daiki Development</title>
         <meta property="og:title" content="Daiki Development" />
       </Helmet>
-      <NavBar id='top' />
+      {isLoggedIn ? <NavBarLI id="top" /> : <NavBar id="top" />}
       <div className="home-container2">
         <div className="home-container3">
           <div className="home-container4">
