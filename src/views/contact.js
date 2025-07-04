@@ -2,7 +2,7 @@ import React, { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import NavBar from '../components/nav-bar'
-import NavBarLI from '../components/nav-bar-logged-in'
+import NavBarLI from '../components/nav-bar-li'
 import Footer from '../components/footer'
 import { Helmet } from 'react-helmet'
 import './contact.css'
