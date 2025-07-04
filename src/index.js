@@ -8,6 +8,7 @@ import {
   useHistory
 } from 'react-router-dom'
 import Cookies from 'js-cookie';
+const showWebAlerts = process.env.REACT_APP_SHOW_WEB_ALERTS === 'true';
 
 import './style.css'
 import PageNotFound from './views/page-not-found'
@@ -108,7 +109,7 @@ const dashboardRoutes = dashboardViews.keys().map(path => {
 const App = () => {
   return (
     <Router>
-      <WebAlerts />
+      {showWebAlerts && <WebAlerts />}
       <Switch>
 
         {/* Main Website Pages */}
