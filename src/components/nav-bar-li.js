@@ -8,6 +8,7 @@ import './nav-bar-li.css'
 
 const NavBarLI = (props) => {
     const [userData, setUserData] = useState(null);
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
     useEffect(() => {
         axios.get("https://dash.api.daiki-bot.xyz/api/users/@me", {
@@ -203,12 +204,12 @@ const NavBarLI = (props) => {
                         </div>
                     </div>
                 </div>
-                <div data-thq="thq-burger-menu" className="nav-bar-li-burger-menu">
+                <div data-thq="thq-burger-menu" className="nav-bar-li-burger-menu" onClick={() => setIsMobileMenuOpen(true)}>
                     <svg viewBox="0 0 1024 1024" className="nav-bar-li-icon12">
                         <path d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"></path>
                     </svg>
                 </div>
-                <div data-thq="thq-mobile-menu" className="nav-bar-li-mobile-menu">
+                <div data-thq="thq-mobile-menu" className={`nav-bar-li-mobile-menu ${isMobileMenuOpen ? 'open' : 'closed'}`}>
                     <div className="nav-bar-li-nav">
                         <div className="nav-bar-li-top">
                             <img
@@ -216,7 +217,7 @@ const NavBarLI = (props) => {
                                 src={props.logoSrc1}
                                 className="nav-bar-li-logo"
                             />
-                            <div data-thq="thq-close-menu" className="nav-bar-li-close-menu">
+                            <div data-thq="thq-close-menu" className="nav-bar-li-close-menu" onClick={() => setIsMobileMenuOpen(false)}>
                                 <svg viewBox="0 0 1024 1024" className="nav-bar-li-icon14">
                                     <path d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"></path>
                                 </svg>
