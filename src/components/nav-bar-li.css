@@ -654,3 +654,16 @@
         padding: var(--dl-layout-space-unit);
     }
 }
+
+.nav-bar-li-mobile-menu.closed {
+    display: none;
+}
+
+.nav-bar-li-mobile-menu.open {
+    display: flex;
+    flex-direction: column;
+}
+
+.nav-bar-li-mobile-menu {
+    transition: all 0.3s ease-in-out;
+}
