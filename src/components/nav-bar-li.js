@@ -5,6 +5,7 @@ import PropTypes from 'prop-types'
 import { ThreeDot } from 'react-loading-indicators'
 
 import './nav-bar-li.css'
+import NavBar from './nav-bar'
 
 const NavBarLI = (props) => {
     const [userData, setUserData] = useState(null);
@@ -23,7 +24,7 @@ const NavBarLI = (props) => {
 
     if (!userData) {
         return <div >
-            <ThreeDot variant="bounce" color={["#6141ac", "#233dff", "#6845ba", "#3850ff"]} size="large" text="" textColor="" />
+            <NavBar />
         </div>;
     }
 

@@ -1,14 +1,29 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Helmet } from 'react-helmet'
 
 import NavBar from '../components/nav-bar'
+import NavBarLI from '../components/nav-bar-li'
 import Docs from '../components/docs'
 import Footer from '../components/footer'
 import './documentation.css'
 
 const Documentation = (props) => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+    useEffect(() => {
+        fetch('/api/users/@me')
+            .then(response => {
+                if (response.ok) {
+                    setIsLoggedIn(true);
+                } else {
+                    setIsLoggedIn(false);
+                }
+            })
+            .catch(() => setIsLoggedIn(false));
+    }, []);
+
     return (
         <div className="documentation-container1">
             <Helmet>
@@ -18,7 +33,7 @@ const Documentation = (props) => {
                     content="Documentation - Daiki Development"
                 />
             </Helmet>
-            <NavBar />
+            {isLoggedIn ? <NavBarLI /> : <NavBar />}
             <div className="documentation-container2">
                 <div className="documentation-container3">
                     <div className="documentation-container4">

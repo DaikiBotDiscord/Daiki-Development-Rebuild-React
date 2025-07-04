@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import { Helmet } from 'react-helmet'
@@ -6,8 +6,23 @@ import { Helmet } from 'react-helmet'
 import './page-not-found.css'
 import Footer from '../components/footer'
 import NavBar from '../components/nav-bar'
+import NavBarLI from '../components/nav-bar-li'
 
 const PageNotFound = (props) => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+
+  useEffect(() => {
+    fetch('/api/users/@me')
+      .then((res) => {
+        if (res.ok) {
+          setIsLoggedIn(true)
+        } else {
+          setIsLoggedIn(false)
+        }
+      })
+      .catch(() => setIsLoggedIn(false))
+  }, [])
+
   return (
     <div className="page-not-found-container1">
       <Helmet>
@@ -17,7 +32,7 @@ const PageNotFound = (props) => {
           content="Page-Not-Found - Daiki Development"
         />
       </Helmet>
-      <NavBar />
+      {isLoggedIn ? <NavBarLI /> : <NavBar />}
       <div className="page-not-found-container2">
         <div className="page-not-found-container3">
           <div className="page-not-found-container4">

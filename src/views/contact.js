@@ -1,12 +1,27 @@
-import React, { Fragment } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import NavBar from '../components/nav-bar'
+import NavBarLI from '../components/nav-bar-logged-in'
 import Footer from '../components/footer'
 import { Helmet } from 'react-helmet'
 import './contact.css'
 
 const Contact = (props) => {
+    const [loggedIn, setLoggedIn] = useState(false);
+
+    useEffect(() => {
+        fetch('/api/users/@me', { credentials: 'include' })
+            .then(res => {
+                if (res.ok) {
+                    setLoggedIn(true);
+                } else {
+                    setLoggedIn(false);
+                }
+            })
+            .catch(() => setLoggedIn(false));
+    }, []);
+
     return (
         <div className="contact-container1"><Helmet>
             <title>Contact - Daiki Development</title>
@@ -15,7 +30,7 @@ const Contact = (props) => {
                 content="Documentation - Daiki Development"
             />
         </Helmet>
-            <NavBar />
+            {loggedIn ? <NavBarLI /> : <NavBar />}
             <div className="contact-container2">
                 <div className="contact-container3">
                     <div className="contact-container4">
