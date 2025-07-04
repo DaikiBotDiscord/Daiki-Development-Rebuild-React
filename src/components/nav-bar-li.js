@@ -144,10 +144,9 @@ const NavBarLI = (props) => {
                                 data-thq="thq-dropdown-list"
                                 className="nav-bar-li-dropdown-list1"
                             >
-                                <a href="/dashboard/account">
+                                <a href="/dashboard/account" className="nav-bar-li-dropdown1 list-item">
                                     <li
                                         data-thq="thq-dropdown"
-                                        className="nav-bar-li-dropdown1 list-item"
                                     >
                                         <div
                                             data-thq="thq-dropdown-toggle"
@@ -163,10 +162,9 @@ const NavBarLI = (props) => {
                                         </div>
                                     </li>
                                 </a>
-                                <a href="/dashboard/warnings">
+                                <a href="/dashboard/warnings" className="nav-bar-li-dropdown1 list-item">
                                     <li
                                         data-thq="thq-dropdown"
-                                        className="nav-bar-li-dropdown2 list-item"
                                     >
                                         <div
                                             data-thq="thq-dropdown-toggle"
@@ -182,10 +180,9 @@ const NavBarLI = (props) => {
                                         </div>
                                     </li>
                                 </a>
-                                <a href="/dashboard/servers">
+                                <a href="/dashboard/servers" className="nav-bar-li-dropdown1 list-item">
                                     <li
                                         data-thq="thq-dropdown"
-                                        className="nav-bar-li-dropdown3 list-item"
                                     >
                                         <div
                                             data-thq="thq-dropdown-toggle"
@@ -323,10 +320,9 @@ const NavBarLI = (props) => {
                                     data-thq="thq-dropdown-list"
                                     className="nav-bar-li-dropdown-list2"
                                 >
-                                    <a href="/dashboard/account">
+                                    <a href="/dashboard/account" className="nav-bar-li-dropdown1 list-item">
                                         <li
                                             data-thq="thq-dropdown"
-                                            className="nav-bar-li-dropdown4 list-item"
                                         >
                                             <div
                                                 data-thq="thq-dropdown-toggle"
@@ -342,10 +338,9 @@ const NavBarLI = (props) => {
                                             </div>
                                         </li>
                                     </a>
-                                    <a href="/dashboard/warnings">
+                                    <a href="/dashboard/warnings" className="nav-bar-li-dropdown1 list-item">
                                         <li
                                             data-thq="thq-dropdown"
-                                            className="nav-bar-li-dropdown5 list-item"
                                         >
                                             <div
                                                 data-thq="thq-dropdown-toggle"
@@ -363,10 +358,9 @@ const NavBarLI = (props) => {
                                             </div>
                                         </li>
                                     </a>
-                                    <a href="/dashboard/servers">
+                                    <a href="/dashboard/servers" className="nav-bar-li-dropdown1 list-item">
                                         <li
                                             data-thq="thq-dropdown"
-                                            className="nav-bar-li-dropdown6 list-item"
                                         >
                                             <div
                                                 data-thq="thq-dropdown-toggle"
