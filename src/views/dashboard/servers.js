@@ -63,7 +63,7 @@ const Servers = (props) => {
                 </div>
                 <hr className="servers-separator"></hr>
                 <div className="servers-container5">
-                    {userData?.guilds?.map((guild) => (
+                    {userData?.manageable_guilds?.map((guild) => (
                         <div className="servers-container6" key={guild.id}>
                             <img
                                 src={
