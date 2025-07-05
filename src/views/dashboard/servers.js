@@ -6,9 +6,9 @@ import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet'
 import { Mosaic, ThreeDot } from 'react-loading-indicators'
 
-import NavBar from '../../components/nav-bar'
 import Footer from '../../components/footer'
 import './servers.css'
+import NavBarLI from '../../components/nav-bar-li'
 
 const Servers = (props) => {
     const [userData, setUserData] = useState(null);
@@ -43,7 +43,7 @@ const Servers = (props) => {
                 <title>Servers - Daiki Development</title>
                 <meta property="og:title" content="Servers - Daiki Development" />
             </Helmet>
-            <NavBar />
+            <NavBarLI />
             <div className="servers-container2">
                 <div className="servers-container3">
                     <div className="servers-container4">
