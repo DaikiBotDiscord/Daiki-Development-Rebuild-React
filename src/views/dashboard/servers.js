@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 
 import { Helmet } from 'react-helmet'
 
-import NavBar from '../components/nav-bar'
-import Footer from '../components/footer'
+import NavBar from '../../components/nav-bar'
+import Footer from '../../components/footer'
 import './servers.css'
 
 const Servers = (props) => {
