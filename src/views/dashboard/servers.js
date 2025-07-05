@@ -4,26 +4,38 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 import { Helmet } from 'react-helmet'
+import { ThreeDot } from 'react-css-loaders';
 
 import NavBar from '../../components/nav-bar'
 import Footer from '../../components/footer'
 import './servers.css'
 
 const Servers = (props) => {
-    const [manageableGuilds, setManageableGuilds] = useState([]);
+    const [userData, setUserData] = useState(null);
 
     useEffect(() => {
-        const fetchGuilds = async () => {
-            try {
-                const response = await axios.get('https://dash.api.daiki-bot.xyz/api/users/@me');
-                setManageableGuilds(response.data.manageable_guilds);
-            } catch (error) {
-                console.error('Error fetching manageable guilds:', error);
-            }
-        };
-
-        fetchGuilds();
+        axios.get("https://dash.api.daiki-bot.xyz/api/users/@me", {
+            withCredentials: true
+        })
+            .then(res => setUserData(res.data))
+            .catch(err => {
+                console.error("❌ Error fetching user data:", err);
+                window.location.href = "https://daiki-bot.xyz/dashboard-sync";
+            });
     }, []);
+
+    if (!userData) {
+        return <div style={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            height: '100%',
+            width: '100%',
+            marginTop: '100px',
+        }}>
+            <ThreeDot variant="bounce" color={["#6141ac", "#233dff", "#6845ba", "#3850ff"]} size="large" text="" textColor="" />
+        </div>;
+    }
 
     return (
         <div className="servers-container1">
@@ -51,7 +63,7 @@ const Servers = (props) => {
                 </div>
                 <hr className="servers-separator"></hr>
                 <div className="servers-container5">
-                    {manageableGuilds.map((guild) => (
+                    {userData?.manageable_guilds?.map((guild) => (
                         <div className="servers-container6" key={guild.id}>
                             <img
                                 src={
