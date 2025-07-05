@@ -63,11 +63,9 @@ const Warnings = (props) => {
                                         <br />
                                     </span>
                                     <span className="warnings-text40">
-                                        <span>Reason</span>
+                                        <span>Reason: {warn.reason}</span>
                                         <br />
                                     </span>
-                                    <hr className="warnings-separator2" />
-                                    <span className="warnings-text133">{warn.reason}</span>
                                 </div>
                             </div>
                         ))
