@@ -13,6 +13,17 @@ import { Mosaic, ThreeDot } from 'react-loading-indicators'
 const Warnings = (props) => {
     const [warnings, setWarningsData] = useState(null);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const formatDiscordTime = (unix) => {
+        const date = new Date(unix * 1000); // Convert to milliseconds
+        return date.toLocaleString(undefined, {
+            timeZoneName: 'short',
+            hour: 'numeric',
+            minute: 'numeric',
+            day: 'numeric',
+            month: 'short',
+            year: 'numeric',
+        });
+    };
 
     useEffect(() => {
         axios.get("https://dash.api.daiki-bot.xyz/api/users/@me/warnings", {
@@ -60,6 +71,10 @@ const Warnings = (props) => {
                                     </span>
                                     <span className="warnings-text37">
                                         <span>Server ID: {warn.guildId}</span>
+                                        <br />
+                                    </span>
+                                    <span className='warnings-text37'>
+                                        <span>Issued at: {formatDiscordTime(warn.discordTimecodeNum)}</span>
                                         <br />
                                     </span>
                                     <span className="warnings-text40">
