@@ -13,18 +13,14 @@
     display: inline-block;
 }
 
-.servers-text11 {
+.servers-link1 {
+    fill: var(--dl-color-theme-accent1);
+    color: rgb(255, 255, 255);
     display: inline-block;
     text-decoration: none;
 }
 
-.servers-text12 {
-    display: inline-block;
-}
-
-.servers-link1 {
-    fill: var(--dl-color-theme-accent1);
-    color: rgb(255, 255, 255);
+.servers-link2 {
     display: inline-block;
     text-decoration: none;
 }
@@ -36,11 +32,11 @@
 
 .servers-text16 {
     display: inline-block;
+    text-decoration: none;
 }
 
 .servers-text17 {
     display: inline-block;
-    text-decoration: none;
 }
 
 .servers-text18 {
@@ -53,17 +49,24 @@
     text-decoration: none;
 }
 
-.servers-link2 {
+.servers-text20 {
+    display: inline-block;
+    text-decoration: none;
+}
+
+.servers-text21 {
     display: inline-block;
     text-decoration: none;
 }
 
 .servers-text22 {
     display: inline-block;
+    text-decoration: none;
 }
 
 .servers-text23 {
     display: inline-block;
+    text-decoration: none;
 }
 
 .servers-text24 {
@@ -72,17 +75,14 @@
 
 .servers-text25 {
     display: inline-block;
-    text-decoration: none;
 }
 
 .servers-text26 {
     display: inline-block;
-    text-decoration: none;
 }
 
 .servers-text27 {
     display: inline-block;
-    text-decoration: none;
 }
 
 .servers-container2 {
@@ -202,7 +202,6 @@
     display: flex;
     overflow: auto;
     align-items: flex-start;
-    margin-left: var(--dl-layout-space-halfunit);
     flex-direction: column;
 }
 
@@ -226,30 +225,25 @@
     font-weight: 600;
 }
 
-.servers-content3 {
-    fill: var(--dl-color-theme-secondary2);
-    color: var(--dl-color-theme-secondary2);
-    display: inline-block;
-}
-
-.servers-link11 {
-    fill: var(--dl-color-theme-secondary2);
-    color: var(--dl-color-theme-secondary2);
-    display: inline-block;
-    text-decoration: none;
+.servers-text38 {
+    fill: var(--dl-color-theme-neutral-light);
+    color: var(--dl-color-theme-neutral-light);
+    font-size: 12px;
+    margin-top: 4px;
+    text-align: center;
+    font-family: "Poppins";
+    font-weight: 600;
 }
 
 .servers-text41 {
-    fill: var(--dl-color-theme-secondary1);
-    color: var(--dl-color-theme-secondary1);
+    color: #132441;
     display: inline-block;
 }
 
 .servers-text42 {
-    fill: var(--dl-color-theme-secondary2);
-    color: var(--dl-color-theme-secondary2);
+    fill: var(--dl-color-theme-secondary1);
+    color: var(--dl-color-theme-secondary1);
     display: inline-block;
-    text-decoration: none;
 }
 
 .servers-text43 {
@@ -271,13 +265,28 @@
 }
 
 .servers-text46 {
+    fill: var(--dl-color-theme-secondary2);
+    color: var(--dl-color-theme-secondary2);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.servers-text47 {
     fill: var(--dl-color-theme-secondary1);
     color: var(--dl-color-theme-secondary1);
     display: inline-block;
 }
 
-.servers-text47 {
-    color: #132441;
+.servers-link11 {
+    fill: var(--dl-color-theme-secondary2);
+    color: var(--dl-color-theme-secondary2);
+    display: inline-block;
+    text-decoration: none;
+}
+
+.servers-content3 {
+    fill: var(--dl-color-theme-secondary2);
+    color: var(--dl-color-theme-secondary2);
     display: inline-block;
 }
 
@@ -298,7 +307,11 @@
     }
 
     .servers-text35 {
-        font-size: 20px;
+        font-size: 18px;
+    }
+
+    .servers-text38 {
+        font-size: 16px;
     }
 }
 
@@ -314,11 +327,15 @@
     }
 
     .servers-text32 {
-        font-size: 25px;
+        font-size: 18px;
     }
 
     .servers-text35 {
-        font-size: 25px;
+        font-size: 14px;
+    }
+
+    .servers-text38 {
+        font-size: 12px;
     }
 }
 
@@ -342,17 +359,28 @@
         justify-content: center;
     }
 
+    .servers-image {
+        width: 100px;
+        height: 100px;
+    }
+
     .servers-container7 {
-        margin-left: 0px;
+        width: 280px;
+        margin-left: 4px;
     }
 
     .servers-text32 {
         display: block;
-        font-size: 18px;
+        font-size: 14px;
     }
 
     .servers-text35 {
         display: block;
-        font-size: 18px;
+        font-size: 12px;
+    }
+
+    .servers-text38 {
+        display: block;
+        font-size: 12px;
     }
 }

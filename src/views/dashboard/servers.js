@@ -83,6 +83,10 @@ const Servers = (props) => {
                                     <span>{guild.id}</span>
                                     <br />
                                 </span>
+                                <span className="servers-text38">
+                                    <span>{guild.owner ? 'OWNER' : 'BOT MANAGER'}</span>
+                                    <br />
+                                </span>
                             </div>
                         </div>
                     ))}
