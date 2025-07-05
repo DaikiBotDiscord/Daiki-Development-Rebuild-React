@@ -85,7 +85,7 @@ const Warnings = (props) => {
                             </div>
                         ))
                     ) : (
-                        <span>No warnings found.</span>
+                        <span className='warnings-text28'>No warnings found.</span>
                     )}
                 </div>
             </div>
