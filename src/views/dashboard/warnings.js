@@ -34,7 +34,6 @@ const Warnings = (props) => {
                 <title>Warnings - Daiki Development</title>
                 <meta property="og:title" content="Warnings - Daiki Development" />
             </Helmet>
-            <NavBar />
             {isLoggedIn && <NavBarLI />}
             <div className="warnings-container2">
                 <div className="warnings-container3">
