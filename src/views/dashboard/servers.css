@@ -185,15 +185,20 @@
     display: flex;
     align-self: center;
     align-items: center;
+    border-radius: var(--dl-layout-radius-radius8);
     flex-direction: row;
     justify-content: flex-start;
+    background-color: rgba(11, 31, 59, 0.95);
 }
 
 .servers-image {
     width: 125px;
     height: 125px;
+    margin-top: var(--dl-layout-space-halfunit);
     object-fit: cover;
+    margin-left: var(--dl-layout-space-halfunit);
     border-radius: var(--dl-layout-radius-round);
+    margin-bottom: var(--dl-layout-space-halfunit);
 }
 
 .servers-container7 {
