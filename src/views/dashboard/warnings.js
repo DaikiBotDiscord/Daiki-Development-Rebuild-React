@@ -12,64 +12,74 @@ import { Mosaic, ThreeDot } from 'react-loading-indicators'
 
 const Warnings = (props) => {
     const [warnings, setWarningsData] = useState(null);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
 
     useEffect(() => {
         axios.get("https://dash.api.daiki-bot.xyz/api/users/@me/warnings", {
             withCredentials: true
         })
-            .then(res => setWarningsData(res.data.warnings))
+            .then(res => {
+                setWarningsData(res.data.warnings);
+                setIsLoggedIn(true);
+            })
             .catch(err => {
                 console.error("❌ Error fetching user data:", err);
                 window.location.href = "https://daiki-bot.xyz/dashboard-sync";
             });
     }, []);
+
     return (
-        <div className="warnings-container10">
+        <div className="warnings-container1">
             <Helmet>
                 <title>Warnings - Daiki Development</title>
                 <meta property="og:title" content="Warnings - Daiki Development" />
             </Helmet>
             <NavBar />
-            <div className="warnings-container11">
-                <div className="warnings-container12">
-                    <div className="warnings-container13">
-                        <span className="warnings-text118">
+            {isLoggedIn && <NavBarLI />}
+            <div className="warnings-container2">
+                <div className="warnings-container3">
+                    <div className="warnings-container4">
+                        <span className="warnings-text28">
                             <span>Warnings</span>
-                            <br></br>
+                            <br />
                         </span>
                     </div>
                 </div>
-                <hr className="warnings-separator1"></hr>
-                <div className="warnings-container14">
-                    {warnings && warnings.map((warn, index) => (
-                        <div key={index} className="warnings-container15">
-                            <div className="warnings-container16">
-                                <span className="warnings-text121">
-                                    <span>Warning ID: {warn.warningId}</span>
-                                    <br />
-                                </span>
-                                <span className="warnings-text124">
-                                    <span>Issuer ID: {warn.issuerId}</span>
-                                    <br />
-                                </span>
-                                <span className="warnings-text127">
-                                    <span>Server ID: {warn.guildId}</span>
-                                    <br />
-                                </span>
-                                <span className="warnings-text130">
-                                    <span>Reason</span>
-                                    <br />
-                                </span>
-                                <hr className="warnings-separator2" />
-                                <span className="warnings-text133">{warn.reason}</span>
+                <hr className="warnings-separator" />
+                <div className="warnings-container5">
+                    {warnings && warnings.length > 0 ? (
+                        warnings.map((warn, index) => (
+                            <div key={index} className="warnings-container6">
+                                <div className="warnings-container7">
+                                    <span className="warnings-text31">
+                                        <span>Warning ID: {warn.warningId}</span>
+                                        <br />
+                                    </span>
+                                    <span className="warnings-text34">
+                                        <span>Issuer ID: {warn.issuerId}</span>
+                                        <br />
+                                    </span>
+                                    <span className="warnings-text37">
+                                        <span>Server ID: {warn.guildId}</span>
+                                        <br />
+                                    </span>
+                                    <span className="warnings-text40">
+                                        <span>Reason</span>
+                                        <br />
+                                    </span>
+                                    <hr className="warnings-separator2" />
+                                    <span className="warnings-text133">{warn.reason}</span>
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))
+                    ) : (
+                        <span>No warnings found.</span>
+                    )}
                 </div>
             </div>
             <Footer />
         </div>
-    )
+    );
 }
 
 export default Warnings
