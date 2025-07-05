@@ -4,7 +4,7 @@ import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 import { Helmet } from 'react-helmet'
-import { ThreeDot } from 'react-css-loaders';
+import { Mosaic, ThreeDot } from 'react-loading-indicators'
 
 import NavBar from '../../components/nav-bar'
 import Footer from '../../components/footer'
