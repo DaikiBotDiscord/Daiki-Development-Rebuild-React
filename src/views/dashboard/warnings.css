@@ -185,7 +185,6 @@
     flex: 0 0 auto;
     width: var(--dl-layout-size-xxlarge);
     display: flex;
-    overflow: auto;
     align-items: flex-start;
     flex-direction: column;
 }
