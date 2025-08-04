@@ -205,7 +205,6 @@
     flex: 0 0 auto;
     width: var(--dl-layout-size-xxlarge);
     display: flex;
-    overflow: auto;
     align-items: flex-start;
     margin-left: var(--dl-layout-space-halfunit);
     flex-direction: column;
@@ -367,6 +366,8 @@
     .servers-container6 {
         width: auto;
         margin: var(--dl-layout-space-unit);
+        padding-left: var(--dl-layout-space-oneandhalfunits);
+        padding-right: var(--dl-layout-space-oneandhalfunits);
         justify-content: center;
     }
 
@@ -376,8 +377,10 @@
     }
 
     .servers-container7 {
-        width: 240px;
+        flex: 1;
+        width: 100%;
         margin-left: 4px;
+        margin-right: 4px;
     }
 
     .servers-text32 {
