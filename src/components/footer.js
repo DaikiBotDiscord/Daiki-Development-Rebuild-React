@@ -92,7 +92,7 @@ const Footer = (props) => {
                                             >
                                                 ©
                                             </a>
-                                            <span> 2022-2025 Daiki Development</span>
+                                            <span> 2022-2026 Daiki Development</span>
                                         </span>
                                     </Fragment>
                                 )}
@@ -125,7 +125,7 @@ const Footer = (props) => {
                 <span>
                     {props.text ?? (
                         <Fragment>
-                            <span className="footer-text19">Last Updated 07/04/2025</span>
+                            <span className="footer-text19">Last Updated 04/05/2026</span>
                         </Fragment>
                     )}
                 </span>
