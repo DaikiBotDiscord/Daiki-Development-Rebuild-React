@@ -32,7 +32,6 @@ const Warnings = (props) => {
         })
             .then(res => {
                 setWarningsData(res.data.warnings);
-                console.log(res.data.warnings)
                 setIsLoggedIn(true);
             })
             .catch(err => {
