@@ -1,20 +1,21 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom'
 
 import { Helmet } from 'react-helmet'
 
 import NavBarLI from '../../components/nav-bar-li';
-import NavBar from '../../components/nav-bar'
 import Footer from '../../components/footer'
 import './warnings.css'
 import axios from 'axios';
-import { Mosaic, ThreeDot } from 'react-loading-indicators'
 
 const Warnings = (props) => {
     const [warnings, setWarningsData] = useState(null);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const formatDiscordTime = (unix) => {
-        const date = new Date(unix * 1000); // Convert to milliseconds
+    const formatWarningTime = (timestamp) => {
+        if (!timestamp) return 'Unknown';
+
+        const date = new Date(timestamp);
+        if (Number.isNaN(date.getTime())) return 'Unknown';
+
         return date.toLocaleString(undefined, {
             timeZoneName: 'short',
             hour: 'numeric',
@@ -59,27 +60,37 @@ const Warnings = (props) => {
                 <hr className="warnings-separator" />
                 <div className="warnings-container5">
                     {warnings && warnings.length > 0 ? (
-                        warnings.map((warn, index) => (
-                            <div key={index} className="warnings-container6">
+                        warnings.map((warn) => (
+                            <div key={warn.id} className="warnings-container6">
                                 <div className="warnings-container7">
                                     <span className="warnings-text31">
-                                        <span>Warning ID: {warn.warningId}</span>
+                                        <span>Warning ID: {warn.id}</span>
                                         <br />
                                     </span>
                                     <span className="warnings-text34">
-                                        <span>Issuer ID: {warn.issuerId}</span>
+                                        <span>Moderator ID: {warn.moderator_id}</span>
                                         <br />
                                     </span>
                                     <span className="warnings-text37">
-                                        <span>Server ID: {warn.guildId}</span>
+                                        <span>Server ID: {warn.guild_id}</span>
                                         <br />
                                     </span>
                                     <span className='warnings-text37'>
-                                        <span>Issued at: {formatDiscordTime(warn.discordTimecodeNum)}</span>
+                                        <span>Issued at: {formatWarningTime(warn.created_at)}</span>
                                         <br />
                                     </span>
+                                    <span className='warnings-text37'>
+                                        <span>User ID: {warn.user_id}</span>
+                                        <br />
+                                    </span>
+                                    {warn.receiverUsername && (
+                                        <span className='warnings-text37'>
+                                            <span>Username: {warn.receiverUsername}</span>
+                                            <br />
+                                        </span>
+                                    )}
                                     <span className="warnings-text40">
-                                        <span>Reason: {warn.reason}</span>
+                                        <span>Reason: {warn.reason || 'No reason provided.'}</span>
                                         <br />
                                     </span>
                                 </div>
