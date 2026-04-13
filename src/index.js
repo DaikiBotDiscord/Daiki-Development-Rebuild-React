@@ -155,7 +155,7 @@ const App = () => {
           window.location.href = 'https://top.gg/bot/839287174482362438'
         }} />
         <Route path='/partners/contact/bruton-woodworks' component={() => {
-          window.location.href = 'https://brutonwood.work/contact'
+          window.location.href = 'https://brutonwoodworks.com/contact'
         }} />
         <Route component={PageNotFound} path="**" />
         <Redirect to="**" />
