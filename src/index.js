@@ -20,6 +20,8 @@ import WebAlerts from './components/web-alerts'
 import Docs from './views/documentation'
 import Contact from './views/contact'
 import Commands from './views/commands'
+import PrivacyPolicy from './views/privacy'
+import TermsOfService from './views/tos'
 import { Mosaic, ThreeDot } from 'react-loading-indicators'
 import Dashboard from './views/dashboard';
 import axios from 'axios';
@@ -126,6 +128,10 @@ const App = () => {
         <Route component={LendMeATenor} exact path="/lendmeatenor" />
         <Route component={TheWeddingSinger} exact path="/theweddingsinger" />
         <Route component={AroundTheWorld} exact path="/aroundtheworld" />
+        <Route component={PrivacyPolicy} exact path="/privacy" />
+        <Redirect exact from="/privacy-policy" to="/privacy" />
+        <Route component={TermsOfService} exact path="/tos" />
+        <Redirect exact from="/terms-of-service" to="/tos" />
         {dashboardRoutes}
         {/* <Route component={Status} exact path={"/status"} /> */}
         {/* <Route component={Staff} exact path="/staff" /> */}
@@ -158,7 +164,6 @@ const App = () => {
           window.location.href = 'https://brutonwoodworks.com/contact'
         }} />
         <Route component={PageNotFound} path="**" />
-        <Redirect to="**" />
       </Switch>
     </Router>
   )
