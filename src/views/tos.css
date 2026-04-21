@@ -48,7 +48,7 @@
   margin-top: var(--dl-layout-space-twounits);
   margin-bottom: var(--dl-layout-space-threeunits);
   border-radius: 45px;
-  background-color: rgba(0, 9, 24, 0.85);
+  background-color: rgba(0, 9, 24, 0.99);
   flex-direction: column;
 }
 
@@ -77,6 +77,7 @@
   margin-top: 32px;
   align-items: flex-start;
   flex-direction: column;
+  gap: 2rem;
 }
 
 .terms-of-service-feature-card {
@@ -171,6 +172,11 @@
   align-items: flex-start;
   flex-direction: column;
   justify-content: flex-start;
+  gap: 0.6rem;
+}
+
+.terms-of-service-feature-card05:last-child {
+  margin-bottom: 0;
 }
 
 .terms-of-service-text027 {
@@ -181,7 +187,25 @@
 
 .terms-of-service-text030 {
   color: var(--dl-color-theme-secondary1);
-  margin-bottom: var(--dl-space-space-tripleunit);
+  margin: 0;
+  width: 100%;
+  line-height: 1.6;
+}
+
+.terms-of-service-container1 ul {
+  width: 100%;
+  margin: 0.15rem 0 0;
+  padding-left: 1.5rem;
+  list-style-position: outside;
+}
+
+.terms-of-service-container1 li {
+  margin-bottom: 0.45rem;
+  overflow-wrap: anywhere;
+}
+
+.terms-of-service-container1 li:last-child {
+  margin-bottom: 0;
 }
 
 .terms-of-service-text031 {
@@ -627,6 +651,10 @@
 
   .terms-of-service-text007 {
     text-align: center;
+  }
+
+  .terms-of-service-container1 ul {
+    padding-left: 1.2rem;
   }
 }
 

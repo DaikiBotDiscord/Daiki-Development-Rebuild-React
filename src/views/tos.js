@@ -186,7 +186,7 @@ const TermsOfService = () => {
       {isLoggedIn ? <NavBarLI id="top" /> : <NavBar id="top" />}
       <div className="terms-of-service-tos-document">
         <h1 className="terms-of-service-text007">Terms of Service</h1>
-        <span className="terms-of-service-text008">Last Updated: April 20, 2026</span>
+        <span className="terms-of-service-text008">Last Updated: April 21, 2026</span>
         <div className="terms-of-service-separator"></div>
 
         <div className="terms-of-service-container1">
