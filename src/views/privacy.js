@@ -7,7 +7,7 @@ import NavBarLI from '../components/nav-bar-li'
 import Footer from '../components/footer'
 import './privacy.css'
 
-const PrivacyPolicy = (props) => {
+const PrivacyPolicy = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   useEffect(() => {
@@ -27,115 +27,142 @@ const PrivacyPolicy = (props) => {
   return (
     <div className="privacy-policy-container">
       <Helmet>
-              <title>Privacy Policy - Daiki Development</title>
-              <meta property="og:title" content="Privacy Policy - Daiki Development" />
-            </Helmet>
+        <title>Privacy Policy - Daiki Development</title>
+        <meta property="og:title" content="Privacy Policy - Daiki Development" />
+      </Helmet>
       {isLoggedIn ? <NavBarLI id="top" /> : <NavBar id="top" />}
       <div className="privacy-policy-container1">
         <h1 className="privacy-policy-text">Privacy Policy</h1>
         <div className="privacy-policy-separator"></div>
+
         <div className="privacy-policy-container2">
           <div className="privacy-policy-container3">
             <div className="privacy-policy-feature-card">
-              <span className="privacy-policy-text01">
-                <span>
-                  The use of this application (&quot;Bot&quot;) in a server
-                  requires the collection of some specific user data
-                  (&quot;Data&quot;). The Data collected includes Discord User Id,
-                  Discord Username, Discord User Discriminator. Use of the Bot is
-                  considered an agreement to the terms of this Policy.
-                </span>
-                <br></br>
-              </span>
+              <span className="privacy-policy-text01">Last Updated: April 20, 2026</span>
             </div>
+
             <div className="privacy-policy-feature-card1">
-              <h2 className="privacy-policy-text04">Access To Data</h2>
+              <h2 className="privacy-policy-text04">1. Overview</h2>
               <span className="privacy-policy-text05">
-                <span>
-                  Access to this collected data is only permitted to Bot
-                  Developers (bigtdm10, norbono), and only in the scope
-                  required for the development, testing, and implementation of
-                  features of the application (Bot). Data is not sold, provided
-                  to, or shared with a third party, except where required by Terms
-                  of Service agreement. You can view the data upon request from
-                  (bigtdm10)
-                </span>
-                <br></br>
+                This Privacy Policy explains how Daiki Bot ("Bot") collects, uses, stores, and protects user data.
               </span>
             </div>
+
             <div className="privacy-policy-feature-card2">
-              <h2 className="privacy-policy-text08">Storage of Data</h2>
+              <h2 className="privacy-policy-text08">2. Data Collected</h2>
+              <span className="privacy-policy-text09">We may collect and store the following information:</span>
               <span className="privacy-policy-text09">
-                <span>
-                  Data is stored in a MongoDB database. The database is secured to
-                  prevent external access, however no guarantee is provided and the
-                  application (Bot) owners assume no liability for the
-                  unintentional or malicious breach of Data. In the event of an
-                  unauthorized Data access, users will be notified through the
-                  Discord client application (Discord Bot)
-                </span>
-                <br></br>
+                <ul>
+                  <li>Discord User ID</li>
+                  <li>Discord Username and Discriminator</li>
+                  <li>Email address (if provided via Discord or integrations)</li>
+                  <li>Server ID</li>
+                  <li>Command usage data</li>
+                  <li>Message content (only where required for features such as moderation or logging)</li>
+                </ul>
               </span>
             </div>
+
             <div className="privacy-policy-feature-card3">
-              <h2 className="privacy-policy-text12">User Rights</h2>
+              <h2 className="privacy-policy-text12">3. Data Storage</h2>
               <span className="privacy-policy-text13">
-                <span>
-                  At any time, you have the right to request to view the Data
-                  pertaining to your Discord account. You may submit a request
-                  through the Discord DM&apos;s with the application (Bot)
-                  developers (bigtdm10, norbono). You have the right to
-                  request the removal of relevant Data.
-                </span>
-                <br></br>
+                All data is stored in a self-hosted MySQL database controlled and maintained by the Bot developers. Reasonable technical and organizational measures are implemented to protect data, but no system is completely secure.
               </span>
             </div>
+
             <div className="privacy-policy-feature-card4">
-              <h2 className="privacy-policy-text16">Underage Users</h2>
+              <h2 className="privacy-policy-text16">4. Use of Data</h2>
+              <span className="privacy-policy-text17">Data is used solely for:</span>
               <span className="privacy-policy-text17">
-                <span>
-                  The use of the application (Bot) is not permitted for minors
-                  under the age of 13, or under the age of legal consent for their
-                  country. This is in compliance with the{' '}
-                </span>
-                <a
-                  href="https://discord.com/terms"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="privacy-policy-link"
-                >
-                  Discord Terms Of Service
-                </a>
-                <span>
-                  . No information will be knowingly stored from an underage user.
-                  If it is found out that a user is underage we will take all
-                  necessary action to delete the stored data and or prevent you
-                  from using the application (Bot). Along with contacting discord
-                  with information such as proof of underage and your discord
-                  username / Id.
-                </span>
-                <br className="privacy-policy-text20"></br>
-                <br></br>
+                <ul>
+                  <li>Providing Bot functionality</li>
+                  <li>Moderation and logging systems</li>
+                  <li>Maintenance, debugging, and improvements</li>
+                </ul>
               </span>
             </div>
+
             <div className="privacy-policy-feature-card5">
-              <h2 className="privacy-policy-text22">Questions</h2>
+              <h2 className="privacy-policy-text22">5. Data Sharing</h2>
               <span className="privacy-policy-text23">
-                <span>
-                  If you have any questions or are concerned about what data might
-                  be being stored from your account contact @bigtdm10. For more
-                  information check the{' '}
-                </span>
-                <a
-                  href="https://discord.com/terms"
-                  target="_blank"
-                  rel="noreferrer noopener"
-                  className="privacy-policy-link1"
-                >
-                  Discord Terms Of Service
+                We do not sell, rent, or give away user data. Data is not shared with third parties except:
+              </span>
+              <span className="privacy-policy-text23">
+                <ul>
+                  <li>When required to operate the service (e.g., hosting infrastructure)</li>
+                  <li>When required by law or valid legal process</li>
+                </ul>
+              </span>
+            </div>
+
+            <div className="privacy-policy-feature-card1">
+              <h2 className="privacy-policy-text04">6. Legal Compliance</h2>
+              <span className="privacy-policy-text05">
+                We may disclose user data if required to do so by law, including in response to a valid warrant, subpoena, or other legal request from a government authority.
+              </span>
+            </div>
+
+            <div className="privacy-policy-feature-card2">
+              <h2 className="privacy-policy-text08">7. Data Retention</h2>
+              <span className="privacy-policy-text09">
+                Data is retained only as long as necessary for the operation of the Bot and its features.
+              </span>
+            </div>
+
+            <div className="privacy-policy-feature-card3">
+              <h2 className="privacy-policy-text12">8. Data Deletion Requests</h2>
+              <span className="privacy-policy-text13">
+                Users may request deletion of their personal data by contacting support@daiki-bot.xyz. Deletion requests may take up to 30 days to process.
+              </span>
+              <span className="privacy-policy-text13">Data eligible for deletion includes:</span>
+              <span className="privacy-policy-text13">
+                <ul>
+                  <li>Discord User ID</li>
+                  <li>Username</li>
+                  <li>Email address</li>
+                  <li>Any other personally identifiable information</li>
+                </ul>
+              </span>
+              <span className="privacy-policy-text13">Certain data will not be deleted, including:</span>
+              <span className="privacy-policy-text13">
+                <ul>
+                  <li>Server moderation records (e.g., warnings, infractions)</li>
+                </ul>
+              </span>
+            </div>
+
+            <div className="privacy-policy-feature-card4">
+              <h2 className="privacy-policy-text16">9. User Rights</h2>
+              <span className="privacy-policy-text17">You have the right to:</span>
+              <span className="privacy-policy-text17">
+                <ul>
+                  <li>Request access to your stored data</li>
+                  <li>Request deletion of your personal data (subject to limitations above)</li>
+                </ul>
+              </span>
+            </div>
+
+            <div className="privacy-policy-feature-card5">
+              <h2 className="privacy-policy-text22">10. Underage Users</h2>
+              <span className="privacy-policy-text23">
+                The Bot is not intended for users under the age of 13. Any data identified as belonging to underage users will be removed.
+              </span>
+            </div>
+
+            <div className="privacy-policy-feature-card1">
+              <h2 className="privacy-policy-text04">11. Security</h2>
+              <span className="privacy-policy-text05">
+                We implement reasonable safeguards to protect user data; however, we cannot guarantee absolute security.
+              </span>
+            </div>
+
+            <div className="privacy-policy-feature-card5">
+              <h2 className="privacy-policy-text22">12. Contact</h2>
+              <span className="privacy-policy-text23">
+                For any privacy-related inquiries:{' '}
+                <a href="mailto:support@daiki-bot.xyz" className="privacy-policy-link1">
+                  support@daiki-bot.xyz
                 </a>
-                <span>.</span>
-                <br></br>
               </span>
             </div>
           </div>
