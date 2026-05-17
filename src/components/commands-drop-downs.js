@@ -87,12 +87,6 @@ const CommandsDropDowns = (props) => {
                     <span>
                       Sends a virtual hug to the mentioned user. Options: User
                     </span>
-                    <br className="commands-drop-downs-text118"></br>
-                    <span className="commands-drop-downs-text119">Image:</span>
-                    <span>
-                      Searches for an image based on the provided keyword and
-                      displays it. Options: keyword
-                    </span>
                     <br className="commands-drop-downs-text121"></br>
                     <span className="commands-drop-downs-text122">Joke:</span>
                     <span> Fetches and displays random joke</span>
