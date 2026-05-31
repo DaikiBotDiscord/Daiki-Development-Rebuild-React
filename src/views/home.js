@@ -11,7 +11,7 @@ const particles = Array.from({ length: 15 })
 
 const stats = [
   { value: '100+', label: 'Servers' },
-  { value: '100K+', label: 'Members' },
+  { value: '100K+', label: 'Users' },
   { value: '99.9%', label: 'Uptime' },
 ]
 
