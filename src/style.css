@@ -1874,3 +1874,18 @@ body.has-web-alert .page-not-found-container2,
 body.has-web-alert .lend-me-a-tenor-navbar-container {
   margin-top: calc(132px + var(--web-alert-height, 52px)) !important;
 }
+
+@media (max-width: 980px) {
+  .nav-bar-mobile-menu.open,
+  .nav-bar-li-mobile-menu.open {
+    background-color: #0a0a0f !important;
+    background-image: radial-gradient(circle at 15% 18%, rgba(255, 0, 255, 0.08), transparent 34%), radial-gradient(circle at 88% 22%, rgba(0, 212, 255, 0.08), transparent 34%) !important;
+    opacity: 1 !important;
+    backdrop-filter: none !important;
+  }
+
+  .nav-bar-links2 .nav-bar-link,
+  .nav-bar-li-links2 .nav-bar-li-link {
+    background: rgba(255, 255, 255, 0.045) !important;
+  }
+}
