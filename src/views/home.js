@@ -31,6 +31,31 @@ const Home = () => {
       <Helmet>
         <title>Daiki Development</title>
         <meta property="og:title" content="Daiki Development" />
+        <meta
+          name="description"
+          content="Daiki Development builds Daiki Bot, an all-in-one Discord bot for moderation, fun commands, server management, documentation, and dashboard tools."
+        />
+        <meta
+          property="og:description"
+          content="Daiki Bot is an all-in-one Discord bot for moderation, fun commands, server management, documentation, and dashboard tools."
+        />
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Daiki Development" />
+        <meta property="og:url" content="https://daiki-bot.xyz/" />
+        <meta property="og:image" content="https://daiki-bot.xyz/daiki3.png" />
+        <meta property="og:image:secure_url" content="https://daiki-bot.xyz/daiki3.png" />
+        <meta property="og:image:type" content="image/png" />
+        <meta property="og:image:width" content="500" />
+        <meta property="og:image:height" content="500" />
+        <meta property="og:image:alt" content="Daiki Development logo" />
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="Daiki Development" />
+        <meta
+          name="twitter:description"
+          content="Daiki Bot is an all-in-one Discord bot for moderation, fun commands, server management, documentation, and dashboard tools."
+        />
+        <meta name="twitter:image" content="https://daiki-bot.xyz/daiki3.png" />
+        <link rel="canonical" href="https://daiki-bot.xyz/" />
       </Helmet>
       {isLoggedIn ? <NavBarLI id="top" /> : <NavBar id="top" />}
 
