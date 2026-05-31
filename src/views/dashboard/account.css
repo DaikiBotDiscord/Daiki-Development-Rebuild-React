@@ -1,489 +1,77 @@
 .account-container1 {
-    width: 100%;
-    display: flex;
-    min-height: 100vh;
-    align-items: center;
-    flex-direction: column;
-    background-size: cover;
-    background-image: url("/daiki-webpage-background-1500w.png");
-    background-position: center;
+  width: 100%;
+  min-height: 100vh;
+  background: radial-gradient(circle at 15% 25%, rgba(88, 101, 242, 0.07), transparent 40%), radial-gradient(circle at 85% 75%, rgba(0, 212, 255, 0.05), transparent 40%), #0a0a0f !important;
 }
 
-.account-text10 {
-    display: inline-block;
+.account-container1 .daiki-account-shell {
+  width: min(1180px, calc(100% - 48px));
+  margin: 0 auto;
+  padding: 140px 0 72px;
 }
 
-.account-link1 {
-    fill: var(--dl-color-theme-accent1);
-    color: rgb(255, 255, 255);
-    display: inline-block;
-    text-decoration: none;
+.account-container1 .daiki-profile-header,
+.account-container1 .daiki-stat-card,
+.account-container1 .daiki-detail-card {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: linear-gradient(145deg, rgba(26, 26, 36, 0.92), rgba(18, 18, 26, 0.88));
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
 }
 
-.account-link2 {
-    display: inline-block;
-    text-decoration: none;
+.account-container1 .daiki-profile-header {
+  overflow: hidden;
+  background: radial-gradient(circle at 20% 20%, rgba(255, 0, 255, 0.16), transparent 35%), radial-gradient(circle at 90% 10%, rgba(0, 212, 255, 0.12), transparent 32%), rgba(18, 18, 26, 0.92);
 }
 
-.account-text15 {
-    display: inline-block;
-    text-decoration: none;
+.account-container1 .daiki-profile-header-inner {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 56px;
 }
 
-.account-text16 {
-    display: inline-block;
-    text-decoration: none;
+.account-container1 .daiki-username {
+  color: #fff;
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  line-height: 1;
+  margin: 0;
 }
 
-.account-text17 {
-    display: inline-block;
+.account-container1 .daiki-user-tagline {
+  color: #b0b3b8;
 }
 
-.account-text18 {
-    display: inline-block;
-    text-decoration: none;
+.account-container1 .daiki-stats-grid,
+.account-container1 .daiki-detail-grid {
+  display: grid;
+  gap: 20px;
 }
 
-.account-text19 {
-    display: inline-block;
-    text-decoration: none;
+.account-container1 .daiki-stats-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-.account-text20 {
-    display: inline-block;
-    text-decoration: none;
+.account-container1 .daiki-detail-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.account-text21 {
-    display: inline-block;
-    text-decoration: none;
+.account-container1 .daiki-stat-card,
+.account-container1 .daiki-detail-card {
+  padding: 28px;
 }
 
-.account-text22 {
-    display: inline-block;
-    text-decoration: none;
+.account-container1 .daiki-stat-value,
+.account-container1 .daiki-detail-card strong,
+.account-container1 .daiki-section-title {
+  color: #fff;
 }
 
-.account-text23 {
-    display: inline-block;
-}
-
-.account-text24 {
-    display: inline-block;
-}
-
-.account-text25 {
-    display: inline-block;
-}
-
-.account-text26 {
-    display: inline-block;
-}
-
-.account-text27 {
-    display: inline-block;
-    text-decoration: none;
-}
-
-.account-text28 {
-    display: inline-block;
-}
-
-.account-text29 {
-    display: inline-block;
-}
-
-.account-text30 {
-    display: inline-block;
-}
-
-.account-text31 {
-    display: inline-block;
-}
-
-.account-container2 {
-    flex: 0 0 auto;
-    width: 85%;
-    height: auto;
-    display: flex;
-    margin-top: 168px;
-    align-items: flex-start;
-    border-radius: 45px;
-    margin-bottom: var(--dl-layout-space-threeunits);
-    flex-direction: column;
-    background-color: rgba(0, 9, 24, 0.95);
-}
-
-.account-container3 {
-    flex: 0 0 auto;
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: flex-start;
-    border-radius: 45px;
-    animation-name: none;
-    flex-direction: row;
-    animation-delay: 0s;
-    background-size: cover, auto;
-    justify-content: center;
-    background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.2) 0.00%, rgba(0, 9, 24, 0.2) 98.00%);
-    background-repeat: repeat;
-    animation-duration: 300ms;
-    animation-direction: normal;
-    background-position: bottom, center;
-    animation-iteration-count: 1;
-    animation-timing-function: ease;
-}
-
-.account-container4 {
-    flex: 0 0 auto;
-    width: auto;
-    height: auto;
-    display: flex;
-    margin-top: var(--dl-layout-space-unit);
-    align-items: center;
-    margin-left: var(--dl-layout-space-unit);
-    margin-right: var(--dl-layout-space-unit);
-    margin-bottom: var(--dl-layout-space-halfunit);
-    flex-direction: column;
-}
-
-.account-text32 {
-    fill: var(--dl-color-theme-neutral-light);
-    color: var(--dl-color-theme-neutral-light);
-    font-size: 40px;
-    align-self: center;
-    font-style: normal;
-    text-align: center;
-    font-family: "Poppins";
-    font-weight: 700;
-}
-
-.account-separator1 {
-    width: 100%;
-    height: 1px;
-    background-color: #595959;
-}
-
-.account-container5 {
-    flex: 0 0 auto;
-    width: 100%;
-    height: 400px;
-    display: flex;
-    align-items: flex-start;
-    border-radius: 45px;
-    animation-name: none;
-    flex-direction: row;
-    animation-delay: 0s;
-    background-size: cover, auto;
-    justify-content: center;
-    background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.2) 0.00%, rgba(0, 9, 24, 0.2) 98.00%);
-    background-repeat: repeat;
-    animation-duration: 300ms;
-    animation-direction: normal;
-    background-position: bottom, center;
-    animation-iteration-count: 1;
-    animation-timing-function: ease;
-}
-
-.account-container6 {
-    flex: 0 0 auto;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: row;
-}
-
-.account-image {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: var(--dl-layout-radius-round);
-}
-
-.account-container7 {
-    flex: 0 0 auto;
-    display: flex;
-    align-items: flex-start;
-    margin-left: var(--dl-layout-space-unit);
-    flex-direction: column;
-}
-
-.account-text35 {
-    fill: var(--dl-color-theme-neutral-light);
-    color: var(--dl-color-theme-neutral-light);
-    font-size: 30px;
-    align-self: flex-start;
-    margin-top: var(--dl-layout-space-oneandhalfunits);
-    text-align: center;
-    font-family: "Poppins";
-    font-weight: 600;
-}
-
-.account-text38 {
-    fill: var(--dl-color-theme-neutral-light);
-    color: var(--dl-color-theme-neutral-light);
-    font-size: 15px;
-    align-self: flex-start;
-    margin-top: 4px;
-    text-align: center;
-    font-family: "Poppins";
-    font-weight: 600;
-}
-
-.account-text39 {
-    font-style: normal;
-    font-weight: 300;
-}
-
-.account-container8 {
-    flex: 0 0 auto;
-    display: flex;
-    align-items: flex-start;
-    flex-direction: row;
-}
-
-.account-container9 {
-    flex: 0 0 auto;
-    display: flex;
-    align-items: flex-start;
-    margin-left: var(--dl-layout-space-fourunits);
-    flex-direction: column;
-}
-
-.account-text41 {
-    fill: var(--dl-color-theme-neutral-light);
-    color: var(--dl-color-theme-neutral-light);
-    font-size: 30px;
-    align-self: center;
-    margin-top: var(--dl-layout-space-oneandhalfunits);
-    text-align: center;
-    font-family: "Poppins";
-    font-weight: 600;
-}
-
-.account-separator2 {
-    width: 100%;
-    height: 1px;
-    background-color: #595959;
-}
-
-.account-text44 {
-    fill: var(--dl-color-theme-neutral-light);
-    color: var(--dl-color-theme-neutral-light);
-    align-self: center;
-    margin-top: var(--dl-layout-space-halfunit);
-    text-align: center;
-    font-family: "Poppins";
-    font-weight: 600;
-}
-
-.account-text47 {
-    fill: var(--dl-color-theme-neutral-light);
-    color: var(--dl-color-theme-neutral-light);
-    align-self: center;
-    margin-top: 4px;
-    text-align: center;
-    font-family: "Poppins";
-    font-weight: 600;
-}
-
-.account-text50 {
-    fill: var(--dl-color-theme-neutral-light);
-    color: var(--dl-color-theme-neutral-light);
-    align-self: center;
-    margin-top: 4px;
-    text-align: center;
-    font-family: "Poppins";
-    font-weight: 600;
-}
-
-.account-text53 {
-    fill: var(--dl-color-theme-neutral-light);
-    color: var(--dl-color-theme-neutral-light);
-    align-self: center;
-    margin-top: 4px;
-    text-align: center;
-    font-family: "Poppins";
-    font-weight: 600;
-}
-
-.account-text56 {
-    fill: var(--dl-color-theme-neutral-light);
-    color: var(--dl-color-theme-neutral-light);
-    align-self: center;
-    margin-top: 4px;
-    text-align: center;
-    font-family: "Poppins";
-    font-weight: 600;
-}
-
-@media(max-width: 991px) {
-    .account-text32 {
-        font-size: 35px;
-    }
-
-    .account-container5 {
-        height: auto;
-        align-items: center;
-        padding-top: var(--dl-layout-space-twounits);
-        padding-bottom: var(--dl-layout-space-twounits);
-    }
-
-    .account-image {
-        width: 100px;
-        height: 100px;
-    }
-
-    .account-text35 {
-        font-size: 25px;
-    }
-
-    .account-text38 {
-        font-size: 20px;
-    }
-
-    .account-text41 {
-        font-size: 20px;
-    }
-
-    .account-text44 {
-        font-size: 20px;
-    }
-
-    .account-text47 {
-        font-size: 20px;
-    }
-
-    .account-text50 {
-        font-size: 20px;
-    }
-
-    .account-text53 {
-        font-size: 20px;
-    }
-
-    .account-text56 {
-        font-size: 20px;
-    }
-}
-
-@media(max-width: 767px) {
-    .account-container5 {
-        align-self: center;
-        align-items: center;
-        flex-direction: column;
-    }
-
-    .account-image {
-        width: 100px;
-        height: 100px;
-    }
-
-    .account-text35 {
-        font-size: 25px;
-    }
-
-    .account-text38 {
-        font-size: 20px;
-    }
-
-    .account-container9 {
-        margin-left: 0px;
-    }
-
-    .account-text41 {
-        font-size: 25px;
-    }
-
-    .account-text44 {
-        font-size: 25px;
-    }
-
-    .account-text47 {
-        font-size: 25px;
-    }
-
-    .account-text50 {
-        font-size: 25px;
-    }
-
-    .account-text53 {
-        font-size: 25px;
-    }
-
-    .account-text56 {
-        font-size: 25px;
-    }
-}
-
-@media(max-width: 479px) {
-    .account-container2 {
-        background-color: rgba(0, 9, 24, 0.9);
-    }
-
-    .account-container3 {
-        background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.6) 0.00%, rgba(0, 9, 24, 0.6) 100.00%);
-        background-repeat: bottom;
-    }
-
-    .account-container5 {
-        align-items: center;
-        flex-direction: column;
-        background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.6) 0.00%, rgba(0, 9, 24, 0.6) 100.00%);
-    }
-
-    .account-image {
-        width: 100px;
-        height: 100px;
-    }
-
-    .account-text35 {
-        font-size: 25px;
-    }
-
-    .account-text38 {
-        font-size: 15px;
-    }
-
-    .account-container8 {
-        justify-content: center;
-    }
-
-    .account-container9 {
-        margin-left: 0px;
-    }
-
-    .account-text41 {
-        display: block;
-        font-size: 25px;
-    }
-
-    .account-separator2 {
-        display: block;
-    }
-
-    .account-text44 {
-        display: block;
-        font-size: 18px;
-    }
-
-    .account-text47 {
-        display: block;
-        font-size: 18px;
-    }
-
-    .account-text50 {
-        display: block;
-        font-size: 18px;
-    }
-
-    .account-text53 {
-        display: block;
-        font-size: 18px;
-    }
-
-    .account-text56 {
-        display: block;
-        font-size: 18px;
-    }
+.account-container1 .daiki-stat-label,
+.account-container1 .daiki-detail-card span {
+  color: #72767d;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }

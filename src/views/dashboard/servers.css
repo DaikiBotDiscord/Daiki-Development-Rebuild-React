@@ -9,6 +9,90 @@
     background-position: center;
 }
 
+/* Daiki refresh: servers page */
+.servers-container1 {
+  background: radial-gradient(circle at 15% 25%, rgba(88, 101, 242, 0.07), transparent 40%), radial-gradient(circle at 85% 75%, rgba(0, 212, 255, 0.05), transparent 40%), #0a0a0f !important;
+}
+
+.servers-container1 .daiki-page-shell {
+  width: min(1180px, calc(100% - 48px));
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin: 140px auto 72px;
+}
+
+.servers-container1 .daiki-panel-hero {
+  padding: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: radial-gradient(circle at 15% 18%, rgba(255, 0, 255, 0.16), transparent 34%), radial-gradient(circle at 88% 22%, rgba(0, 212, 255, 0.15), transparent 34%), linear-gradient(145deg, rgba(26, 26, 36, 0.94), rgba(18, 18, 26, 0.9));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+}
+
+.servers-container1 .daiki-panel-hero--split {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.servers-container1 .daiki-panel-hero h1 {
+  color: #fff;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.98;
+  margin: 0;
+}
+
+.servers-container1 .daiki-panel-hero p:not(.daiki-eyebrow) {
+  max-width: 680px;
+  color: #b0b3b8;
+  font-size: 1.08rem;
+  line-height: 1.65;
+  margin: 18px 0 0;
+}
+
+.servers-container1 .daiki-list-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.servers-container1 .daiki-list-card,
+.servers-container1 .daiki-empty-state {
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: linear-gradient(145deg, rgba(26, 26, 36, 0.92), rgba(18, 18, 26, 0.88));
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.servers-container1 .daiki-list-card {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.servers-container1 .daiki-list-card__image {
+  width: 76px;
+  height: 76px;
+  object-fit: cover;
+  border: 2px solid rgba(0, 212, 255, 0.55);
+  border-radius: 999px;
+}
+
+.servers-container1 .daiki-list-card h3,
+.servers-container1 .daiki-empty-state h3 {
+  color: #fff;
+  margin: 0;
+}
+
+.servers-container1 .daiki-list-card p,
+.servers-container1 .daiki-empty-state p {
+  color: #b0b3b8;
+  line-height: 1.65;
+}
+
 .servers-text10 {
     display: inline-block;
 }

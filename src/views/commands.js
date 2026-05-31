@@ -1,6 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-
+import React, { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 
 import NavBar from '../components/nav-bar'
@@ -9,43 +7,37 @@ import CommandsDropDowns from '../components/commands-drop-downs'
 import Footer from '../components/footer'
 import './commands.css'
 
-const Commands = (props) => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+const Commands = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
 
     useEffect(() => {
         fetch('https://dash.api.daiki-bot.xyz/api/users/@me', {
-            credentials: 'include'
+            credentials: 'include',
         })
-            .then(res => {
-                if (res.ok) {
-                    setIsLoggedIn(true);
-                } else {
-                    setIsLoggedIn(false);
-                }
-            })
-            .catch(() => setIsLoggedIn(false));
-    }, []);
+            .then((res) => setIsLoggedIn(res.ok))
+            .catch(() => setIsLoggedIn(false))
+    }, [])
 
     return (
-        <div className="commands-container1">
+        <div className="commands-container1 daiki-page">
             <Helmet>
                 <title>Commands - Daiki Development</title>
                 <meta property="og:title" content="Commands - Daiki Development" />
             </Helmet>
             {isLoggedIn ? <NavBarLI id="top" /> : <NavBar id="top" />}
-            <div className="commands-container2">
-                <div className="commands-container3">
-                    <div className="commands-container4">
-                        <span className="commands-text22">
-                            <span>Commands</span>
-                            <br></br>
-                        </span>
-                    </div>
-                </div>
-                <div className="commands-container5">
+
+            <main className="daiki-page-shell">
+                <section className="daiki-panel-hero">
+                    <p className="daiki-eyebrow">Command center</p>
+                    <h1>Commands</h1>
+                    <p>Browse Daiki commands by category and find the exact tool your server needs.</p>
+                </section>
+
+                <section className="daiki-content-panel">
                     <CommandsDropDowns />
-                </div>
-            </div>
+                </section>
+            </main>
+
             <Footer />
         </div>
     )

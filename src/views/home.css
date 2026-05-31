@@ -1,422 +1,144 @@
 .home-container1 {
   width: 100%;
-  display: flex;
   min-height: 100vh;
-  align-items: center;
-  flex-direction: column;
-  background-size: cover;
-  background-image: url("/daiki-webpage-background-1500w.png");
-  background-repeat: no-repeat;
-  background-position: center;
+  background: radial-gradient(circle at 15% 25%, rgba(88, 101, 242, 0.07), transparent 40%), radial-gradient(circle at 85% 75%, rgba(0, 212, 255, 0.05), transparent 40%), #0a0a0f !important;
 }
 
-.home-text10 {
-  display: inline-block;
-}
-
-.home-link1 {
-  fill: var(--dl-color-theme-accent1);
-  color: rgb(255, 255, 255);
-  display: inline-block;
-  text-decoration: none;
-}
-
-.home-link2 {
-  display: inline-block;
-  text-decoration: none;
-}
-
-.home-text15 {
-  display: inline-block;
-  text-decoration: none;
-}
-
-.home-text16 {
-  display: inline-block;
-  text-decoration: none;
-}
-
-.home-text17 {
-  display: inline-block;
-}
-
-.home-text18 {
-  display: inline-block;
-  text-decoration: none;
-}
-
-.home-text19 {
-  display: inline-block;
-  text-decoration: none;
-}
-
-.home-text20 {
-  display: inline-block;
-  text-decoration: none;
-}
-
-.home-text21 {
-  display: inline-block;
-  text-decoration: none;
-}
-
-.home-container2 {
-  flex: 0 0 auto;
-  width: 85%;
-  height: auto;
-  display: flex;
-  margin-top: 168px;
-  align-items: flex-start;
-  border-radius: 0px;
-  margin-bottom: var(--dl-layout-space-threeunits);
-  flex-direction: column;
-  background-color: rgba(0, 9, 24, 0.8);
-  border-top-left-radius: 45px;
-  border-top-right-radius: 45px;
-  border-bottom-left-radius: 45px;
-  border-bottom-right-radius: 45px;
-}
-
-.home-container3 {
-  flex: 0 0 auto;
+.home-container1 .daiki-hero {
   width: 100%;
-  height: 350px;
+  min-height: 760px;
+  position: relative;
+  overflow: hidden;
+  padding: 170px 24px 90px;
+}
+
+.home-container1 .daiki-hero__headline {
+  max-width: 780px;
+  color: #fff;
+  font-size: clamp(3rem, 8vw, 6.8rem);
+  line-height: 0.95;
+  margin: 0;
+}
+
+.home-container1 .daiki-hero__subheadline {
+  max-width: 620px;
+  color: #b0b3b8;
+  font-size: clamp(1.05rem, 2vw, 1.35rem);
+  line-height: 1.65;
+  margin: 26px 0 0;
+}
+
+.home-container1 .daiki-hero__actions {
   display: flex;
-  align-items: flex-start;
-  border-radius: 0px;
-  animation-name: none;
-  flex-direction: column;
-  animation-delay: 0s;
-  background-size: cover, auto;
-  justify-content: flex-end;
-  background-image: radial-gradient(circle at center, rgba(0, 9, 24, 0.6) 0.00%, rgba(0, 9, 24, 0.2) 98.00%), url("/daiki6-1300w.png");
-  background-repeat: repeat, no-repeat;
-  animation-duration: 300ms;
-  animation-direction: normal;
-  background-position: bottom, center;
-  border-top-left-radius: 45px;
-  border-top-right-radius: 45px;
-  animation-iteration-count: 1;
-  animation-timing-function: ease;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 34px;
 }
 
-.home-container4 {
-  flex: 0 0 auto;
-  width: auto;
-  height: auto;
-  display: flex;
-  align-items: flex-start;
-  margin-left: var(--dl-layout-space-threeunits);
-  margin-bottom: var(--dl-layout-space-threeunits);
-  flex-direction: column;
+.home-container1 .daiki-home-content {
+  width: min(1180px, 100%);
+  padding: 0 24px 80px;
 }
 
-.home-text22 {
-  fill: var(--dl-color-theme-neutral-light);
-  color: var(--dl-color-theme-neutral-light);
-  font-size: 40px;
-  font-style: normal;
-  font-family: "Poppins";
-  font-weight: 700;
+.home-container1 .daiki-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
 }
 
-.home-link3 {
-  display: contents;
-}
-
-.home-exclude {
-  width: var(--dl-layout-size-xxlarge);
-  height: auto;
-  z-index: 5;
-  box-sizing: content-box;
-  margin-top: var(--dl-layout-space-oneandhalfunits);
-  transition: 0.3s;
+.home-container1 .daiki-feature-card {
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #b0b3b8;
   text-decoration: none;
+  background: linear-gradient(145deg, rgba(26, 26, 36, 0.92), rgba(18, 18, 26, 0.88));
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
 }
 
-.home-exclude:hover {
-  width: 295px;
-  animation-name: pulse;
-  animation-delay: 0s;
-  animation-duration: 400ms;
-  animation-direction: normal;
-  animation-iteration-count: 1;
-  animation-timing-function: ease;
+.home-container1 .daiki-feature-card h3,
+.home-container1 .daiki-section-title {
+  color: #fff;
 }
 
-.home-container5 {
-  flex: 0 0 auto;
-  width: 100%;
-  height: 600px;
+.home-container1 .daiki-feature-card p {
+  color: #b0b3b8;
+  line-height: 1.65;
+}
+
+.home-container1 .daiki-stats {
+  position: relative;
+  overflow: hidden;
+  margin-top: 10px;
+  padding: 72px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: radial-gradient(circle at 10% 20%, rgba(255, 0, 255, 0.1), transparent 32%), radial-gradient(circle at 90% 40%, rgba(0, 212, 255, 0.1), transparent 32%), rgba(18, 18, 26, 0.9);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.26);
+}
+
+.home-container1 .daiki-stats::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(88, 101, 242, 0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(88, 101, 242, 0.08) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), transparent);
+}
+
+.home-container1 .daiki-stats__container {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.home-container1 .daiki-stats__item {
   display: flex;
   align-items: center;
-  border-radius: 0px;
   flex-direction: column;
-  justify-content: center;
-  background-color: #000918;
-  border-bottom-left-radius: 45px;
-  border-bottom-right-radius: 45px;
+  gap: 10px;
+  text-align: center;
 }
 
-.home-container6 {
-  flex: 0 0 auto;
-  width: auto;
-  display: flex;
+.home-container1 .daiki-stats__number {
+  color: #ffffff;
+  font-size: clamp(2.7rem, 6vw, 4.5rem);
+  font-weight: 950;
+  line-height: 1;
+  background: linear-gradient(135deg, #ff00ff, #5865f2 48%, #00d4ff);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: daikiStatsGradient 5s ease infinite;
 }
 
-.home-navlink1 {
-  display: contents;
+.home-container1 .daiki-stats__label {
+  color: #72767d;
+  font-size: 1.05rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.home-container7 {
-  flex: 0 0 auto;
-  width: 250px;
-  height: 200px;
-  display: flex;
-  box-shadow: 2px 2px 10px 0px #6141ac;
-  transition: 0.3s;
-  align-items: center;
-  border-color: var(--dl-color-theme-accent2);
-  border-width: 4px;
-  flex-direction: column;
-  justify-content: center;
-  text-decoration: none;
-  background-color: var(--dl-color-theme-accent2);
-}
-
-.home-container7:hover {
-  box-shadow: 2px 2px 10px 0px #0554d2;
-  border-color: var(--dl-color-theme-primary2);
-  animation-name: pulse;
-  animation-delay: 0s;
-  background-color: var(--dl-color-theme-primary2);
-  animation-duration: 300ms;
-  animation-direction: normal;
-  animation-iteration-count: 1;
-  animation-timing-function: ease;
-}
-
-.home-icon1 {
-  fill: var(--dl-color-theme-secondary1);
-  color: var(--dl-color-theme-secondary1);
-}
-
-.home-text25 {
-  fill: var(--dl-color-theme-secondary1);
-  color: var(--dl-color-theme-secondary1);
-  font-size: 18px;
-  margin-top: var(--dl-layout-space-halfunit);
-  font-family: "Poppins";
-}
-
-.home-navlink2 {
-  display: contents;
-}
-
-.home-container8 {
-  flex: 0 0 auto;
-  width: 250px;
-  height: 200px;
-  display: flex;
-  box-shadow: 2px 2px 10px 0px #6141ac;
-  transition: 0.3s;
-  align-items: center;
-  margin-left: var(--dl-layout-space-unit);
-  border-color: var(--dl-color-theme-accent2);
-  border-width: 4px;
-  flex-direction: column;
-  justify-content: center;
-  text-decoration: none;
-  background-color: var(--dl-color-theme-accent2);
-}
-
-.home-container8:hover {
-  box-shadow: 2px 2px 10px 0px #0554d2;
-  border-color: var(--dl-color-theme-primary2);
-  animation-name: pulse;
-  animation-delay: 0s;
-  background-color: var(--dl-color-theme-primary2);
-  animation-duration: 300ms;
-  animation-direction: normal;
-  animation-iteration-count: 1;
-  animation-timing-function: ease;
-}
-
-.home-icon3 {
-  fill: var(--dl-color-theme-secondary1);
-  color: var(--dl-color-theme-secondary1);
-}
-
-.home-text28 {
-  fill: var(--dl-color-theme-secondary1);
-  color: var(--dl-color-theme-secondary1);
-  font-size: 20px;
-  margin-top: var(--dl-layout-space-halfunit);
-  font-family: "Poppins";
-}
-
-.home-navlink3 {
-  display: contents;
-}
-
-.home-container9 {
-  flex: 0 0 auto;
-  width: 250px;
-  height: 200px;
-  display: flex;
-  box-shadow: 2px 2px 10px 0px #6141ac;
-  transition: 0.3s;
-  align-items: center;
-  margin-left: var(--dl-layout-space-unit);
-  border-color: var(--dl-color-theme-accent2);
-  border-width: 4px;
-  flex-direction: column;
-  justify-content: center;
-  text-decoration: none;
-  background-color: var(--dl-color-theme-accent2);
-}
-
-.home-container9:hover {
-  box-shadow: 2px 2px 10px 0px #0554d2;
-  border-color: var(--dl-color-theme-primary2);
-  animation-name: pulse;
-  animation-delay: 0s;
-  background-color: var(--dl-color-theme-primary2);
-  animation-duration: 300ms;
-  animation-direction: normal;
-  animation-iteration-count: 1;
-  animation-timing-function: ease;
-}
-
-.home-icon5 {
-  fill: var(--dl-color-theme-secondary1);
-  color: var(--dl-color-theme-secondary1);
-}
-
-.home-text31 {
-  fill: var(--dl-color-theme-secondary1);
-  color: var(--dl-color-theme-secondary1);
-  font-size: 20px;
-  margin-top: var(--dl-layout-space-halfunit);
-  font-family: "Poppins";
-}
-
-.home-text34 {
-  color: #132441;
-  display: inline-block;
-}
-
-.home-text35 {
-  fill: var(--dl-color-theme-secondary1);
-  color: var(--dl-color-theme-secondary1);
-  display: inline-block;
-}
-
-.home-text36 {
-  fill: var(--dl-color-theme-secondary1);
-  color: var(--dl-color-theme-secondary1);
-  display: inline-block;
-}
-
-.home-text37 {
-  fill: var(--dl-color-theme-secondary1);
-  color: var(--dl-color-theme-secondary1);
-  display: inline-block;
-}
-
-.home-text38 {
-  fill: var(--dl-color-theme-secondary1);
-  color: var(--dl-color-theme-secondary1);
-  display: inline-block;
-}
-
-.home-text39 {
-  fill: var(--dl-color-theme-secondary2);
-  color: var(--dl-color-theme-secondary2);
-  display: inline-block;
-  text-decoration: none;
-}
-
-.home-link11 {
-  fill: var(--dl-color-theme-secondary2);
-  color: var(--dl-color-theme-secondary2);
-  display: inline-block;
-  text-decoration: none;
-}
-
-.home-content3 {
-  fill: var(--dl-color-theme-secondary2);
-  color: var(--dl-color-theme-secondary2);
-  display: inline-block;
-}
-
-@media(max-width: 991px) {
-  .home-text22 {
-    font-size: 35px;
+@keyframes daikiStatsGradient {
+  0%, 100% {
+    background-position: 0% 50%;
   }
 
-  .home-exclude {
-    width: var(--dl-layout-size-xlarge);
-  }
-
-  .home-container5 {
-    align-self: center;
-    align-items: center;
-    justify-content: center;
+  50% {
+    background-position: 100% 50%;
   }
 }
 
-@media(max-width: 767px) {
-  .home-container3 {
-    background-image: url("/daiki6-1300w.png");
-  }
-
-  .home-container7 {
-    width: 200px;
-  }
-
-  .home-container8 {
-    width: 200px;
-  }
-
-  .home-container9 {
-    width: 200px;
-  }
-}
-
-@media(max-width: 479px) {
-  .home-container2 {
-    background-color: rgba(0, 9, 24, 0.9);
-  }
-
-  .home-container3 {
-    background-image: url("/daiki6-1300w.png");
-  }
-
-  .home-container5 {
-    height: 650px;
-  }
-
-  .home-container6 {
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .home-container7 {
-    width: 250px;
-    margin-left: 0px;
-  }
-
-  .home-container8 {
-    width: 250px;
-    margin-top: var(--dl-layout-space-unit);
-    margin-left: 0px;
-  }
-
-  .home-container9 {
-    width: 250px;
-    margin-top: var(--dl-layout-space-unit);
-    margin-left: 0px;
+@media (max-width: 900px) {
+  .home-container1 .daiki-card-grid,
+  .home-container1 .daiki-stats__container {
+    grid-template-columns: 1fr;
   }
 }

@@ -1,108 +1,108 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
+import { ThreeDot } from 'react-loading-indicators'
+import axios from 'axios'
 
-import NavBarLI from '../../components/nav-bar-li';
+import NavBarLI from '../../components/nav-bar-li'
 import Footer from '../../components/footer'
 import './warnings.css'
-import axios from 'axios';
 
-const Warnings = (props) => {
-    const [warnings, setWarningsData] = useState(null);
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
-    const formatWarningTime = (timestamp) => {
-        if (!timestamp) return 'Unknown';
+const formatWarningTime = (timestamp) => {
+    if (!timestamp) return 'Unknown'
 
-        const date = new Date(timestamp);
-        if (Number.isNaN(date.getTime())) return 'Unknown';
+    const date = new Date(timestamp)
+    if (Number.isNaN(date.getTime())) return 'Unknown'
 
-        return date.toLocaleString(undefined, {
-            timeZoneName: 'short',
-            hour: 'numeric',
-            minute: 'numeric',
-            day: 'numeric',
-            month: 'short',
-            year: 'numeric',
-        });
-    };
+    return date.toLocaleString(undefined, {
+        timeZoneName: 'short',
+        hour: 'numeric',
+        minute: 'numeric',
+        day: 'numeric',
+        month: 'short',
+        year: 'numeric',
+    })
+}
+
+const Warnings = () => {
+    const [warnings, setWarningsData] = useState(null)
 
     useEffect(() => {
-        axios.get("https://dash.api.daiki-bot.xyz/api/users/@me/warnings", {
-            withCredentials: true
+        axios.get('https://dash.api.daiki-bot.xyz/api/users/@me/warnings', {
+            withCredentials: true,
         })
-            .then(res => {
-                setWarningsData(res.data.warnings);
-                setIsLoggedIn(true);
+            .then((res) => setWarningsData(res.data.warnings || []))
+            .catch((err) => {
+                console.error('Error fetching warnings:', err)
+                window.location.href = 'https://daiki-bot.xyz/dashboard-sync'
             })
-            .catch(err => {
-                console.error("❌ Error fetching user data:", err);
-                window.location.href = "https://daiki-bot.xyz/dashboard-sync";
-            });
-    }, []);
+    }, [])
+
+    if (!warnings) {
+        return (
+            <div className="daiki-loading">
+                <ThreeDot variant="bounce" color={['#ff00ff', '#5865f2', '#00d4ff']} size="large" text="" textColor="" />
+            </div>
+        )
+    }
 
     return (
-        <div className="warnings-container1">
+        <div className="warnings-container1 daiki-page">
             <Helmet>
                 <title>Warnings - Daiki Development</title>
                 <meta property="og:title" content="Warnings - Daiki Development" />
             </Helmet>
-            {isLoggedIn && <NavBarLI />}
-            <div className="warnings-container2">
-                <div className="warnings-container3">
-                    <div className="warnings-container4">
-                        <span className="warnings-text28">
-                            <span>Warnings</span>
-                            <br />
-                        </span>
-                    </div>
-                </div>
-                <hr className="warnings-separator" />
-                <div className="warnings-container5">
-                    {warnings && warnings.length > 0 ? (
+            <NavBarLI />
+
+            <main className="daiki-page-shell">
+                <section className="daiki-panel-hero">
+                    <p className="daiki-eyebrow">Moderation history</p>
+                    <h1>Warnings</h1>
+                    <p>Review warning records tied to your account.</p>
+                </section>
+
+                <section className="daiki-list-grid">
+                    {warnings.length > 0 ? (
                         warnings.map((warn) => (
-                            <div key={warn.id} className="warnings-container6">
-                                <div className="warnings-container7">
-                                    <span className="warnings-text31">
-                                        <span>Warning ID: {warn.id}</span>
-                                        <br />
-                                    </span>
-                                    <span className="warnings-text34">
-                                        <span>Moderator ID: {warn.moderator_id}</span>
-                                        <br />
-                                    </span>
-                                    <span className="warnings-text37">
-                                        <span>Server ID: {warn.guild_id}</span>
-                                        <br />
-                                    </span>
-                                    <span className='warnings-text37'>
-                                        <span>Issued at: {formatWarningTime(warn.created_at)}</span>
-                                        <br />
-                                    </span>
-                                    <span className='warnings-text37'>
-                                        <span>User ID: {warn.user_id}</span>
-                                        <br />
-                                    </span>
-                                    {warn.receiverUsername && (
-                                        <span className='warnings-text37'>
-                                            <span>Username: {warn.receiverUsername}</span>
-                                            <br />
-                                        </span>
-                                    )}
-                                    <span className="warnings-text40">
-                                        <span>Reason: {warn.reason || 'No reason provided.'}</span>
-                                        <br />
-                                    </span>
+                            <article key={warn.id} className="daiki-warning-card">
+                                <div className="daiki-warning-card__top">
+                                    <span className="daiki-feature-card__icon">Warning #{warn.id}</span>
+                                    <strong>{formatWarningTime(warn.created_at)}</strong>
                                 </div>
-                            </div>
+                                <dl>
+                                    <div>
+                                        <dt>Moderator ID</dt>
+                                        <dd>{warn.moderator_id}</dd>
+                                    </div>
+                                    <div>
+                                        <dt>Server ID</dt>
+                                        <dd>{warn.guild_id}</dd>
+                                    </div>
+                                    <div>
+                                        <dt>User ID</dt>
+                                        <dd>{warn.user_id}</dd>
+                                    </div>
+                                    {warn.receiverUsername ? (
+                                        <div>
+                                            <dt>Username</dt>
+                                            <dd>{warn.receiverUsername}</dd>
+                                        </div>
+                                    ) : null}
+                                </dl>
+                                <p>{warn.reason || 'No reason provided.'}</p>
+                            </article>
                         ))
                     ) : (
-                        <span className='warnings-text28'>No warnings found.</span>
+                        <article className="daiki-empty-state">
+                            <h3>No warnings found</h3>
+                            <p>Your account does not currently have warning records.</p>
+                        </article>
                     )}
-                </div>
-            </div>
+                </section>
+            </main>
+
             <Footer />
         </div>
-    );
+    )
 }
 
 export default Warnings

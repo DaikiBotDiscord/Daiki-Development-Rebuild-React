@@ -123,55 +123,54 @@ const PrivacyPolicy = () => {
   }, [])
 
   return (
-    <div className="privacy-policy-container">
+    <div className="privacy-policy-container daiki-page">
       <Helmet>
         <title>Privacy Policy - Daiki Development</title>
         <meta property="og:title" content="Privacy Policy - Daiki Development" />
       </Helmet>
       {isLoggedIn ? <NavBarLI id="top" /> : <NavBar id="top" />}
-      <div className="privacy-policy-container1">
-        <h1 className="privacy-policy-text">Privacy Policy</h1>
-        <div className="privacy-policy-separator"></div>
+      <main className="daiki-page-shell">
+        <section className="daiki-panel-hero">
+          <p className="daiki-eyebrow">Legal</p>
+          <h1>Privacy Policy</h1>
+          <p>How Daiki Bot collects, stores, uses, and protects service data.</p>
+        </section>
 
-        <div className="privacy-policy-container2">
-          <div className="privacy-policy-container3">
-            <div className="privacy-policy-feature-card">
-              <span className="privacy-policy-text01">Last Updated: April 21, 2026</span>
-            </div>
+        <section className="daiki-content-panel daiki-legal-panel">
+          <div className="daiki-legal-updated">Last Updated: April 21, 2026</div>
 
             {privacySections.map((section) => (
-              <div key={section.title} className="privacy-policy-feature-card1">
-                <h2 className="privacy-policy-text04">{section.title}</h2>
+              <article key={section.title} className="daiki-legal-card">
+                <h2>{section.title}</h2>
                 {section.paragraphs?.map((paragraph) => (
-                  <p key={paragraph} className="privacy-policy-text05">{paragraph}</p>
+                  <p key={paragraph}>{paragraph}</p>
                 ))}
                 {section.bullets?.length ? (
-                  <ul className="privacy-policy-text05">
+                  <ul>
                     {section.bullets.map((bullet) => (
                       <li key={bullet}>{bullet}</li>
                     ))}
                   </ul>
                 ) : null}
-                {section.closing ? <p className="privacy-policy-text05">{section.closing}</p> : null}
+                {section.closing ? <p>{section.closing}</p> : null}
                 {section.closingBullets?.length ? (
-                  <ul className="privacy-policy-text05">
+                  <ul>
                     {section.closingBullets.map((bullet) => (
                       <li key={bullet}>{bullet}</li>
                     ))}
                   </ul>
                 ) : null}
                 {section.contact ? (
-                  <p className="privacy-policy-text05">
-                    <a href={`mailto:${section.contact}`} className="privacy-policy-link1">
+                  <p>
+                    <a href={`mailto:${section.contact}`}>
                       {section.contact}
                     </a>
                   </p>
                 ) : null}
-              </div>
+              </article>
             ))}
-          </div>
-        </div>
-      </div>
+        </section>
+      </main>
       <Footer />
     </div>
   )

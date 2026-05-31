@@ -178,43 +178,47 @@ const TermsOfService = () => {
   }, [])
 
   return (
-    <div className="terms-of-service-container">
+    <div className="terms-of-service-container daiki-page">
       <Helmet>
         <title>Terms of Service - Daiki Development</title>
         <meta property="og:title" content="Terms of Service - Daiki Development" />
       </Helmet>
       {isLoggedIn ? <NavBarLI id="top" /> : <NavBar id="top" />}
-      <div className="terms-of-service-tos-document">
-        <h1 className="terms-of-service-text007">Terms of Service</h1>
-        <span className="terms-of-service-text008">Last Updated: April 21, 2026</span>
-        <div className="terms-of-service-separator"></div>
+      <main className="daiki-page-shell">
+        <section className="daiki-panel-hero">
+          <p className="daiki-eyebrow">Legal</p>
+          <h1>Terms of Service</h1>
+          <p>The agreement for using Daiki Bot and related services.</p>
+        </section>
 
-        <div className="terms-of-service-container1">
+        <section className="daiki-content-panel daiki-legal-panel">
+          <div className="daiki-legal-updated">Last Updated: April 21, 2026</div>
+
           {tosSections.map((section) => (
-            <div key={section.title} className="terms-of-service-feature-card05">
-              <h2 className="terms-of-service-text027">{section.title}</h2>
+            <article key={section.title} className="daiki-legal-card">
+              <h2>{section.title}</h2>
               {section.paragraphs?.map((paragraph) => (
-                <p key={paragraph} className="terms-of-service-text030">{paragraph}</p>
+                <p key={paragraph}>{paragraph}</p>
               ))}
               {section.bullets?.length ? (
-                <ul className="terms-of-service-text030">
+                <ul>
                   {section.bullets.map((bullet) => (
                     <li key={bullet}>{bullet}</li>
                   ))}
                 </ul>
               ) : null}
-              {section.closing ? <p className="terms-of-service-text030">{section.closing}</p> : null}
+              {section.closing ? <p>{section.closing}</p> : null}
               {section.contact ? (
-                <p className="terms-of-service-text030">
-                  <a href={`mailto:${section.contact}`} className="terms-of-service-link1">
+                <p>
+                  <a href={`mailto:${section.contact}`}>
                     {section.contact}
                   </a>
                 </p>
               ) : null}
-            </div>
+            </article>
           ))}
-        </div>
-      </div>
+        </section>
+      </main>
       <Footer />
     </div>
   )

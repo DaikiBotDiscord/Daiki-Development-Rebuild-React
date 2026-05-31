@@ -1,122 +1,147 @@
-import React, { Fragment, useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
-
 import { Helmet } from 'react-helmet'
 
 import NavBar from '../components/nav-bar'
-import NavBarLI from '../components/nav-bar-li';
+import NavBarLI from '../components/nav-bar-li'
 import Footer from '../components/footer'
 import './home.css'
 
-const Home = (props) => {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+const particles = Array.from({ length: 15 })
+
+const stats = [
+  { value: '100+', label: 'Servers' },
+  { value: '100K+', label: 'Members' },
+  { value: '99.9%', label: 'Uptime' },
+]
+
+const Home = () => {
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
 
   useEffect(() => {
     fetch('https://dash.api.daiki-bot.xyz/api/users/@me', {
-      credentials: 'include'
+      credentials: 'include',
     })
-      .then(res => {
-        if (res.ok) {
-          setIsLoggedIn(true);
-        } else {
-          setIsLoggedIn(false);
-        }
-      })
-      .catch(() => setIsLoggedIn(false));
-  }, []);
+      .then((res) => setIsLoggedIn(res.ok))
+      .catch(() => setIsLoggedIn(false))
+  }, [])
 
   return (
-    <div className="home-container1">
+    <div className="home-container1 daiki-page">
       <Helmet>
         <title>Daiki Development</title>
         <meta property="og:title" content="Daiki Development" />
       </Helmet>
       {isLoggedIn ? <NavBarLI id="top" /> : <NavBar id="top" />}
-      <div className="home-container2">
-        <div className="home-container3">
-          <div className="home-container4">
-            <span className="home-text22">
-              <span>Home</span>
-              <br></br>
-            </span>
-            <a
-              href="https://daiki-bot.xyz/invite"
-              target="_blank"
-              rel="noreferrer noopener"
-              className="home-link3"
-            >
-              <img
-                alt="Exclude380"
-                src="/external/exclude380-n6cl.svg"
-                className="home-exclude"
-              />
-            </a>
+
+      <section aria-label="Hero" className="daiki-hero">
+        <div className="daiki-hero__bg">
+          <div aria-hidden="true" className="daiki-hero__grid"></div>
+          <div aria-hidden="true" className="daiki-hero__particles">
+            {particles.map((_, index) => (
+              <span key={index}></span>
+            ))}
           </div>
         </div>
-        <div className="home-container5">
-          <div className="home-container6">
-            <Link to="/docs" className="home-navlink1">
-              <div className="home-container7">
-                <svg
-                  width="75"
-                  height="75"
-                  viewBox="0 0 24 24"
-                  className="home-icon1"
-                >
-                  <path
-                    d="M4 4v18h16v2H4c-1.1 0-2-.9-2-2V4zm11 3h5.5L15 1.5zM8 0h8l6 6v12c0 1.11-.89 2-2 2H8a2 2 0 0 1-2-2V2c0-1.11.89-2 2-2m9 16v-2H8v2zm3-4v-2H8v2z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-                <span className="home-text25">
-                  <span>Documentation</span>
-                  <br></br>
-                </span>
-              </div>
-            </Link>
-            <Link to="/contact" className="home-navlink2">
-              <div className="home-container8">
-                <svg
-                  width="75"
-                  height="75"
-                  viewBox="0 0 24 24"
-                  className="home-icon3"
-                >
-                  <path
-                    d="M19 3h-1V1h-2v2H8V1H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2m-7 3c1.66 0 3 1.34 3 3s-1.34 3-3 3s-3-1.34-3-3s1.34-3 3-3m6 12H6v-1c0-2 4-3.1 6-3.1s6 1.1 6 3.1z"
-                    fill="currentColor"
-                  ></path>
-                </svg>
-                <span className="home-text28">
-                  <span>Contact</span>
-                  <br></br>
-                </span>
-              </div>
-            </Link>
-            <Link to="/commands" className="home-navlink3">
-              <div className="home-container9">
-                <svg
-                  width="75"
-                  height="75"
-                  viewBox="0 0 20 20"
-                  className="home-icon5"
-                >
-                  <path
-                    d="M3.25 3A2.25 2.25 0 0 0 1 5.25v9.5A2.25 2.25 0 0 0 3.25 17h13.5A2.25 2.25 0 0 0 19 14.75v-9.5A2.25 2.25 0 0 0 16.75 3zm.943 8.752a.75.75 0 0 1 .055-1.06L6.128 9l-1.88-1.693a.75.75 0 1 1 1.004-1.114l2.5 2.25a.75.75 0 0 1 0 1.114l-2.5 2.25a.75.75 0 0 1-1.06-.055M9.75 10.25a.75.75 0 0 0 0 1.5h2.5a.75.75 0 0 0 0-1.5z"
-                    fill="currentColor"
-                    clip-rule="evenodd"
-                    fill-rule="evenodd"
-                  ></path>
-                </svg>
-                <span className="home-text31">
-                  <span>Commands</span>
-                  <br></br>
-                </span>
-              </div>
-            </Link>
+        <div className="daiki-hero__container">
+          <div className="daiki-hero__content">
+            <p className="daiki-eyebrow">Daiki Development</p>
+            <h1 className="daiki-hero__headline">
+              The Discord Bot That Does It All
+            </h1>
+            <p className="daiki-hero__subheadline">
+              Powerful moderation, fun commands, server controls, and clear
+              documentation in one polished place.
+            </p>
+            <div className="daiki-hero__actions">
+              <a
+                href="https://daiki-bot.xyz/invite"
+                target="_blank"
+                rel="noreferrer noopener"
+                className="daiki-hero__btn daiki-hero__btn--primary"
+              >
+                Add to Server
+              </a>
+              <Link to="/docs" className="daiki-hero__btn daiki-hero__btn--secondary">
+                See Documentation
+              </Link>
+            </div>
+          </div>
+
+          <div aria-hidden="true" className="daiki-hero__visual">
+            <div className="daiki-hero__orb daiki-hero__orb--1"></div>
+            <div className="daiki-hero__orb daiki-hero__orb--2"></div>
+            <div className="daiki-hero__orb daiki-hero__orb--3"></div>
+            <div className="daiki-hero__shape daiki-hero__shape--hex">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="hexGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stopColor="#FF00FF" stopOpacity="0.8" />
+                    <stop offset="50%" stopColor="#5865F2" stopOpacity="0.6" />
+                    <stop offset="100%" stopColor="#00D4FF" stopOpacity="0.8" />
+                  </linearGradient>
+                </defs>
+                <polygon
+                  points="100,10 190,55 190,145 100,190 10,145 10,55"
+                  fill="none"
+                  stroke="url(#hexGrad)"
+                  strokeWidth="2"
+                />
+                <polygon
+                  points="100,30 170,65 170,135 100,170 30,135 30,65"
+                  fill="url(#hexGrad)"
+                  fillOpacity="0.15"
+                />
+                <circle cx="100" cy="100" r="25" fill="url(#hexGrad)" fillOpacity="0.4" />
+                <circle cx="100" cy="100" r="12" fill="#00D4FF" fillOpacity="0.8" />
+              </svg>
+            </div>
+            <div className="daiki-hero__shape daiki-hero__shape--ring">
+              <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="80" fill="none" stroke="#FF00FF" strokeWidth="1" strokeOpacity="0.4" />
+                <circle cx="100" cy="100" r="60" fill="none" stroke="#5865F2" strokeWidth="1.5" strokeOpacity="0.5" />
+                <circle cx="100" cy="100" r="40" fill="none" stroke="#00D4FF" strokeWidth="2" strokeOpacity="0.6" />
+              </svg>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      <main className="daiki-home-content">
+        <section id="features" className="daiki-section">
+          <p className="daiki-eyebrow">Core tools</p>
+          <h2 className="daiki-section-title">Everything your server needs</h2>
+          <div className="daiki-card-grid daiki-card-grid--three">
+            <Link to="/docs" className="daiki-feature-card">
+              <span className="daiki-feature-card__icon">DOCS</span>
+              <h3>Documentation</h3>
+              <p>Guides and references for setting up Daiki with confidence.</p>
+            </Link>
+            <Link to="/commands" className="daiki-feature-card">
+              <span className="daiki-feature-card__icon">CMD</span>
+              <h3>Commands</h3>
+              <p>Browse moderation, fun, utility, and server management commands.</p>
+            </Link>
+            <Link to="/contact" className="daiki-feature-card">
+              <span className="daiki-feature-card__icon">HELP</span>
+              <h3>Support</h3>
+              <p>Reach the team when you need account, bot, or billing help.</p>
+            </Link>
+          </div>
+        </section>
+
+        <section aria-label="Daiki statistics" className="daiki-stats">
+          <div className="daiki-stats__container">
+            {stats.map((stat) => (
+              <div key={stat.label} className="daiki-stats__item">
+                <span className="daiki-stats__number">{stat.value}</span>
+                <span className="daiki-stats__label">{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
       <Footer />
     </div>
   )

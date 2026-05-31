@@ -9,6 +9,68 @@
     background-position: center;
 }
 
+/* Daiki refresh: dashboard landing */
+.dashboard-container1 {
+  background: radial-gradient(circle at 15% 25%, rgba(88, 101, 242, 0.07), transparent 40%), radial-gradient(circle at 85% 75%, rgba(0, 212, 255, 0.05), transparent 40%), #0a0a0f !important;
+}
+
+.dashboard-container1 .daiki-page-shell {
+  width: min(1180px, calc(100% - 48px));
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  margin: 140px auto 72px;
+}
+
+.dashboard-container1 .daiki-panel-hero {
+  padding: 48px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  background: radial-gradient(circle at 15% 18%, rgba(255, 0, 255, 0.16), transparent 34%), radial-gradient(circle at 88% 22%, rgba(0, 212, 255, 0.15), transparent 34%), linear-gradient(145deg, rgba(26, 26, 36, 0.94), rgba(18, 18, 26, 0.9));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+}
+
+.dashboard-container1 .daiki-panel-hero h1 {
+  color: #fff;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  line-height: 0.98;
+  margin: 0;
+}
+
+.dashboard-container1 .daiki-panel-hero p:not(.daiki-eyebrow) {
+  max-width: 680px;
+  color: #b0b3b8;
+  font-size: 1.08rem;
+  line-height: 1.65;
+  margin: 18px 0 0;
+}
+
+.dashboard-container1 .daiki-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.dashboard-container1 .daiki-dashboard-card {
+  min-height: 220px;
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  color: #b0b3b8;
+  text-decoration: none;
+  background: linear-gradient(145deg, rgba(26, 26, 36, 0.92), rgba(18, 18, 26, 0.88));
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.22);
+}
+
+.dashboard-container1 .daiki-dashboard-card h3 {
+  color: #fff;
+}
+
+.dashboard-container1 .daiki-dashboard-card p {
+  color: #b0b3b8;
+  line-height: 1.65;
+}
+
 .dashboard-text10 {
     display: inline-block;
 }

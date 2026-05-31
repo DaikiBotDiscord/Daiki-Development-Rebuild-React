@@ -1,97 +1,90 @@
-import React, { Fragment } from 'react'
-import { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import { Link } from 'react-router-dom'
-
 import { Helmet } from 'react-helmet'
-import { Mosaic, ThreeDot } from 'react-loading-indicators'
+import { ThreeDot } from 'react-loading-indicators'
 
 import Footer from '../../components/footer'
-import './servers.css'
 import NavBarLI from '../../components/nav-bar-li'
+import './servers.css'
 
-const Servers = (props) => {
-    const [userData, setUserData] = useState(null);
+const Servers = () => {
+    const [userData, setUserData] = useState(null)
 
     useEffect(() => {
-        axios.get("https://dash.api.daiki-bot.xyz/api/users/@me", {
-            withCredentials: true
+        axios.get('https://dash.api.daiki-bot.xyz/api/users/@me', {
+            withCredentials: true,
         })
-            .then(res => setUserData(res.data))
-            .catch(err => {
-                console.error("❌ Error fetching user data:", err);
-                window.location.href = "https://daiki-bot.xyz/dashboard-sync";
-            });
-    }, []);
+            .then((res) => setUserData(res.data))
+            .catch((err) => {
+                console.error('Error fetching user data:', err)
+                window.location.href = 'https://daiki-bot.xyz/dashboard-sync'
+            })
+    }, [])
 
     if (!userData) {
-        return <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100%',
-            width: '100%',
-            marginTop: '100px',
-        }}>
-            <ThreeDot variant="bounce" color={["#6141ac", "#233dff", "#6845ba", "#3850ff"]} size="large" text="" textColor="" />
-        </div>;
+        return (
+            <div className="daiki-loading">
+                <ThreeDot variant="bounce" color={['#ff00ff', '#5865f2', '#00d4ff']} size="large" text="" textColor="" />
+            </div>
+        )
     }
 
+    const guilds = userData?.manageable_guilds || []
+
     return (
-        <div className="servers-container1">
+        <div className="servers-container1 daiki-page">
             <Helmet>
                 <title>Servers - Daiki Development</title>
                 <meta property="og:title" content="Servers - Daiki Development" />
             </Helmet>
             <NavBarLI />
-            <div className="servers-container2">
-                <div className="servers-container3">
-                    <div className="servers-container4">
-                        <span className="servers-text28">
-                            <span>Servers</span>
-                            <br></br>
-                        </span>
+
+            <main className="daiki-page-shell">
+                <section className="daiki-panel-hero daiki-panel-hero--split">
+                    <div>
+                        <p className="daiki-eyebrow">Server management</p>
+                        <h1>Servers</h1>
+                        <p>Manage the Discord servers where you have Daiki access.</p>
                     </div>
                     <a
                         href="https://daiki-bot.xyz/invite"
                         target="_blank"
                         rel="noreferrer noopener"
-                        className="servers-action1 thq-button-filled thq-button-animated"
+                        className="daiki-hero__btn daiki-hero__btn--primary"
                     >
-                        <span>Invite Daiki</span>
+                        Invite Daiki
                     </a>
-                </div>
-                <hr className="servers-separator"></hr>
-                <div className="servers-container5">
-                    {userData?.manageable_guilds?.map((guild) => (
-                        <div className="servers-container6" key={guild.id}>
-                            <img
-                                src={
-                                    guild.icon
-                                        ? `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png`
-                                        : '/default-server-icon.png'
-                                }
-                                alt="Server Icon"
-                                className="servers-image"
-                            />
-                            <div className="servers-container7">
-                                <span className="servers-text32">
-                                    <span>{guild.name}</span>
-                                    <br />
-                                </span>
-                                <span className="servers-text35">
-                                    <span>{guild.id}</span>
-                                    <br />
-                                </span>
-                                <span className="servers-text38">
-                                    <span>{guild.owner ? 'OWNER' : 'BOT MANAGER'}</span>
-                                    <br />
-                                </span>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
+                </section>
+
+                <section className="daiki-list-grid">
+                    {guilds.length > 0 ? (
+                        guilds.map((guild) => (
+                            <article className="daiki-list-card" key={guild.id}>
+                                <img
+                                    src={
+                                        guild.icon
+                                            ? `https://cdn.discordapp.com/icons/${guild.id}/${guild.icon}.png`
+                                            : '/default-server-icon.png'
+                                    }
+                                    alt={`${guild.name} server icon`}
+                                    className="daiki-list-card__image"
+                                />
+                                <div>
+                                    <h3>{guild.name}</h3>
+                                    <p>{guild.id}</p>
+                                    <span>{guild.owner ? 'Owner' : 'Bot Manager'}</span>
+                                </div>
+                            </article>
+                        ))
+                    ) : (
+                        <article className="daiki-empty-state">
+                            <h3>No manageable servers found</h3>
+                            <p>Invite Daiki or check that your Discord account has the right permissions.</p>
+                        </article>
+                    )}
+                </section>
+            </main>
+
             <Footer />
         </div>
     )

@@ -1,106 +1,111 @@
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
+import axios from 'axios'
+import { ThreeDot } from 'react-loading-indicators'
+
+import NavBarLI from '../../components/nav-bar-li'
+import Footer from '../../components/footer'
 import './account.css'
-import React, { useState, useEffect } from 'react';
-import NavBarLI from '../../components/nav-bar-li';
-import Footer from '../../components/footer';
-import './account.css';
-import axios from 'axios';
-import { Mosaic, ThreeDot } from 'react-loading-indicators'
 
 const Account = () => {
-    const [userData, setUserData] = useState(null);
+    const [userData, setUserData] = useState(null)
 
     useEffect(() => {
-        axios.get("https://dash.api.daiki-bot.xyz/api/users/@me", {
-            withCredentials: true
+        axios.get('https://dash.api.daiki-bot.xyz/api/users/@me', {
+            withCredentials: true,
         })
-            .then(res => setUserData(res.data))
-            .catch(err => {
-                console.error("❌ Error fetching user data:", err);
-                window.location.href = "https://daiki-bot.xyz/dashboard-sync";
-            });
-    }, []);
+            .then((res) => setUserData(res.data))
+            .catch((err) => {
+                console.error('Error fetching user data:', err)
+                window.location.href = 'https://daiki-bot.xyz/dashboard-sync'
+            })
+    }, [])
 
     if (!userData) {
-        return <div style={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            height: '100%', // Full viewport height
-            width: '100%',  // Full viewport width
-            marginTop: '100px',
-        }}>
-            <ThreeDot variant="bounce" color={["#6141ac", "#233dff", "#6845ba", "#3850ff"]} size="large" text="" textColor="" />
-        </div>;
+        return (
+            <div className="daiki-loading">
+                <ThreeDot variant="bounce" color={['#ff00ff', '#5865f2', '#00d4ff']} size="large" text="" textColor="" />
+            </div>
+        )
     }
 
+    const avatarUrl = `https://cdn.discordapp.com/avatars/${userData.discordId}/${userData.avatar}.png`
+    const createdAt = new Date(userData.createdAt).toLocaleDateString('en-US', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+    })
+
     return (
-        <div className="account-container1">
+        <div className="account-container1 daiki-page">
             <Helmet>
                 <title>Account - Daiki Development</title>
                 <meta property="og:title" content="Account - Daiki Development" />
             </Helmet>
             <NavBarLI />
-            <div className="account-container2">
-                <div className="account-container3">
-                    <div className="account-container4">
-                        <span className="account-text32">
-                            <span>Account</span>
-                            <br></br>
-                        </span>
+
+            <main className="daiki-account-shell">
+                <header role="banner" className="daiki-profile-header">
+                    <div className="daiki-header-bg-shapes">
+                        <div className="daiki-shape-hex"></div>
+                        <div className="daiki-shape-tri"></div>
+                        <div className="daiki-shape-diamond"></div>
                     </div>
-                </div>
-                <hr className="account-separator1"></hr>
-                <div className="account-container5">
-                    <div className="account-container6">
-                        <img
-                            alt="image"
-                            src={`https://cdn.discordapp.com/avatars/${userData.discordId}/${userData.avatar}.png`}
-                            className="account-image"
-                        />
-                        <div className="account-container7">
-                            <span className="account-text35">
-                                <span>{userData.displayName}</span>
-                                <br></br>
-                            </span>
-                            <span className="account-text38">
-                                <span className="account-text39">{userData.discordId}</span>
-                                <br></br>
-                            </span>
+                    <div className="daiki-profile-header-inner">
+                        <div className="daiki-avatar-wrap">
+                            <div className="daiki-avatar-ring"></div>
+                            <div className="daiki-avatar-ring-outer"></div>
+                            <img src={avatarUrl} alt={`${userData.displayName} avatar`} className="daiki-avatar-image" />
+                            <div aria-label="Online status" className="daiki-avatar-status"></div>
+                        </div>
+                        <div className="daiki-profile-text">
+                            <p className="daiki-eyebrow">Account</p>
+                            <h1 className="daiki-username">{userData.displayName}</h1>
+                            <p className="daiki-user-tagline">Discord ID {userData.discordId}</p>
                         </div>
                     </div>
-                    <div className="account-container8">
-                        <div className="account-container9">
-                            <span className="account-text41">
-                                <span> Info</span>
-                                <br></br>
-                            </span>
-                            <hr className="account-separator2"></hr>
-                            <span className="account-text44">
-                                <span>Email: {userData.email}</span>
-                                <br></br>
-                            </span>
-                            <span className="account-text47">
-                                <span>Total Servers: {userData.guildCount}</span>
-                                <br></br>
-                            </span>
-                            <span className="account-text50">
-                                <span>Total Servers with Daiki: {userData.mutualCount}</span>
-                                <br></br>
-                            </span>
-                            <span className="account-text53">
-                                <span>Total Manageable Servers: {userData.manageableCount}</span>
-                                <br></br>
-                            </span>
-                            <span className="account-text56">
-                                <span>Daiki Account Created: {new Date(userData.createdAt).toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}</span>
-                                <br></br>
-                            </span>
+                </header>
+
+                <section aria-labelledby="stats-heading" className="daiki-stats-section">
+                    <div className="daiki-stats-inner">
+                        <h2 id="stats-heading" className="daiki-section-title">Account Stats</h2>
+                        <div className="daiki-stats-grid">
+                            <article className="daiki-stat-card">
+                                <div className="daiki-stat-glow"></div>
+                                <div className="daiki-stat-value">{userData.guildCount}</div>
+                                <div className="daiki-stat-label">Total Servers</div>
+                            </article>
+                            <article className="daiki-stat-card">
+                                <div className="daiki-stat-glow"></div>
+                                <div className="daiki-stat-value">{userData.mutualCount}</div>
+                                <div className="daiki-stat-label">Servers with Daiki</div>
+                            </article>
+                            <article className="daiki-stat-card">
+                                <div className="daiki-stat-glow"></div>
+                                <div className="daiki-stat-value">{userData.manageableCount}</div>
+                                <div className="daiki-stat-label">Manageable Servers</div>
+                            </article>
                         </div>
                     </div>
-                </div>
-            </div>
+                </section>
+
+                <section aria-labelledby="details-heading" className="daiki-settings-section">
+                    <div className="daiki-settings-inner">
+                        <h2 id="details-heading" className="daiki-section-title">Account Details</h2>
+                        <div className="daiki-detail-grid">
+                            <article className="daiki-detail-card">
+                                <span>Email</span>
+                                <strong>{userData.email}</strong>
+                            </article>
+                            <article className="daiki-detail-card">
+                                <span>Daiki Account Created</span>
+                                <strong>{createdAt}</strong>
+                            </article>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
             <Footer />
         </div>
     )

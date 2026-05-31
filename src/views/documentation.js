@@ -1,6 +1,4 @@
-import React, { Fragment, useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-
+import React, { useState, useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 
 import NavBar from '../components/nav-bar'
@@ -9,46 +7,37 @@ import Docs from '../components/docs'
 import Footer from '../components/footer'
 import './documentation.css'
 
-const Documentation = (props) => {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+const Documentation = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false)
 
     useEffect(() => {
         fetch('https://dash.api.daiki-bot.xyz/api/users/@me', {
-            credentials: 'include'
+            credentials: 'include',
         })
-            .then(res => {
-                if (res.ok) {
-                    setIsLoggedIn(true);
-                } else {
-                    setIsLoggedIn(false);
-                }
-            })
-            .catch(() => setIsLoggedIn(false));
-    }, []);
+            .then((res) => setIsLoggedIn(res.ok))
+            .catch(() => setIsLoggedIn(false))
+    }, [])
 
     return (
-        <div className="documentation-container1">
+        <div className="documentation-container1 daiki-page">
             <Helmet>
                 <title>Documentation - Daiki Development</title>
-                <meta
-                    property="og:title"
-                    content="Documentation - Daiki Development"
-                />
+                <meta property="og:title" content="Documentation - Daiki Development" />
             </Helmet>
             {isLoggedIn ? <NavBarLI id="top" /> : <NavBar id="top" />}
-            <div className="documentation-container2">
-                <div className="documentation-container3">
-                    <div className="documentation-container4">
-                        <span className="documentation-text22">
-                            <span>Documentation</span>
-                            <br></br>
-                        </span>
-                    </div>
-                </div>
-                <div className="documentation-container5">
+
+            <main className="daiki-page-shell">
+                <section className="daiki-panel-hero">
+                    <p className="daiki-eyebrow">Knowledge base</p>
+                    <h1>Documentation</h1>
+                    <p>Set up Daiki, understand each feature, and keep your server configuration tidy.</p>
+                </section>
+
+                <section className="daiki-content-panel">
                     <Docs />
-                </div>
-            </div>
+                </section>
+            </main>
+
             <Footer />
         </div>
     )
