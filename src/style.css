@@ -1844,3 +1844,33 @@ a {
   color: #ffffff !important;
   background: rgba(255, 255, 255, 0.07) !important;
 }
+
+body.has-web-alert .nav-bar-nav-bar,
+body.has-web-alert .nav-bar-li-nav-bar {
+  top: var(--web-alert-height, 52px) !important;
+}
+
+body.has-web-alert .daiki-hero {
+  padding-top: calc(170px + var(--web-alert-height, 52px)) !important;
+}
+
+body.has-web-alert .daiki-page-shell {
+  margin-top: calc(140px + var(--web-alert-height, 52px)) !important;
+}
+
+body.has-web-alert .daiki-account-shell {
+  padding-top: calc(140px + var(--web-alert-height, 52px)) !important;
+}
+
+body.has-web-alert .commands-container2,
+body.has-web-alert .documentation-container2,
+body.has-web-alert .contact-container2,
+body.has-web-alert .dashboard-container2,
+body.has-web-alert .servers-container2,
+body.has-web-alert .warnings-container2,
+body.has-web-alert .privacy-policy-container1,
+body.has-web-alert .terms-of-service-tos-document,
+body.has-web-alert .page-not-found-container2,
+body.has-web-alert .lend-me-a-tenor-navbar-container {
+  margin-top: calc(132px + var(--web-alert-height, 52px)) !important;
+}
