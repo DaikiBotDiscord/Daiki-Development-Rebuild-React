@@ -1,53 +1,53 @@
 .web-alerts-web-alerts {
-  flex: 0 0 auto;
   width: 100%;
-  height: auto;
+  min-height: 52px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 220;
   display: flex;
-  position: relative;
   align-items: center;
-  padding-top: var(--dl-layout-space-unit);
-  flex-direction: column;
-  padding-bottom: 34px;
   justify-content: center;
-  background-image: linear-gradient(180deg, rgb(255, 246, 0) 86.00%, rgb(0, 9, 24) 100.00%);
-  border-top-left-radius: 0;
-  border-top-right-radius: 0;
-  border-bottom-left-radius: 0;
-  border-bottom-right-radius: 0;
+  gap: 16px;
+  padding: 10px 24px;
+  color: #0a0a0f;
+  background: linear-gradient(135deg, #fff400, #ffd84d);
+  border-bottom: 1px solid rgba(10, 10, 15, 0.18);
+  box-shadow: 0 12px 34px rgba(0, 0, 0, 0.22);
 }
 
-.web-alerts-text10 {
+.web-alerts-text13 {
+  color: #0a0a0f;
+  display: inline-block;
+  font-size: 0.98rem;
+  font-style: normal;
+  font-weight: 900;
+  line-height: 1.35;
   text-align: center;
 }
 
 .web-alerts-navlink {
-  margin-top: var(--dl-layout-space-halfunit);
-  border-width: 0px;
+  min-height: 34px;
+  margin: 0;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 999px;
+  color: #ffffff !important;
+  font-weight: 900;
   text-decoration: none;
-  background-color: var(--dl-color-theme-primary2);
+  white-space: nowrap;
+  background: linear-gradient(135deg, #ff00ff, #5865f2 48%, #00d4ff) !important;
 }
 
-.web-alerts-text12 {
-  display: inline-block;
-}
-
-.web-alerts-text13 {
-  fill: var(--dl-color-theme-primary2);
-  color: var(--dl-color-theme-primary2);
-  display: inline-block;
-  font-size: 18px;
-  font-style: normal;
-  text-align: center;
-  font-weight: 700;
-}
-
-@media(max-width: 479px) {
+@media (max-width: 640px) {
   .web-alerts-web-alerts {
-    height: auto;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+    padding: 10px 16px;
   }
 
-  .web-alerts-text10 {
-    padding-top: var(--dl-layout-space-halfunit);
-    padding-bottom: var(--dl-layout-space-halfunit);
+  .web-alerts-navlink {
+    align-self: center;
   }
 }
