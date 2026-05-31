@@ -1878,10 +1878,16 @@ body.has-web-alert .lend-me-a-tenor-navbar-container {
 @media (max-width: 980px) {
   .nav-bar-mobile-menu.open,
   .nav-bar-li-mobile-menu.open {
-    background-color: #0a0a0f !important;
-    background-image: radial-gradient(circle at 15% 18%, rgba(255, 0, 255, 0.08), transparent 34%), radial-gradient(circle at 88% 22%, rgba(0, 212, 255, 0.08), transparent 34%) !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    min-height: 100dvh !important;
+    background: #03040a !important;
+    background-color: #03040a !important;
+    background-image: none !important;
     opacity: 1 !important;
     backdrop-filter: none !important;
+    box-shadow: inset 0 0 0 100vmax #03040a !important;
+    overflow-y: auto !important;
   }
 
   .nav-bar-links2 .nav-bar-link,
