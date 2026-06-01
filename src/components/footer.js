@@ -46,12 +46,7 @@ const Footer = (props) => {
                                 </Fragment>
                             )}
                         </Link>
-                        <a
-                            href="/dashboard"
-                            target="_blank"
-                            rel="noreferrer noopener"
-                            className="footer-link5"
-                        >
+                        <Link to="/dashboard" className="footer-link5">
                             {props.link41 ?? (
                                 <Fragment>
                                     <span className="footer-text20 thq-body-small">
@@ -59,7 +54,7 @@ const Footer = (props) => {
                                     </span>
                                 </Fragment>
                             )}
-                        </a>
+                        </Link>
                     </div>
                     <div className="footer-social-links">
                         <a
@@ -97,7 +92,7 @@ const Footer = (props) => {
                                     </Fragment>
                                 )}
                             </span>
-                            <a href={props.link11Url}>
+                            <Link to="/privacy">
                                 {props.link11 ?? (
                                     <Fragment>
                                         <span className="footer-text15 thq-body-small">
@@ -105,20 +100,17 @@ const Footer = (props) => {
                                         </span>
                                     </Fragment>
                                 )}
-                            </a>
-                            <a href={props.link11Url1}>
+                            </Link>
+                            <Link to="/tos">
                                 {props.link111 ?? (
                                     <Fragment>
-                                        <a
-                                            href="https://daiki-bot.xyz/tos"
-                                            className="footer-link113 thq-body-small"
-                                        >
+                                        <span className="footer-link113 thq-body-small">
                                             <span>Terms of Service</span>
                                             <br></br>
-                                        </a>
+                                        </span>
                                     </Fragment>
                                 )}
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
