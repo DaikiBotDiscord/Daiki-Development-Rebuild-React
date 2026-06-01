@@ -17,6 +17,7 @@ import LendMeATenor from './views/lend-me-a-tenor'
 import TheWeddingSinger from './views/theweddingsinger'
 import AroundTheWorld from './views/around-the-world'
 import WebAlerts from './components/web-alerts'
+import ScrollToTop from './components/scroll-to-top'
 import Docs from './views/documentation'
 import Contact from './views/contact'
 import Commands from './views/commands'
@@ -112,6 +113,7 @@ const App = () => {
   return (
     <Router>
       {showWebAlerts && <WebAlerts />}
+      <ScrollToTop />
       <Switch>
 
         {/* Main Website Pages */}

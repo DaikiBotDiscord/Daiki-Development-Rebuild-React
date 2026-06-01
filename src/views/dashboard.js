@@ -25,6 +25,12 @@ const dashboardCards = [
         copy: 'Browse the servers you can manage and invite Daiki where needed.',
         icon: 'SRV',
     },
+    {
+        to: '/dashboard/music',
+        label: 'Music',
+        copy: 'Manage your music playback and queue settings across servers.',
+        icon: 'MUS',
+    },
 ]
 
 const Dashboard = () => {
