@@ -515,31 +515,6 @@ const Docs = (props) => {
                                             Daiki uses version: 14.14.1
                                         </span>
                                         <br></br>
-                                        <br className="docs-text236"></br>
-                                        <span>
-                                            Mongoose - Database application that can be used for small
-                                            applications and is free but for better quality and
-                                            performance you will need to pay. To learn more please
-                                            visit
-                                            <span
-                                                dangerouslySetInnerHTML={{
-                                                    __html: ' ',
-                                                }}
-                                            />
-                                        </span>
-                                        <a
-                                            href="https://mongodb.com"
-                                            target="_blank"
-                                            rel="noreferrer noopener"
-                                            className="docs-link9"
-                                        >
-                                            mongodb.com
-                                        </a>
-                                        <br className="docs-text238"></br>
-                                        <span className="docs-text239">
-                                            Daiki uses version: 6.0.12
-                                        </span>
-                                        <br className="docs-text240"></br>
                                     </span>
                                 </div>
                             )}
