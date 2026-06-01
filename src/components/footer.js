@@ -125,7 +125,7 @@ const Footer = (props) => {
                 <span>
                     {props.text ?? (
                         <Fragment>
-                            <span className="footer-text19">Last Updated 04/05/2026</span>
+                            <span className="footer-text19">Last Updated 06/01/2026</span>
                         </Fragment>
                     )}
                 </span>
