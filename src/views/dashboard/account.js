@@ -10,7 +10,7 @@ import './account.css'
 const Account = () => {
     const [userData, setUserData] = useState(null)
 
-   /*  useEffect(() => {
+    useEffect(() => {
         axios.get('https://dash.api.daiki-bot.xyz/api/users/@me', {
             withCredentials: true,
         })
@@ -34,7 +34,7 @@ const Account = () => {
         year: 'numeric',
         month: 'long',
         day: 'numeric',
-    }) */
+    })
 
     return (
         <div className="account-container1 daiki-page">
