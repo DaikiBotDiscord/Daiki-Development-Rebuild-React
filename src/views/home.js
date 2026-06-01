@@ -76,7 +76,7 @@ const Home = () => {
             </h1>
             <p className="daiki-hero__subheadline">
               Powerful moderation, fun commands, server controls, and clear
-              documentation in one polished place.
+              documentation in one polished place. Without the price tag.
             </p>
             <div className="daiki-hero__actions">
               <a
