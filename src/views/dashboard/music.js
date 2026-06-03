@@ -223,7 +223,7 @@ const Music = () => {
             type="text"
             value={query}
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="never gonna give you up"
+            placeholder="Never Gonna Give You Up"
           />
         </label>
         <button type="submit" className="music-control-button music-control-button--primary" disabled={sendingType === 'music.add_song'}>
