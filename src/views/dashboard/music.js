@@ -7,7 +7,7 @@ import NavBarLI from '../../components/nav-bar-li'
 import Footer from '../../components/footer'
 import './music.css'
 
-const REFRESH_SECONDS = 10
+const REFRESH_SECONDS = 20
 
 const formatTime = (seconds) => {
   if (seconds == null || Number.isNaN(seconds)) {
