@@ -38,8 +38,6 @@ const Music = () => {
   const [requestError, setRequestError] = useState(null)
   const [sendingType, setSendingType] = useState(null)
   const [query, setQuery] = useState('')
-  const [voiceChannelId, setVoiceChannelId] = useState('')
-  const [textChannelId, setTextChannelId] = useState('')
   const [volume, setVolume] = useState(75)
   const [secondsUntilRefresh, setSecondsUntilRefresh] = useState(REFRESH_SECONDS)
 
@@ -126,6 +124,18 @@ const Music = () => {
       return
     }
 
+    const requesterId = userData?.discordId || userData?.id
+    if (!requesterId) {
+      setRequestError('Unable to identify the requester. Refresh the page and try again.')
+      setRequestMessage(null)
+      return
+    }
+
+    const requesterPayload = {
+      ...payload,
+      requestedById: requesterId,
+    }
+
     setSendingType(type)
     setRequestError(null)
     setRequestMessage(null)
@@ -135,7 +145,7 @@ const Music = () => {
         `https://dash.api.daiki-bot.xyz/api/guilds/${activeGuildId}/bot-requests`,
         {
           type,
-          payload,
+          payload: requesterPayload,
           waitForResult: true,
           waitTimeoutMs: 8000,
         },
@@ -175,14 +185,6 @@ const Music = () => {
       source: 'website',
     }
 
-    if (voiceChannelId.trim()) {
-      payload.voiceChannelId = voiceChannelId.trim()
-    }
-
-    if (textChannelId.trim()) {
-      payload.textChannelId = textChannelId.trim()
-    }
-
     sendMusicRequest('music.add_song', payload)
   }
 
@@ -219,24 +221,6 @@ const Music = () => {
             value={query}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="never gonna give you up"
-          />
-        </label>
-        <label className="music-field">
-          <span>Voice channel ID</span>
-          <input
-            type="text"
-            value={voiceChannelId}
-            onChange={(event) => setVoiceChannelId(event.target.value)}
-            placeholder="Optional if saved"
-          />
-        </label>
-        <label className="music-field">
-          <span>Text channel ID</span>
-          <input
-            type="text"
-            value={textChannelId}
-            onChange={(event) => setTextChannelId(event.target.value)}
-            placeholder="Optional if saved"
           />
         </label>
         <button type="submit" className="music-control-button music-control-button--primary" disabled={sendingType === 'music.add_song'}>
