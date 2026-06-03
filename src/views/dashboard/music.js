@@ -31,7 +31,6 @@ const musicActions = [
 
 const Music = () => {
   const [userData, setUserData] = useState(null)
-  const [selectedGuildId, setSelectedGuildId] = useState('')
   const [musicData, setMusicData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [musicError, setMusicError] = useState(null)
@@ -45,7 +44,14 @@ const Music = () => {
   const [secondsUntilRefresh, setSecondsUntilRefresh] = useState(REFRESH_SECONDS)
 
   const guilds = useMemo(() => userData?.manageable_guilds || [], [userData])
-  const selectedGuild = guilds.find((guild) => guild.id === selectedGuildId)
+  const activeGuildId = useMemo(() => {
+    const player = musicData?.player || {}
+    const state = musicData?.music_state || {}
+
+    return state.guild_id || player.guild_id || player.server?.id || musicData?.guild_id || ''
+  }, [musicData])
+  const activeGuild = guilds.find((guild) => guild.id === activeGuildId)
+  const hasActiveMusic = Boolean(musicData?.in_voice_channel || musicData?.player || musicData?.music_state)
 
   const fetchMusicState = useCallback(async () => {
     try {
@@ -79,11 +85,9 @@ const Music = () => {
   useEffect(() => {
     axios.get('https://dash.api.daiki-bot.xyz/api/users/@me', {
       withCredentials: true,
-    })
+      })
       .then((res) => {
         setUserData(res.data)
-        const firstGuildId = res.data?.manageable_guilds?.[0]?.id || ''
-        setSelectedGuildId((currentGuildId) => currentGuildId || firstGuildId)
       })
       .catch((err) => {
         console.error('Error fetching user data:', err)
@@ -116,8 +120,8 @@ const Music = () => {
   }, [fetchMusicState])
 
   const sendMusicRequest = async (type, payload = {}) => {
-    if (!selectedGuildId) {
-      setRequestError('Select a server before sending a music command.')
+    if (!activeGuildId) {
+      setRequestError('No active music server was found. Join a voice channel and start music before sending controls.')
       setRequestMessage(null)
       return
     }
@@ -128,7 +132,7 @@ const Music = () => {
 
     try {
       const response = await axios.post(
-        `https://dash.api.daiki-bot.xyz/api/guilds/${selectedGuildId}/bot-requests`,
+        `https://dash.api.daiki-bot.xyz/api/guilds/${activeGuildId}/bot-requests`,
         {
           type,
           payload,
@@ -195,6 +199,88 @@ const Music = () => {
     sendMusicRequest('music.set_volume', { volume: normalizedVolume })
   }
 
+  const renderMusicCommandPanel = () => (
+    <div className="music-command-panel">
+      <div className="music-command-header">
+        <div>
+          <p className="daiki-eyebrow">Bot requests</p>
+          <h2>Send music controls</h2>
+          <p className="music-active-server">
+            Sending to {activeGuild?.name || activeGuildId || 'the active music server'}.
+          </p>
+        </div>
+      </div>
+
+      <form className="music-add-form" onSubmit={handleAddSong}>
+        <label className="music-field music-field--wide">
+          <span>Song URL or search term</span>
+          <input
+            type="text"
+            value={query}
+            onChange={(event) => setQuery(event.target.value)}
+            placeholder="never gonna give you up"
+          />
+        </label>
+        <label className="music-field">
+          <span>Voice channel ID</span>
+          <input
+            type="text"
+            value={voiceChannelId}
+            onChange={(event) => setVoiceChannelId(event.target.value)}
+            placeholder="Optional if saved"
+          />
+        </label>
+        <label className="music-field">
+          <span>Text channel ID</span>
+          <input
+            type="text"
+            value={textChannelId}
+            onChange={(event) => setTextChannelId(event.target.value)}
+            placeholder="Optional if saved"
+          />
+        </label>
+        <button type="submit" className="music-control-button music-control-button--primary" disabled={sendingType === 'music.add_song'}>
+          {sendingType === 'music.add_song' ? 'Adding...' : 'Add Song'}
+        </button>
+      </form>
+
+      <div className="music-actions-grid">
+        {musicActions.map((action) => (
+          <button
+            key={action.type}
+            type="button"
+            className="music-control-button"
+            disabled={Boolean(sendingType)}
+            onClick={() => sendMusicRequest(action.type)}
+          >
+            <span>{action.icon}</span>
+            {sendingType === action.type ? 'Sending...' : action.label}
+          </button>
+        ))}
+      </div>
+
+      <form className="music-volume-form" onSubmit={handleSetVolume}>
+        <label className="music-field music-volume-range">
+          <span>Volume: {volume}%</span>
+          <input
+            type="range"
+            min="0"
+            max="100"
+            step="1"
+            value={volume}
+            onChange={(event) => setVolume(event.target.value)}
+          />
+        </label>
+        <button type="submit" className="music-control-button" disabled={sendingType === 'music.set_volume'}>
+          {sendingType === 'music.set_volume' ? 'Setting...' : 'Set Volume'}
+        </button>
+      </form>
+
+      {requestMessage && <div className="music-request-message">{requestMessage}</div>}
+      {requestError && <div className="music-request-error">{requestError}</div>}
+    </div>
+  )
+
   const renderMusicOverview = () => {
     if (loading) {
       return (
@@ -222,9 +308,9 @@ const Music = () => {
             live player, queue, and controls have anything active to show.
           </p>
           <p>
-            You can still use the Add Song form above. If Daiki does not already
-            have saved channel IDs for this server, include the voice channel ID
-            and text channel ID before adding a song.
+            Music controls are only sent to the server that currently has an
+            active music session, so start music in Discord first and this page
+            will pick up the active server on the next refresh.
           </p>
         </div>
       )
@@ -253,7 +339,7 @@ const Music = () => {
               <div className="music-tracker-row">
                 <div>
                   <span className="music-label">Server</span>
-                  <p>{player.server?.name || selectedGuild?.name || state.guild_id || 'Unknown server'}</p>
+                  <p>{player.server?.name || activeGuild?.name || state.guild_id || 'Unknown server'}</p>
                 </div>
                 <div>
                   <span className="music-label">Status</span>
@@ -325,6 +411,8 @@ const Music = () => {
           </article>
         </div>
 
+        {renderMusicCommandPanel()}
+
         <section className="music-queue-panel">
           <div className="music-queue-header">
             <h3>Queue snapshot</h3>
@@ -378,94 +466,6 @@ const Music = () => {
         </section>
 
         <section className="daiki-content-panel music-panel">
-          <div className="music-command-panel">
-            <div className="music-command-header">
-              <div>
-                <p className="daiki-eyebrow">Bot requests</p>
-                <h2>Send music controls</h2>
-              </div>
-              <label className="music-field music-field--server">
-                <span>Server</span>
-                <select value={selectedGuildId} onChange={(event) => setSelectedGuildId(event.target.value)}>
-                  <option value="">Select a server</option>
-                  {guilds.map((guild) => (
-                    <option key={guild.id} value={guild.id}>
-                      {guild.name}
-                    </option>
-                  ))}
-                </select>
-              </label>
-            </div>
-
-            <form className="music-add-form" onSubmit={handleAddSong}>
-              <label className="music-field music-field--wide">
-                <span>Song URL or search term</span>
-                <input
-                  type="text"
-                  value={query}
-                  onChange={(event) => setQuery(event.target.value)}
-                  placeholder="never gonna give you up"
-                />
-              </label>
-              <label className="music-field">
-                <span>Voice channel ID</span>
-                <input
-                  type="text"
-                  value={voiceChannelId}
-                  onChange={(event) => setVoiceChannelId(event.target.value)}
-                  placeholder="Optional if saved"
-                />
-              </label>
-              <label className="music-field">
-                <span>Text channel ID</span>
-                <input
-                  type="text"
-                  value={textChannelId}
-                  onChange={(event) => setTextChannelId(event.target.value)}
-                  placeholder="Optional if saved"
-                />
-              </label>
-              <button type="submit" className="music-control-button music-control-button--primary" disabled={sendingType === 'music.add_song'}>
-                {sendingType === 'music.add_song' ? 'Adding...' : 'Add Song'}
-              </button>
-            </form>
-
-            <div className="music-actions-grid">
-              {musicActions.map((action) => (
-                <button
-                  key={action.type}
-                  type="button"
-                  className="music-control-button"
-                  disabled={Boolean(sendingType)}
-                  onClick={() => sendMusicRequest(action.type)}
-                >
-                  <span>{action.icon}</span>
-                  {sendingType === action.type ? 'Sending...' : action.label}
-                </button>
-              ))}
-            </div>
-
-            <form className="music-volume-form" onSubmit={handleSetVolume}>
-              <label className="music-field music-volume-range">
-                <span>Volume: {volume}%</span>
-                <input
-                  type="range"
-                  min="0"
-                  max="100"
-                  step="1"
-                  value={volume}
-                  onChange={(event) => setVolume(event.target.value)}
-                />
-              </label>
-              <button type="submit" className="music-control-button" disabled={sendingType === 'music.set_volume'}>
-                {sendingType === 'music.set_volume' ? 'Setting...' : 'Set Volume'}
-              </button>
-            </form>
-
-            {requestMessage && <div className="music-request-message">{requestMessage}</div>}
-            {requestError && <div className="music-request-error">{requestError}</div>}
-          </div>
-
           {renderMusicOverview()}
         </section>
       </main>
