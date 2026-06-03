@@ -95,7 +95,7 @@ const DashboardLogout = () => {
     sessionStorage.clear()
 
     const redirectTimer = setTimeout(() => {
-      window.location.href = '/'
+      window.location.replace('https://oauth2.daiki-bot.xyz/auth/logout')
     }, 250)
 
     return () => clearTimeout(redirectTimer)
