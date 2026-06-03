@@ -143,11 +143,6 @@ const Music = () => {
       return
     }
 
-    const requesterPayload = {
-      ...payload,
-      requestedById: requesterId,
-    }
-
     setSendingType(type)
     setRequestError(null)
     setRequestMessage(null)
@@ -157,7 +152,8 @@ const Music = () => {
         `https://dash.api.daiki-bot.xyz/api/guilds/${activeGuildId}/bot-requests`,
         {
           type,
-          payload: requesterPayload,
+          payload,
+          requestedById: requesterId,
           waitForResult: true,
           waitTimeoutMs: 8000,
         },
