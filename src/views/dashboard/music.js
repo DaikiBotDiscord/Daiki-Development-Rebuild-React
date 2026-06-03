@@ -117,6 +117,18 @@ const Music = () => {
     }
   }, [fetchMusicState])
 
+  useEffect(() => {
+    if (!requestMessage) {
+      return undefined
+    }
+
+    const messageTimer = setTimeout(() => {
+      setRequestMessage(null)
+    }, 5000)
+
+    return () => clearTimeout(messageTimer)
+  }, [requestMessage])
+
   const sendMusicRequest = async (type, payload = {}) => {
     if (!activeGuildId) {
       setRequestError('No active music server was found. Join a voice channel and start music before sending controls.')
@@ -157,10 +169,7 @@ const Music = () => {
         }
       )
 
-      const data = response.data
-      const status = data?.request?.status
-      const suffix = status && status !== 'pending' ? ` Status: ${status}.` : ''
-      setRequestMessage(data?.message ? `${data.message}${suffix}` : 'Bot request created.')
+      setRequestMessage('Request sent.')
       await fetchMusicState()
     } catch (err) {
       const message = err.response?.data?.message || err.message || 'Unable to send music command.'
