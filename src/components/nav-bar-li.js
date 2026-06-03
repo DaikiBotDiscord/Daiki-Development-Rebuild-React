@@ -17,6 +17,8 @@ const accountItems = [
     { to: '/dashboard/account', label: 'Account' },
     { to: '/dashboard/warnings', label: 'Warnings' },
     { to: '/dashboard/servers', label: 'Servers' },
+    { to: '/dashboard/music', label: 'Music' },
+    { to: '/dashboard/logout', label: 'Logout' },
 ]
 
 const NavBarLI = (props) => {

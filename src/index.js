@@ -61,6 +61,60 @@ const DashboardSync = () => {
   );
 };
 
+const DashboardLogout = () => {
+  useEffect(() => {
+    const cookieNames = document.cookie
+      ? document.cookie.split(';').map((cookie) => cookie.split('=')[0].trim()).filter(Boolean)
+      : []
+    const hostname = window.location.hostname
+    const rootDomain = hostname.split('.').slice(-2).join('.')
+    const domains = Array.from(new Set([
+      undefined,
+      hostname,
+      `.${hostname}`,
+      rootDomain,
+      `.${rootDomain}`,
+      '.daiki-bot.xyz',
+    ].filter((domain) => domain && domain !== '.localhost')))
+    const paths = Array.from(new Set(['/', window.location.pathname]))
+
+    cookieNames.forEach((name) => {
+      paths.forEach((path) => {
+        Cookies.remove(name, { path })
+
+        domains.forEach((domain) => {
+          Cookies.remove(name, { path, domain })
+          document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=${path}; domain=${domain}`
+        })
+
+        document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=${path}`
+      })
+    })
+
+    localStorage.removeItem('discord.oauth2')
+    sessionStorage.clear()
+
+    const redirectTimer = setTimeout(() => {
+      window.location.href = '/'
+    }, 250)
+
+    return () => clearTimeout(redirectTimer)
+  }, [])
+
+  return (
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      alignItems: 'center',
+      height: '100%',
+      width: '100%',
+      marginTop: '100px',
+    }}>
+      <ThreeDot variant="bounce" color={["#6141ac", "#233dff", "#6845ba", "#3850ff"]} size="large" text="" textColor="" />
+    </div>
+  )
+}
+
 /* const DashboardSync = () => {
   const history = useHistory();
 
@@ -127,6 +181,7 @@ const App = () => {
         <Route component={Contact} exact path='/contact' />
 
         <Route component={DashboardSync} exact path="/dashboard-sync" />
+        <Route component={DashboardLogout} exact path="/dashboard/logout" />
         <Route component={LendMeATenor} exact path="/lendmeatenor" />
         <Route component={TheWeddingSinger} exact path="/theweddingsinger" />
         <Route component={AroundTheWorld} exact path="/aroundtheworld" />
