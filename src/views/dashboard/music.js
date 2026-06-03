@@ -218,7 +218,7 @@ const Music = () => {
 
       <form className="music-add-form" onSubmit={handleAddSong}>
         <label className="music-field music-field--wide">
-          <span>Song URL or search term</span>
+          <span>Song URL or Search Term</span>
           <input
             type="text"
             value={query}
