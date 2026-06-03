@@ -1,9 +1,13 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import axios from 'axios'
 import { Helmet } from 'react-helmet'
+import { ThreeDot } from 'react-loading-indicators'
 
 import NavBarLI from '../../components/nav-bar-li'
 import Footer from '../../components/footer'
 import './music.css'
+
+const REFRESH_SECONDS = 15
 
 const formatTime = (seconds) => {
   if (seconds == null || Number.isNaN(seconds)) {
@@ -16,67 +20,214 @@ const formatTime = (seconds) => {
   return `${minutes}:${String(remainder).padStart(2, '0')}`
 }
 
+const musicActions = [
+  { type: 'music.skip', label: 'Skip', icon: 'SKIP' },
+  { type: 'music.pause', label: 'Pause', icon: 'PAUSE' },
+  { type: 'music.resume', label: 'Resume', icon: 'PLAY' },
+  { type: 'music.stop', label: 'Stop', icon: 'STOP' },
+  { type: 'music.shuffle', label: 'Shuffle', icon: 'SHUF' },
+  { type: 'music.disconnect', label: 'Disconnect', icon: 'DISC' },
+]
+
 const Music = () => {
+  const [userData, setUserData] = useState(null)
+  const [selectedGuildId, setSelectedGuildId] = useState('')
   const [musicData, setMusicData] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
+  const [musicError, setMusicError] = useState(null)
+  const [requestMessage, setRequestMessage] = useState(null)
+  const [requestError, setRequestError] = useState(null)
+  const [sendingType, setSendingType] = useState(null)
+  const [query, setQuery] = useState('')
+  const [voiceChannelId, setVoiceChannelId] = useState('')
+  const [textChannelId, setTextChannelId] = useState('')
+  const [volume, setVolume] = useState(75)
+  const [secondsUntilRefresh, setSecondsUntilRefresh] = useState(REFRESH_SECONDS)
 
-  useEffect(() => {
-    let mounted = true
-    const fetchMusicState = async () => {
-      try {
-        const response = await fetch('https://dash.api.daiki-bot.xyz/api/users/@me/music-state', {
-          credentials: 'include',
-          headers: {
-            'Accept': 'application/json',
-          },
-        })
+  const guilds = useMemo(() => userData?.manageable_guilds || [], [userData])
+  const selectedGuild = guilds.find((guild) => guild.id === selectedGuildId)
 
-        if (!response.ok) {
-          throw new Error(`Network response was not ok (${response.status})`)
-        }
+  const fetchMusicState = useCallback(async () => {
+    try {
+      const response = await fetch('https://dash.api.daiki-bot.xyz/api/users/@me/music-state', {
+        credentials: 'include',
+        headers: {
+          Accept: 'application/json',
+        },
+      })
 
-        const data = await response.json()
-
-        if (!data.success) {
-          throw new Error(data.message || 'Unable to load music state')
-        }
-
-        if (mounted) {
-          setMusicData(data)
-          setError(null)
-        }
-      } catch (fetchError) {
-        if (mounted) {
-          setError(fetchError.message || 'Unable to load music state')
-        }
-      } finally {
-        if (mounted) {
-          setLoading(false)
-        }
+      if (!response.ok) {
+        throw new Error(`Network response was not ok (${response.status})`)
       }
-    }
 
-    fetchMusicState()
-    const interval = setInterval(fetchMusicState, 15000)
+      const data = await response.json()
 
-    return () => {
-      mounted = false
-      clearInterval(interval)
+      if (!data.success) {
+        throw new Error(data.message || 'Unable to load music state')
+      }
+
+      setMusicData(data)
+      setMusicError(null)
+    } catch (fetchError) {
+      setMusicError(fetchError.message || 'Unable to load music state')
+    } finally {
+      setLoading(false)
+      setSecondsUntilRefresh(REFRESH_SECONDS)
     }
   }, [])
 
-  const renderMusicControlPanel = () => {
-    if (loading) {
-      return <div className="music-status-empty">Loading music state…</div>
+  useEffect(() => {
+    axios.get('https://dash.api.daiki-bot.xyz/api/users/@me', {
+      withCredentials: true,
+    })
+      .then((res) => {
+        setUserData(res.data)
+        const firstGuildId = res.data?.manageable_guilds?.[0]?.id || ''
+        setSelectedGuildId((currentGuildId) => currentGuildId || firstGuildId)
+      })
+      .catch((err) => {
+        console.error('Error fetching user data:', err)
+        window.location.href = 'https://daiki-bot.xyz/dashboard-sync'
+      })
+  }, [])
+
+  useEffect(() => {
+    let mounted = true
+
+    const load = async () => {
+      if (mounted) {
+        await fetchMusicState()
+      }
     }
 
-    if (error) {
-      return <div className="music-status-error">Unable to load music state: {error}</div>
+    load()
+    const refreshInterval = setInterval(load, REFRESH_SECONDS * 1000)
+    const countdownInterval = setInterval(() => {
+      setSecondsUntilRefresh((currentSeconds) => (
+        currentSeconds > 1 ? currentSeconds - 1 : REFRESH_SECONDS
+      ))
+    }, 1000)
+
+    return () => {
+      mounted = false
+      clearInterval(refreshInterval)
+      clearInterval(countdownInterval)
+    }
+  }, [fetchMusicState])
+
+  const sendMusicRequest = async (type, payload = {}) => {
+    if (!selectedGuildId) {
+      setRequestError('Select a server before sending a music command.')
+      setRequestMessage(null)
+      return
+    }
+
+    setSendingType(type)
+    setRequestError(null)
+    setRequestMessage(null)
+
+    try {
+      const response = await axios.post(
+        `https://dash.api.daiki-bot.xyz/api/guilds/${selectedGuildId}/bot-requests`,
+        {
+          type,
+          payload,
+          waitForResult: true,
+          waitTimeoutMs: 8000,
+        },
+        {
+          withCredentials: true,
+          headers: {
+            'Content-Type': 'application/json',
+          },
+        }
+      )
+
+      const data = response.data
+      const status = data?.request?.status
+      const suffix = status && status !== 'pending' ? ` Status: ${status}.` : ''
+      setRequestMessage(data?.message ? `${data.message}${suffix}` : 'Bot request created.')
+      await fetchMusicState()
+    } catch (err) {
+      const message = err.response?.data?.message || err.message || 'Unable to send music command.'
+      setRequestError(message)
+    } finally {
+      setSendingType(null)
+    }
+  }
+
+  const handleAddSong = (event) => {
+    event.preventDefault()
+
+    const trimmedQuery = query.trim()
+    if (!trimmedQuery) {
+      setRequestError('Enter a song URL or search term first.')
+      setRequestMessage(null)
+      return
+    }
+
+    const payload = {
+      query: trimmedQuery,
+      source: 'website',
+    }
+
+    if (voiceChannelId.trim()) {
+      payload.voiceChannelId = voiceChannelId.trim()
+    }
+
+    if (textChannelId.trim()) {
+      payload.textChannelId = textChannelId.trim()
+    }
+
+    sendMusicRequest('music.add_song', payload)
+  }
+
+  const handleSetVolume = (event) => {
+    event.preventDefault()
+    const normalizedVolume = Number(volume)
+
+    if (!Number.isInteger(normalizedVolume) || normalizedVolume < 0 || normalizedVolume > 100) {
+      setRequestError('Volume must be a whole number from 0 to 100.')
+      setRequestMessage(null)
+      return
+    }
+
+    sendMusicRequest('music.set_volume', { volume: normalizedVolume })
+  }
+
+  const renderMusicOverview = () => {
+    if (loading) {
+      return (
+        <div className="music-status-empty">
+          <ThreeDot variant="bounce" color={['#ff00ff', '#5865f2', '#00d4ff']} size="small" text="" textColor="" />
+        </div>
+      )
+    }
+
+    if (musicError) {
+      return <div className="music-status-error">Unable to load music state: {musicError}</div>
     }
 
     if (!musicData) {
       return <div className="music-status-empty">No music state available.</div>
+    }
+
+    if (!musicData.in_voice_channel && !musicData.player && !musicData.music_state) {
+      return (
+        <div className="music-empty-state">
+          <span className="daiki-feature-card__icon">NO ACTIVE MUSIC</span>
+          <h2>No voice channel or music session found</h2>
+          <p>
+            Join a voice channel and start playing music with Daiki before the
+            live player, queue, and controls have anything active to show.
+          </p>
+          <p>
+            You can still use the Add Song form above. If Daiki does not already
+            have saved channel IDs for this server, include the voice channel ID
+            and text channel ID before adding a song.
+          </p>
+        </div>
+      )
     }
 
     const player = musicData.player || {}
@@ -87,7 +238,7 @@ const Music = () => {
     const totalSeconds = track.durationSeconds ?? 0
     const progress = totalSeconds ? Math.min(100, Math.max(0, (currentSeconds / totalSeconds) * 100)) : 0
     const loop = state.loop_mode || player.loop || 'off'
-    const volume = state.volume ?? player.volume ?? 0
+    const currentVolume = state.volume ?? player.volume ?? 0
 
     return (
       <>
@@ -102,7 +253,7 @@ const Music = () => {
               <div className="music-tracker-row">
                 <div>
                   <span className="music-label">Server</span>
-                  <p>{player.server?.name || state.guild_id || 'Unknown server'}</p>
+                  <p>{player.server?.name || selectedGuild?.name || state.guild_id || 'Unknown server'}</p>
                 </div>
                 <div>
                   <span className="music-label">Status</span>
@@ -117,7 +268,7 @@ const Music = () => {
               <div className="music-tracker-row">
                 <div>
                   <span className="music-label">Volume</span>
-                  <p>{volume}%</p>
+                  <p>{currentVolume}%</p>
                 </div>
                 <div>
                   <span className="music-label">Loop</span>
@@ -192,7 +343,7 @@ const Music = () => {
                     <div>
                       <p className="music-queue-title">{item.name}</p>
                       <p className="music-queue-subtitle">
-                        {item.duration} • requested by {item.requestedBy?.username || 'unknown'}
+                        {item.duration} - requested by {item.requestedBy?.username || 'unknown'}
                       </p>
                     </div>
                   </div>
@@ -221,10 +372,101 @@ const Music = () => {
           <p className="daiki-eyebrow">Audio controls</p>
           <h1>Music</h1>
           <p>Manage music playback, queues, and server audio settings for Daiki.</p>
+          <span className="music-refresh-note">
+            Playback overview refreshes in {secondsUntilRefresh}s.
+          </span>
         </section>
 
         <section className="daiki-content-panel music-panel">
-          {renderMusicControlPanel()}
+          <div className="music-command-panel">
+            <div className="music-command-header">
+              <div>
+                <p className="daiki-eyebrow">Bot requests</p>
+                <h2>Send music controls</h2>
+              </div>
+              <label className="music-field music-field--server">
+                <span>Server</span>
+                <select value={selectedGuildId} onChange={(event) => setSelectedGuildId(event.target.value)}>
+                  <option value="">Select a server</option>
+                  {guilds.map((guild) => (
+                    <option key={guild.id} value={guild.id}>
+                      {guild.name}
+                    </option>
+                  ))}
+                </select>
+              </label>
+            </div>
+
+            <form className="music-add-form" onSubmit={handleAddSong}>
+              <label className="music-field music-field--wide">
+                <span>Song URL or search term</span>
+                <input
+                  type="text"
+                  value={query}
+                  onChange={(event) => setQuery(event.target.value)}
+                  placeholder="never gonna give you up"
+                />
+              </label>
+              <label className="music-field">
+                <span>Voice channel ID</span>
+                <input
+                  type="text"
+                  value={voiceChannelId}
+                  onChange={(event) => setVoiceChannelId(event.target.value)}
+                  placeholder="Optional if saved"
+                />
+              </label>
+              <label className="music-field">
+                <span>Text channel ID</span>
+                <input
+                  type="text"
+                  value={textChannelId}
+                  onChange={(event) => setTextChannelId(event.target.value)}
+                  placeholder="Optional if saved"
+                />
+              </label>
+              <button type="submit" className="music-control-button music-control-button--primary" disabled={sendingType === 'music.add_song'}>
+                {sendingType === 'music.add_song' ? 'Adding...' : 'Add Song'}
+              </button>
+            </form>
+
+            <div className="music-actions-grid">
+              {musicActions.map((action) => (
+                <button
+                  key={action.type}
+                  type="button"
+                  className="music-control-button"
+                  disabled={Boolean(sendingType)}
+                  onClick={() => sendMusicRequest(action.type)}
+                >
+                  <span>{action.icon}</span>
+                  {sendingType === action.type ? 'Sending...' : action.label}
+                </button>
+              ))}
+            </div>
+
+            <form className="music-volume-form" onSubmit={handleSetVolume}>
+              <label className="music-field music-volume-range">
+                <span>Volume: {volume}%</span>
+                <input
+                  type="range"
+                  min="0"
+                  max="100"
+                  step="1"
+                  value={volume}
+                  onChange={(event) => setVolume(event.target.value)}
+                />
+              </label>
+              <button type="submit" className="music-control-button" disabled={sendingType === 'music.set_volume'}>
+                {sendingType === 'music.set_volume' ? 'Setting...' : 'Set Volume'}
+              </button>
+            </form>
+
+            {requestMessage && <div className="music-request-message">{requestMessage}</div>}
+            {requestError && <div className="music-request-error">{requestError}</div>}
+          </div>
+
+          {renderMusicOverview()}
         </section>
       </main>
 
