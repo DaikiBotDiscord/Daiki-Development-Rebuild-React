@@ -145,17 +145,16 @@ const Music = () => {
 
     setSendingType(type)
     setRequestError(null)
-    setRequestMessage(null)
+    setRequestMessage('Request sent.')
 
     try {
-      const response = await axios.post(
+      await axios.post(
         `https://dash.api.daiki-bot.xyz/api/guilds/${activeGuildId}/bot-requests`,
         {
           type,
           payload,
           requestedById: requesterId,
-          waitForResult: true,
-          waitTimeoutMs: 8000,
+          waitForResult: false,
         },
         {
           withCredentials: true,
@@ -165,11 +164,9 @@ const Music = () => {
         }
       )
 
-      setRequestMessage('Request sent.')
       await fetchMusicState()
     } catch (err) {
-      const message = err.response?.data?.message || err.message || 'Unable to send music command.'
-      setRequestError(message)
+      console.error('Unable to complete music command request:', err)
     } finally {
       setSendingType(null)
     }
@@ -191,6 +188,7 @@ const Music = () => {
     }
 
     sendMusicRequest('music.add_song', payload)
+    setQuery('')
   }
 
   const handleSetVolume = (event) => {
