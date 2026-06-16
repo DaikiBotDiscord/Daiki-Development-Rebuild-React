@@ -41,17 +41,20 @@ const WebAlerts = (props) => {
 
   return (
     <div className="web-alerts-web-alerts" ref={alertRef}>
-      <span className="web-alerts-text13">
-        <Fragment>
-          {alertLines.map((line, index) => (
-            <span key={index}>
-              {line}
-              <br />
-            </span>
-          ))
-          }
-        </Fragment>
-      </span>
+      <div className="web-alerts-content">
+        <span className="web-alerts-label">Website Notice</span>
+        <span className="web-alerts-text13">
+          <Fragment>
+            {alertLines.map((line, index) => (
+              <span key={index}>
+                {line}
+                <br />
+              </span>
+            ))
+            }
+          </Fragment>
+        </span>
+      </div>
       {showButton && (
         <a
           href={alertLink}

@@ -1,3 +1,4 @@
 node_modules
 build
 daiki_bot_tos_privacy.txt
+.env

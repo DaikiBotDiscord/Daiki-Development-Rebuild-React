@@ -33,6 +33,14 @@ const Commands = () => {
                     <p>Browse Daiki commands by category and find the exact tool your server needs.</p>
                 </section>
 
+                <section className="commands-warning" aria-label="Commands availability warning">
+                    <span className="commands-warning__label">Command Notice</span>
+                    <p>
+                        All commands may be unavailable due to Discord restructuring.
+                        We are working to restore all commands as soon as possible.
+                    </p>
+                </section>
+
                 <section className="daiki-content-panel">
                     <CommandsDropDowns />
                 </section>
