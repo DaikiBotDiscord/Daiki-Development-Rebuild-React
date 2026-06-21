@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react'
 import ReactDOM from 'react-dom'
+import { Analytics } from '@vercel/analytics/react'
 import {
   BrowserRouter as Router,
   Route,
@@ -222,6 +223,7 @@ const App = () => {
         }} />
         <Route component={PageNotFound} path="**" />
       </Switch>
+      <Analytics />
     </Router>
   )
 }
